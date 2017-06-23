@@ -1,0 +1,167 @@
+# Clean up data
+// delete all node
+MATCH (n)
+OPTIONAL MATCH (n)-[r]-()
+DELETE n,r;
+
+# Create data hierarchie
+Data is attribute or Data bloc depending on maturity
+// create data
+LOAD CSV WITH HEADERS FROM "file:///data.csv" AS row FIELDTERMINATOR ';'
+MERGE (if:DATA {name:row.DATA});
+
+LOAD CSV WITH HEADERS FROM "file:///data.csv" AS row FIELDTERMINATOR ';'
+MERGE (if:DATA_VIEW {name:row.DATA_VIEW});
+
+// link data to view
+LOAD CSV WITH HEADERS FROM "file:///data.csv" AS row FIELDTERMINATOR ';'
+MATCH (data:DATA {name:row.DATA})
+MATCH (data_view :DATA_VIEW {name:row.DATA_VIEW})
+MERGE (data_view) -[:COMPOSE_OF]-> (data);
+
+# Create application data
+// create  application
+LOAD CSV WITH HEADERS FROM "file:///application.csv" AS row FIELDTERMINATOR ';'
+MERGE (appli:Application {id:row.APPLICATION});
+
+// create interface
+LOAD CSV WITH HEADERS FROM "file:///Interface_in.csv" AS row FIELDTERMINATOR ';'
+MERGE (if:Interface {id:row.INTERFACE_IN});
+
+// create interface pin
+LOAD CSV WITH HEADERS FROM "file:///Interface_in.csv" AS row FIELDTERMINATOR ';'
+MERGE (if:PIN {owner:row.INTERFACE_IN, pinid:row.IF_IN_PIN});
+
+// link with PIN
+LOAD CSV WITH HEADERS FROM "file:///Interface_in.csv" AS row FIELDTERMINATOR ';'
+MATCH (data:DATA {name:row.IF_IN_DATA})
+MATCH (pin :PIN {owner:row.INTERFACE_IN, pinid:row.IF_IN_PIN})
+MERGE (pin) -[:TRANSFERT]-> (data);
+
+// Link interface
+LOAD CSV WITH HEADERS FROM "file:///Interface_in.csv" AS row FIELDTERMINATOR ';'
+MATCH (appli :Application { id:row.APPLICATION})
+MATCH (inter :Interface { id:row.INTERFACE_IN })
+MERGE (appli) -[:Consume]-> (inter);
+
+// link interface pin
+LOAD CSV WITH HEADERS FROM "file:///Interface_in.csv" AS row FIELDTERMINATOR ';'
+MATCH (inter :Interface { id:row.INTERFACE_IN })
+MATCH (pin :PIN {owner:row.INTERFACE_IN, pinid:row.IF_IN_PIN})
+MERGE (inter) -[:HAS]-> (pin);
+
+// create interface
+LOAD CSV WITH HEADERS FROM "file:///Interface_out.csv" AS row FIELDTERMINATOR ';'
+MERGE (if:Interface {id:row.INTERFACE_OUT});
+
+// create interface pin
+LOAD CSV WITH HEADERS FROM "file:///Interface_out.csv" AS row FIELDTERMINATOR ';'
+MERGE (if:PIN {owner:row.INTERFACE_OUT, pinid:row.IF_OU_PIN});
+
+// create interface pin
+LOAD CSV WITH HEADERS FROM "file:///Interface_out.csv" AS row FIELDTERMINATOR ';'
+MERGE (if:DATA {name:row.IF_OU_DATA});
+
+// link with PIN
+LOAD CSV WITH HEADERS FROM "file:///Interface_out.csv" AS row FIELDTERMINATOR ';'
+MATCH (data:DATA {name:row.IF_OU_DATA})
+MATCH (pin :PIN {owner:row.INTERFACE_OUT, pinid:row.IF_OU_PIN})
+MERGE (pin) -[:TRANSFERT]-> (data);
+
+// Link interface
+LOAD CSV WITH HEADERS FROM "file:///Interface_out.csv" AS row FIELDTERMINATOR ';'
+MATCH (appli :Application { id:row.APPLICATION})
+MATCH (inter :Interface { id:row.INTERFACE_OUT })
+MERGE (appli) -[:Produce]-> (inter);
+
+// link interface pin
+LOAD CSV WITH HEADERS FROM "file:///Interface_out.csv" AS row FIELDTERMINATOR ';'
+MATCH (inter :Interface { id:row.INTERFACE_OUT })
+MATCH (pin :PIN {owner:row.INTERFACE_OUT, pinid:row.IF_OU_PIN})
+MERGE (inter) -[:HAS]-> (pin);
+
+// connect interface
+LOAD CSV WITH HEADERS FROM "file:///interface_connection.csv" AS row FIELDTERMINATOR ';'
+MATCH (input :Interface { id:row.INTERFACE_IN})
+MATCH (output :Interface { id:row.INTERFACE_OUT })
+MERGE (input) -[:CONNECTED_TO]-> (output);
+
+// Function mapping
+LOAD CSV WITH HEADERS FROM "file:///function.csv" AS row FIELDTERMINATOR ';'
+MERGE (fct:FUNCTION {appli:row.APPLICATION, fctid:row.FUNCTION});
+
+// Link function
+LOAD CSV WITH HEADERS FROM "file:///function.csv" AS row FIELDTERMINATOR ';'
+MATCH (appli :Application { id:row.APPLICATION})
+MERGE (fct:FUNCTION {appli:row.APPLICATION, fctid:row.FUNCTION})
+MERGE (appli) -[:COMPOSE_OF]-> (fct);
+
+// create function pin
+LOAD CSV WITH HEADERS FROM "file:///function_in.csv" AS row FIELDTERMINATOR ';'
+MERGE (if:PIN {owner:row.FUNCTION, pinid:row.FCT_PIN_IN});
+
+// link with PIN
+LOAD CSV WITH HEADERS FROM "file:///function_in.csv" AS row FIELDTERMINATOR ';'
+MATCH (data:DATA {name:row.FCT_IN_DATA})
+MATCH (pin :PIN {owner:row.FUNCTION, pinid:row.FCT_PIN_IN})
+MERGE (pin) -[:TRANSFERT]-> (data);
+
+// Link pin and interface
+LOAD CSV WITH HEADERS FROM "file:///function_in.csv" AS row FIELDTERMINATOR ';'
+MATCH (fct:FUNCTION {appli:row.APPLICATION, fctid:row.FUNCTION})
+MATCH (if:PIN {owner:row.FUNCTION, pinid:row.FCT_PIN_IN})
+MERGE (fct) -[:Consume]-> (if);
+
+// create function pin
+LOAD CSV WITH HEADERS FROM "file:///function_out.csv" AS row FIELDTERMINATOR ';'
+MERGE (if:PIN {owner:row.FUNCTION, pinid:row.FCT_PIN_OUT});
+
+// create interface pin
+LOAD CSV WITH HEADERS FROM "file:///function_out.csv" AS row FIELDTERMINATOR ';'
+MERGE (if:DATA {name:row.FCT_OU_DATA});
+
+// link with PIN
+LOAD CSV WITH HEADERS FROM "file:///function_out.csv" AS row FIELDTERMINATOR ';'
+MATCH (data:DATA {name:row.FCT_OU_DATA})
+MATCH (pin :PIN {owner:row.FUNCTION, pinid:row.FCT_PIN_OUT})
+MERGE (pin) -[:TRANSFERT]-> (data);
+
+// Link pin and interface
+LOAD CSV WITH HEADERS FROM "file:///function_out.csv" AS row FIELDTERMINATOR ';'
+MATCH (fct:FUNCTION {appli:row.APPLICATION, fctid:row.FUNCTION})
+MATCH (if:PIN {owner:row.FUNCTION, pinid:row.FCT_PIN_OUT})
+MERGE (fct) -[:Produce]-> (if);
+
+LOAD CSV WITH HEADERS FROM "file:///Interface_out.csv" AS row FIELDTERMINATOR ';'
+MATCH (pin_in :PIN {owner:row.INTERFACE_OUT, pinid:row.IF_OU_PIN})
+MATCH (pin_out :PIN {owner:row.IF_OU_USE, pinid:row.IF_OU_USE_PIN})
+MERGE (pin_in) -[:MAP_TO]-> (pin_out);
+
+LOAD CSV WITH HEADERS FROM "file:///Interface_in.csv" AS row FIELDTERMINATOR ';'
+MATCH (pin_in :PIN {owner:row.INTERFACE_IN, pinid:row.IF_IN_PIN})
+MATCH (pin_out :PIN {owner:row.IF_IN_USE, pinid:row.IF_IN_USE_PIN})
+MERGE (pin_in) -[:MAP_TO]-> (pin_out);
+
+LOAD CSV WITH HEADERS FROM "file:///function_in.csv" AS row FIELDTERMINATOR ';'
+MATCH (pin_in :PIN {owner:row.FUNCTION, pinid:row.FCT_PIN_IN})
+MATCH (pin_out :PIN {owner:row.FCT_IN_USE, pinid:row.FCT_IN_USE_PIN})
+MERGE (pin_in) -[:MAP_TO]-> (pin_out);
+
+LOAD CSV WITH HEADERS FROM "file:///function_out.csv" AS row FIELDTERMINATOR ';'
+MATCH (pin_in :PIN {owner:row.FUNCTION, pinid:row.FCT_PIN_OUT})
+MATCH (pin_out :PIN {owner:row.FCT_OU_USE, pinid:row.FCT_OU_USE_PIN})
+MERGE (pin_in) -[:MAP_TO]-> (pin_out);
+
+// Some sample query
+
+All application connected to ICC-CADB
+Match (a1:Application)-[p:Produce]->(i:Interface)<-[c:CONNECTED_TO]-(i2:Interface)<-[c2:Consume]-(a2:Application) WHERE a1.id =~ "ICC-CADB.*" RETURN a1, p, c, c2, i, i2, a2
+
+All application impacted by MSN_COMPILATION
+Match (f:FUNCTION)-[:Produce]->(p:PIN)<-[:MAP_TO]-(:PIN)<-[:HAS]-(i:Interface)<-[c:CONNECTED_TO]-(i2:Interface)<-[c2:Consume]-(a:Application)
+WHERE f.fctid = "MSN_COMPILATION" RETURN f, i, i2, a
+
+All application using data from function
+Match (f:FUNCTION)-[:Produce]->(o)<-[l:MAP_TO*]-(p:PIN) WITH f, o, p, l MATCH (p)<-[:HAS]-(i:Interface) MATCH (i)<-[:Consume]-(a:Application) RETURN f, o, p, l, i, a
+
+MATCH (n:Application) WHERE n.id =~ "ICC.*CADB.*" RETURN n

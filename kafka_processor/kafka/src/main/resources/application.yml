@@ -1,0 +1,28 @@
+app:
+  id: ${random.uuid}
+  name: "iam"
+  consul:
+    hostname: "localhost"
+    port: 8500
+  neo4j:
+    url: "bolt://localhost:7687"
+    user: "neo4j"
+    pwd: "toto"
+
+spring:
+  main:
+    banner-mode: "off"
+  application:
+    name: "iam"
+    java:
+      version: "@java.version@"
+  jmx:
+    enable: false
+  data:
+    mongodb.host: "mongo"
+    mongodb.port: 27017
+    mongodb.database: "prod"
+    
+server:
+  port: 8081
+

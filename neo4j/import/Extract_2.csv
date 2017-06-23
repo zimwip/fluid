@@ -1,0 +1,1197 @@
+ID;Title;Cesar ID;From_application;To_Application;I/F technology;Strong I/F;Cross ICT Domains
+1398;IWDS - Proof reading (AG02) to SIMIC (K350);;IWDS (AG02);SIMIC (K350);;;
+1113;A400M CA dispatch;;SAP PDR (N/A);SAP R/3 Corporate_xAC_LDS (B180);;;YES
+1131;Military AIR-CAIR;;SAP PDR (N/A);SAP R/3 Corporate_xAC_LDS (B180);;NO;YES
+1114;Request for DQN;;SAP SP1 (N/A);SAP R/3 Corporate_xAC_LDS (B180);Other;;YES
+1119;CA allocation management;;SAP SP1 (N/A);SAP R/3 Corporate_xAC_LDS (B180);;NO;YES
+1121;Equipment allocation management;;SAP SP1 (N/A);SAP R/3 Corporate_xAC_LDS (B180);;NO;YES
+1122;Concession management;;SAP SP1 (N/A);SAP R/3 Corporate_xAC_LDS (B180);;NO;YES
+1249;Interface Work Orders;;SAP SP1 (N/A);SAP SPA - ERP SP (B050);RFC;NO;
+1250;Load BOM;;SAP SP1 (N/A);SAP SPA - ERP SP (B050);RFC;NO;YES
+1251;paralel execution. Broken BOM;;SAP SP1 (N/A);SAP SPA - ERP SP (B050);RFC;NO;YES
+1252;RFC transfer data OW Management;;SAP SP1 (N/A);SAP SPA - ERP SP (B050);RFC;NO;YES
+794;Service Bulletin, CIN, and MSN applicability;198;SMART A400M (N/A);ACC (PA02);File;NO;YES
+285;A400M Service Bulletin (SB) Infos ;2179;SMART A400M (N/A);MCT (I531);File;NO;YES
+348;AAT Simulation;1627;EDC Rebuilt and Re-ranking (xxxxx);ACC (PA02);;NO;YES
+302;Change process pre-formated KPI (multiprogram);1751;EZCM (xxxxx);CM Reporting (G930);File;;YES
+270;reports data (A350-A380);1717;iMADE A350 (E382);CM Reporting (G930);Other;;NO
+271;reports data (A350-A380);1717;iMADE A380 (E381);CM Reporting (G930);Other;;NO
+13;Diagrams type;2380;SIDEV (R320);CIRCE-C-CAO (LC20);File;NO;YES
+1635;FIN - DBFIN to Preview Maint;;ACDB (1Q00 and 8W00);GIPSY-AUTHORING (DD) - Preview Maintenance (8R03);Other;NO;NO
+1535;ACDB (From ECDB3) to AWL2-AUTH (WB SA LR DD SAT ATR);;ACDB (8W00);AWL2 (8L00);File;NO;NO
+1343;ACDB/DBFIN  to GIDOCA (DD + LR + SA + MT) - CDE;;ACDB (8W00);GIDOCA (DD + LR + SA + MT) (8E00);Other;YES;NO
+1508;ACDB/DBFIN to SB-CCT;;ACDB (8W00);SB-CCT (DT10);;;
+1331;AIDA to SERACH;;AIDA (UI00);Federated Search (I770);File;NO;YES
+1050;Master data for Materials parts;;AIDA (UI00);SAP R/3 Corporate_xAC_LDS (B180);;;YES
+1193;Data Services;;ASPECT (O910);ACMM (SS10);;;
+1548;ASPECT SBCB to ATLAS - Spares Management;;ASPECT SBCB (O91S);ATLAS Spares Management (S350);;;
+1549;ASPECT SBCB to CDM;;ASPECT SBCB (O91S);CDM (YI10);;;
+1543;ASPECT SBCB to Criteria Master Data Base;;ASPECT SBCB (O91S);Criteria Master Data Base (R739);;;
+1544;ASPECT SBCB to DACAS - SB;;ASPECT SBCB (O91S);DACAS (I070);;;
+1545;ASPECT SBCB to ELIPS (FCOR);;ASPECT SBCB (O91S);ELIPS (D120);;;
+1537;ASPECT SBCB to ISCOM;;ASPECT SBCB (O91S);ISCoM (A661);;;
+1546;ASPECT SBCB to SB-COMP (SH20);;ASPECT SBCB (O91S);SB-COMP (SH20);;;
+1189;Spares parts data;;ATLAS Spares Management (S350);SAP MM KIT PDA (C249);;;YES
+1190;Spares Parts data;;ATLAS Spares Management (S350);SAP R3 Spares (C229);;;YES
+1509;ATLAS - Spares Management to SB-COMP (SH20);;ATLAS Spares Management (S350);SB-COMP (SH20);;;
+1627;Wiring - AWL2 to AWL2 Prod;;AWL2 (8L00);AWL2 (WB SA LR DD SAT ATR) - Finalization (B2 B4) (8L05);DB2 Exchange Table;YES;NO
+1048;Request AWL2 UK data from BCAWD;;AWL2 (8L00);BCAWD (X419);File;YES;YES
+1046;Request AWL2 FR data from CIRCE-G;;AWL2 (8L00);CIRCE-G (LC30);File;;YES
+1047;Request AWL2 GE data from TAKSY ELSY/GESY;1427;AWL2 (8L00);TAKSY (X010);File;YES;YES
+1628;Wiring - AWL2 to WALI;;AWL2 (8L00);WALI AWL Production (B710);File;YES;NO
+893;Delivery dates and planning issues;;CASCADE (F340);APMM (1L01);DBLink;NO;YES
+1598;CASCADE to cVault;;CASCADE (F340);UPS cVault (1P09);Service;NO;YES
+1472;CCDA  to DACAS TR & Preview;;CCDA (T450);DACAS (I070);;;
+1470;CCDA  to DALI Production (DD);;CCDA (T450);DALI (B260);;;
+1471;CCDA  to DALI-SB;;CCDA (T450);DALI-SB (B266);;;
+1469;CCDA  to IPC Production;;CCDA (T450);IPC Production (8D02);;;
+1468;CCDA to TD CONFIGURATION DATA PROVIDER - Data Acq;;CCDA (T450);TD Configuration Data Provider (G101);;;
+1403;CCS to CCDA;;CCS (G102);CCDA (T450);;;
+1402;CCS to RMS;;CCS (G102);RMS (E800);;;
+1314;CDIS to APMM;;CDIS General (A420);APMM (1L01);DBLink;NO;YES
+1559;CDIS (A420) to DDM (F760);;CDIS General (A420);DDM (F760);;;
+1332;CDIS to SEARCH;;CDIS-Concession Damage Tracer (A42P);Federated Search (I770);File;NO;YES
+1560;CISCRM (A277) to e-Collection (A222);;CISCRM (A277);e-Collection (A222);;;
+1558;CLMFU (A237) to CDIS (A420);;CLMFU (A237);CDIS GENERAL (A420);;;
+1488;CML to SB CKM;;CML (2F00);SB CKM (G330);;;
+1506;CML to SB-CCT;;CML (2F00);SB-CCT (DT10);;;
+1383;CMS - PS to CCS;;CMS (DD) (G100);CCS (G102);;;
+1375;CMS - Services to CDS TD;;CMS (DD) (G100);CDS TD (A660);;;
+1385;CMS - Services to DACAS - SB;;CMS (DD) (G100);DACAS (I070);;;
+1389;CMS - Services to EDPS SAP part;;CMS (DD) (G100);EDPS SAP part (SR01);;;
+1624;CMS - Service to GIDOCA (5600) - WB - ST;;CMS (DD) (G100);GIDOCA (5600);File;YES;NO
+1391;CMS - Services to GIDOCA (DD + LR + SA + MT) - CRIT;;CMS (DD) (G100);GIDOCA (DD + LR + SA + MT) (8E00);;YES;NO
+1642;CRITERIA TAV - CMS - GIDOCA(8E00);;CMS (DD) (G100);GIDOCA (DD + LR + SA + MT) (8E00);File;YES;NO
+1390;CMS - Services to IMS - Duplicate & Dispatch;;CMS (DD) (G100);IMS - Duplicate & Dispatch (IM01);;;
+1372;CMS - Services to IPC Authoring;;CMS (DD) (G100);IPC (DD) - Authoring (8D01);;;
+1373;CMS - PS (CMS View) to IPC Production;;CMS (DD) (G100);IPC Production (8D02);;;
+1463;CMS - Services to ISCOM;;CMS (DD) (G100);ISCoM (A661);;;
+1376;CMS - Services to MEDAS - Authoring;;CMS (DD) (G100);MEDAS (DC00);;;
+1379;CMS - Services to MEDAS - Authoring;;CMS (DD) (G100);MEDAS (DC00);;;
+1377;CMS - Services (Common object) to New-GOLDO (FX80) - Authoring;;CMS (DD) (G100);New GOLDO (FX80);;;
+1388;CMS - Services to OPSDATA - AUTH;;CMS (DD) (G100);OPSDATA (OP01);;;
+1386;CMS - Services to Pre Analysis;;CMS (DD) (G100);Pre Analysis (IM34);;;
+1380;CMS - Services to SBCLAS;;CMS (DD) (G100);SBCLAS (F550);;;
+1498;CMS - Services to SBCLAS;;CMS (DD) (G100);SBCLAS (F550);;;
+1374;CMS - Services to SMS (8I00);;CMS (DD) (G100);SMS (8I00);;;
+1382;CMS - PS to TD CONFIGURATION DATA PROVIDER - Data Acq;;CMS (DD) (G100);TD Configuration Data Provider (G101);;;
+1387;CMS - Services to TDFIN;;CMS (DD) (G100);TD FIN (M150);;;
+1384;CMS - Services to WISE;;CMS (DD) (G100);WISE (G340);;;
+1371;COC DB to CMS - Services;;COCDB (G080);CMS (DD) (G100);;;
+1369;COC DB to GIDOCA (WB ATR);;COCDB (G080);GIDOCA (5600);;;
+1370;COC DB to GIDOCA (DD + LR + SA + MT) - CRIT;;COCDB (G080);GIDOCA (DD + LR + SA + MT) (8E00);;;
+874;Contractual Aircraft data from COM to ACMM;;COM (O180);ACMM (SS10);File;NO;YES
+864;COM to APCJaguar;;COM (O180);APC JAGUAR (PB00);DBLink;NO;YES
+1576;COM to CIR;;COM (O180);CIR (A269);;;
+1257;GEL Data - Previsional Backlog of Planes;;COM (O180);CIRAS (A276);;;YES
+1579;COM to CIRAS;;COM (O180);CIRAS (A276);;;
+1600;COM to cVault;;COM (O180);UPS cVault (1P09);;NO;YES
+1525;COMM-LAYER to DALI Production (DD);;COMM-LAYER (8J01);DALI (B260);;;
+516;SB Reporting;1398;CORE (SS11);ACMM (SS10);Other;YES;YES
+1550;Criteria Master Data Base to ASPECT (SAP PCS);;Criteria Master Data Base (R739);ASPECT (O910);;;
+1464;Criteria Master Data Base (Triplet) to CMS - Services;;Criteria Master Data Base (R739);CMS (DD) (G100);;;
+1461;Criteria Master Data Base to ISCOM;;Criteria Master Data Base (R739);ISCoM (A661);;;
+1563;Criteria master data base to RMT (D160);;Criteria Master Data Base (R739);RMT (D160);;;
+1513;Criteria Master Data Base to VIEW;;Criteria Master Data Base (R739);VIEW (F020);;;
+1487;Criteria Master Data Base to WISE;;Criteria Master Data Base (R739);WISE (G340);;;
+1588;CTTOOL to CAPRICA;;CTTOOL (C330);CAPRICA (A930);;;
+610;DACAS-SB to ACMM (Functional view);#VALUE!;DACAS (I070);ACMM (SS10);Other;YES;YES
+1551;DACAS - ?? to ASPECT (SAP PCS);;DACAS (I070);ASPECT (O910);;;
+1531;DACAS - TR&Preview to MEDAS - Production;;DACAS (I070);MEDAS (DC00);;;
+1534;DACAS - SB to SBCLAS;;DACAS (I070);SBCLAS (F550);;;
+1532;DACAS - TR&Preview to SMS;;DACAS (I070);SMS (8I00);;;
+1524;DALI Production (DD) to COMM-LAYER;;DALI (B260);COMM-LAYER (8J01);;;
+1521;DALI Production (DD) to EDPS;;DALI (B260);EDPS (D550);;;
+1555;DALI Production (DD) to ISAIM-CDB;;DALI (B260);ISAIM-CDB (ST00);;;
+1526;DALI Production (DD) to MEDIATIZATION;;DALI (B260);MEDIATIZATION (B220);;;
+1347;DALI Production (DD) to TD CONFIGURATION DATA PROVIDER - Data Acq;;DALI (B260);TD Configuration Data Provider (G101);;;
+1523;DALI Production (DD) to WFILE;;DALI (B260);W-FILE (S750);;;
+1346;DALI Production (DD) to X2PAC;;DALI (B260);X2PAC (D570);;;
+1501;DALI-SB to SBCLAS;;DALI-SB (B266);SBCLAS (F550);;;
+1502;DALI-SB to SBCLAS;;DALI-SB (B266);SBCLAS (F550);;;
+1503;DALI-SB to SBCLAS;;DALI-SB (B266);SBCLAS (F550);;;
+1348;DALI-SB to TD CONFIGURATION DATA PROVIDER - Data Acq;;DALI-SB (B266);TD Configuration Data Provider (G101);;;
+1499;DALI-SB to X2PAC;;DALI-SB (B266);X2PAC (D570);;;
+1500;DALI-SB to ZAMIZ;;DALI-SB (B266);ZAMIZ Imagemaster (H670);;;
+1333;eCatalogue to SEARCH;;eCatalogue (H961);Federated Search (I770);File;NO;YES
+1562;e-Collection to ISAIM (AS30);;e-Collection (A222);ISAIM (AS30);;;
+1467;EDPS SAP part to CCS;;EDPS SAP part (SR01);CCS (G102);;;
+1520;EDPS SAP part to DALI Production (DD);;EDPS SAP part (SR01);DALI (B260);;;
+1349;EDPS SAP part to SMS;;EDPS SAP part (SR01);SMS (8I00);;;
+1541;ELIPS - TDO to CDM;;ELIPS - TDO (D124);CDM (YI10);;;
+1540;ELIPS - TDO to SB-COMP;;ELIPS - TDO (D124);SB-COMP (SH20);;;
+1553;ELIPS (FCOR) to ASPECT (SAP PCS);;ELIPS (D120);ASPECT (O910);;;
+1542;ELIPS-ALCOM (SAP PCS-WebDynPro) to CDM;;ELIPS (D120);CDM (YI10);;;
+1334;FAIR ISP to SEARCH;;FAIR (D220);Federated Search (I770);File;NO;YES
+1335;FAIR OPS to SEARCH;;FAIR (D220);Federated Search (I770);File;NO;YES
+1423;GAMS to CCS;;GAMS (IM06);CCS (G102);;;
+3;ATA Breakdown & Circuit letter;885;GIDOCA (5600);ACC (PA02);File;NO;YES
+1191;DB ATA REF - GIDOCA(8E00) to ACC;;GIDOCA (5600);ACC (PA02);File;NO;YES
+1351;TD Aircraft Allocated  to AMS (WB SA LR DD A400M);;GIDOCA (5600);AMS (8500);File;NO;NO
+1630;Criteria - GIDOCA(5600) to AMS;;GIDOCA (5600);AMS (8500);File;YES;NO
+1626;CRITERIA - GIDOCA (5600) to GIDOCA+ ;;GIDOCA (5600);GIDOCA (DD + LR + SA + MT) (8E00);File;YES;NO
+1515;GIDOCA (DD + LR + SA + MT) - CDE TR to GIPSY-AUTHORING (DD) - Preview Maintenance;;GIDOCA (5600);GIPSY-AUTHORING (DD) - Preview Maintenance (8R03);File;YES;NO
+1633;Criteria - GIDOCA (5600) to MSG3;;GIDOCA (5600);MSG3 Pre Analysis MFU (IM64);;;
+1295;GIDOCA (DD + LR + SA + MT) - PS to ACDB/DBFIN;;GIDOCA (DD + LR + SA + MT) (8E00);ACDB (8W00);File;YES;NO
+1294;GIDOCA (DD + LR + SA + MT) - CRIT to AMS (WB SA LR DD A400M);;GIDOCA (DD + LR + SA + MT) (8E00);AMS (8500);;;
+1298;GIDOCA (DD + LR + SA + MT) - CRIT to CMS - Services;;GIDOCA (DD + LR + SA + MT) (8E00);CMS (DD) (G100);File;NO;NO
+1300;GIDOCA (DD + LR + SA + MT) - CRIT to Criteria Data evolution tracking;;GIDOCA (DD + LR + SA + MT) (8E00);Criteria Data Evolution Tracking (AP28);File;NO;NO
+1634;Criteria - GIDOCA(8E00) - MSG3 ;;GIDOCA (DD + LR + SA + MT) (8E00);MSG3 Pre Analysis MFU (IM64);File;NO;NO
+1297;GIDOCA (DD + LR + SA + MT) - RPT  to CDP - Data Acq - Reporting;;GIDOCA (DD + LR + SA + MT) (8E00);TD Configuration Data Provider (G101);File;YES;NO
+1299;GIDOCA (DD + LR + SA + MT) - CDE to TD CDP- Data Acq - Production ;;GIDOCA (DD + LR + SA + MT) (8E00);TD Configuration Data Provider (G101);;YES;NO
+1517;GIPSY-AUTHORING (DD) - Preview Maintenance to Formated CONTENTS and TEMPORARY;;GIPSY-AUTHORING (DD) - Preview Maintenance (8R03);FORMATED CONTENTS and TEMPORARY (AP50);;;
+1507;GIPSY-AUTHORING (DD) - Preview Maintenance to SB-CCT;;GIPSY-AUTHORING (DD) - Preview Maintenance (8R03);SB-CCT (DT10);;;
+1636;FIN - GIPSY - ACDB;;GIPSY-AUTHORING (DD) (8H00);ACDB (1Q00 and 8W00);;;
+1368;GIS to CMS - PS;;GIS (O710);CMS (DD) (G100);;;
+1439;GIS-TDFIN  to CMS - Services;;GIS (O710);CMS (DD) (G100);;;
+1440;GIS-Zapdis to CMS - Services;;GIS (O710);CMS (DD) (G100);;;
+1409;IMS - Duplicate & Dispatch to CARS - CARS Synthesis;;IMS - Duplicate & Dispatch (IM01);CARS - CARS Synthesis (A741);;;
+1422;IMS - Duplicate & Dispatch to CCDA;;IMS - Duplicate & Dispatch (IM01);CCDA (T450);;;
+1416;IMS - Duplicate & Dispatch to CCS;;IMS - Duplicate & Dispatch (IM01);CCS (G102);;;
+1345;IMS - Duplicate & Dispatch to CDS TD;;IMS - Duplicate & Dispatch (IM01);CDS TD (A660);;;
+1415;IMS - Duplicate & Dispatch to COC DB;;IMS - Duplicate & Dispatch (IM01);COCDB (G080);;;
+1408;IMS - Duplicate & Dispatch to COMM-LAYER;;IMS - Duplicate & Dispatch (IM01);COMM-LAYER (8J01);;;
+1411;IMS - Duplicate & Dispatch to DALI Production (DD);;IMS - Duplicate & Dispatch (IM01);DALI (B260);;;
+1516;IMS - Duplicate & Dispatch to GIPSY-AUTHORING (DD) - Preview Maintenance;;IMS - Duplicate & Dispatch (IM01);GIPSY-AUTHORING (DD) - Preview Maintenance (8R03);File;YES;NO
+1407;IMS - Duplicate & Dispatch to IPC Production;;IMS - Duplicate & Dispatch (IM01);IPC Production (8D02);;;
+1419;IMS - Duplicate & Dispatch to MATR;;IMS - Duplicate & Dispatch (IM01);MATR (IM31);;;
+1410;IMS - Duplicate & Dispatch to MEDIATIZATION;;IMS - Duplicate & Dispatch (IM01);MEDIATIZATION (B220);;;
+1418;IMS - Duplicate & Dispatch to OPS Publisher;;IMS - Duplicate & Dispatch (IM01);OPS Publisher (G420);;;
+1421;IMS - Duplicate & Dispatch to OPSDATA - PROD;;IMS - Duplicate & Dispatch (IM01);OPSDATA (OP01);;;
+1420;IMS - Duplicate & Dispatch to Pre Analysis;;IMS - Duplicate & Dispatch (IM01);Pre Analysis (IM34);;;
+1473;IMS - Duplicate & Dispatch to RMS;;IMS - Duplicate & Dispatch (IM01);RMS (E800);;;
+1412;IMS - Duplicate & Dispatch to WALI AWL Production;;IMS - Duplicate & Dispatch (IM01);WALI AWL Production (B710);;;
+1414;IMS - Duplicate & Dispatch to X2PAC;;IMS - Duplicate & Dispatch (IM01);X2PAC (D570);;;
+1305;IPC Authoring to CCS;;IPC (DD) - Authoring (8D01);CCS (G102);;;NO
+1632;APS Criteria - IPC AUTH to GIDOCA (8E00) - SA&LR;;IPC (DD) - Authoring (8D01);GIDOCA (DD + LR + SA + MT) (8E00);File;NO;NO
+1303;IPC Authoring to IPC Production;;IPC (DD) - Authoring (8D01);IPC Production (8D02);;;NO
+1304;IPC Authoring to SMS;;IPC (DD) - Authoring (8D01);SMS (8I00);;;NO
+1312;IPC Production to APO/SCM: Planning (CDA, NewPDS);;IPC Production (8D02);APO/SCM: Planning (CDA, NewPDS) (T010);;;NO
+1308;IPC Production to CDS TD;;IPC Production (8D02);CDS TD (A660);;;NO
+1306;IPC Production to IPC Production;;IPC Production (8D02);IPC Production (8D02);;;NO
+1311;IPC Production to NEW ESY;;IPC Production (8D02);NEW ESY (H550);;;NO
+1307;IPC Production to SMS;;IPC Production (8D02);SMS (8I00);;;NO
+1310;IPC Production to TD CONFIGURATION DATA PROVIDER - Data Acq;;IPC Production (8D02);TD Configuration Data Provider (G101);;;NO
+1309;IPC Production to WALI AWL Production;;IPC Production (8D02);WALI AWL Production (B710);;;NO
+1575;ISAIM to CIR;;ISAIM (AS30);CIR (A269);;;
+1568;ISAIM (AS30) to DIAM (ST40);;ISAIM (AS30);DIAM (ST40);;;
+318;Flight Data flow for already delivered A/C;;ISAIM-CDBi (ST01);ACC (PA02);File;NO;YES
+799;In service A/C information ;;ISAIM-CDBi (ST01);ACMM (SS10);;;
+875;Transfer of MSN OPCUM info. from FOCUS to ACMM;;ISAIM-CDBi (ST01);ACMM (SS10);File;NO;YES
+878;ISAIM --> ACMM: MSN Events;;ISAIM-CDBi (ST01);ACMM (SS10);File;NO;YES
+609;IsCom SB reporting to ACMM (Functional view);#VALUE!;ISCoM (A661);ACMM (SS10);Other;YES;YES
+1552;Iscom to ASPECT (SAP PCS);;ISCoM (A661);ASPECT (O910);;;
+1554;MADAME to ASPECT;;MADAME (SP01);ASPECT (O910);;;
+1466;MADAME to SMS;;MADAME (SP01);SMS (8I00);;;
+1426;MATR  to DACAS TR & Preview;;MATR (IM31);DACAS (I070);;;
+1424;MATR to IPC Authoring;;MATR (IM31);IPC (DD) - Authoring (8D01);;;
+1425;MATR to WISE;;MATR (IM31);WISE (G340);;;
+1556;MEDAS - Production  to Air Plan Simulator;;MEDAS (DC00);Air Plan Simulator (K210);;;
+1557;MEDAS - Production  to Air Plan Simulator;;MEDAS (DC00);Air Plan Simulator (K210);;;
+1406;NEW ESY to MADAME BW Reporting;;NEW ESY (H550);MADAME BW Reporting (SP02);;;
+1405;NEW ESY to STDE;;NEW ESY (H550);STDE (H350);;;
+1585;NEW GOLDO to TD CONFIGURATION DATA PROVIDER - Data Acq;;New GOLDO (FX80);TD Configuration Data Provider (G101);;;
+1586;NEW GOLDO to X2PAC;;New GOLDO (FX80);X2PAC (D570);;;
+1404;OPS Publisher to OPSDATA - PROD;;OPS Publisher (G420);OPSDATA (OP01);;;
+1456;OPSDATA - PROD to ADOC / ADOC WEB;;OPSDATA (OP01);ADOC for Web Content (M380);;;
+1449;OPSDATA -AUTH to CMS - Services;;OPSDATA (OP01);CMS (DD) (G100);;;
+1192;OPSDATA to Federated Search;;OPSDATA (OP01);Federated Search (I770);;;
+1455;OPSDATA - PROD to IMS - Duplicate & Dispatch;;OPSDATA (OP01);IMS - Duplicate & Dispatch (IM01);;;
+1458;OPSDATA - PROD to LTS;;OPSDATA (OP01);LTS (X497);;;
+1447;OPSDATA - PROD to OIS PREVIEW;;OPSDATA (OP01);OIS-PREVIEW (A610);;;
+1448;OPSDATA - PROD to OLB CLASSIC;;OPSDATA (OP01);OLB Classic (FQ70);;;
+1451;OPSDATA - PROD to OPS Publisher;;OPSDATA (OP01);OPS Publisher (G420);;;
+1450;OPSDATA - PROD to TD CONFIGURATION DATA PROVIDER - Data Acq;;OPSDATA (OP01);TD Configuration Data Provider (G101);;;
+879;PPMS to ACC via ACMM Exchange module;;PPMS (UN01);ACMM (SS10);DB2 Exchange Table;NO;YES
+1432;Pre Analysis to BW for PRE ANALYSIS Reporting;;Pre Analysis (IM34);BW for PRE ANALYSIS Reporting (IM44);;;
+1429;Pre Analysis to CCS;;Pre Analysis (IM34);CCS (G102);;;
+1433;Pre Analysis to EDPS SAP part;;Pre Analysis (IM34);EDPS SAP part (SR01);;;
+1431;Pre Analysis to GAMS;;Pre Analysis (IM34);GAMS (IM06);;;
+1430;Pre Analysis to IMS - Duplicate & Dispatch;;Pre Analysis (IM34);IMS - Duplicate & Dispatch (IM01);;;
+1428;Pre Analysis to IPC Authoring;;Pre Analysis (IM34);IPC (DD) - Authoring (8D01);;;
+1564;RMT to AIRTAC;;RMT (D160);AIRTAC GIS (F300);;;
+1476;SB CEG (Retired) to CADABAS TP2;;SB CEG (DT12);CADABAS TP2 (DA02);;;
+1477;SB CEG (Retired) to DAMASTH TP3;;SB CEG (DT12);DAMASTH TP3 (DB03);;;
+1474;SB CEG (Retired) to SB-CCT;;SB CEG (DT12);SB-CCT (DT10);;;
+1475;SB CEG (Retired) to SB-COMP (SH20);;SB CEG (DT12);SB-COMP (SH20);;;
+1490;SB CKM to CADABAS TP3;;SB CKM (G330);CADABAS TP3 (DA03);;;
+1489;SB CKM to DACAS - SB;;SB CKM (G330);DACAS (I070);;;
+1491;SB CKM to SB CEG (retired);;SB CKM (G330);SB CEG (DT12);;;
+1481;SB-CCT to SB CEG (Retired);;SB-CCT (DT10);SB CEG (DT12);;;
+1478;SB-CCT to SB-CCT;;SB-CCT (DT10);SB-CCT (DT10);;;
+1480;SB-CCT to SBCLAS;;SB-CCT (DT10);SBCLAS (F550);;;
+1479;SB-CCT to SB-COMP (SH20);;SB-CCT (DT10);SB-COMP (SH20);;;
+1493;SBCLAS to CMS - Services;;SBCLAS (F550);CMS (DD) (G100);;;
+1533;SBCLAS to DACAS - SB;;SBCLAS (F550);DACAS (I070);;;
+1518;SBCLAS (SB-DAM for TR & Preview) to DALI Production (DD);;SBCLAS (F550);DALI (B260);;;
+1496;SBCLAS to DALI-SB;;SBCLAS (F550);DALI-SB (B266);;;
+1510;SBCLAS to New GOLDO - Production;;SBCLAS (F550);New GOLDO (FX80);;;
+1492;SBCLAS to SB CKM;;SBCLAS (F550);SB CKM (G330);;;
+1494;SBCLAS to SB-COMP;;SBCLAS (F550);SB-COMP (SH20);;;
+1497;SBCLAS to X2PAC;;SBCLAS (F550);X2PAC (D570);;;
+515;SB;1389;SB-COMP (SH20);ACMM (SS10);Other;YES;YES
+1485;SB-COMP (SH20) to ATLAS - Spares Management;;SB-COMP (SH20);ATLAS Spares Management (S350);;;
+1482;SB-COMP (SH20) to SB-CCT;;SB-COMP (SH20);SB-CCT (DT10);;;
+1483;SB-COMP (SH20) to SB-CCT;;SB-COMP (SH20);SB-CCT (DT10);;;
+1484;SB-COMP (SH20) to SBCLAS;;SB-COMP (SH20);SBCLAS (F550);;;
+1538;SB-COMP (SH20) to SUPREM;;SB-COMP (SH20);SUPREM (A730);;;
+1205;3D data exchange;;SIMIC (K350);3DSRM Ident (1B80);;;YES
+1438;SIMICto Repair Manager;;SIMIC (K350);Repair Manager (K140);;;
+1313;SMS to Airnav SRM Ident;;SMS (8I00);Airnav (C770);;;NO
+1625;SMS to AIRN@v;;SMS (8I00);Airnav (C770);;;
+1536;SMS to AWL2-AUTH (WB SA LR DD SAT ATR);;SMS (8I00);AWL2 (8L00);;;
+612;SMS Part to BOM;#VALUE!;SMS (8I00);Bom Transfer (FT80);DBLink;NO;NO
+1337;SMS to CMS - Services?;;SMS (8I00);CMS (DD) (G100);;;
+1631;APS Criteria - SMS - GIDOCA (8E00) - A380;;SMS (8I00);GIDOCA (DD + LR + SA + MT) (8E00);File;YES;NO
+1188;Materiel data transfer (equipment & airframe parts);;SMS (8I00);HAZMAT (A500);Service;NO;YES
+1341;SMS to MADAME;;SMS (8I00);MADAME (SP01);;;
+1339;SMS to NEW ESY;;SMS (8I00);NEW ESY (H550);;;
+1338;SMS to STDE;;SMS (8I00);STDE (H350);;;
+349;In-service RFC;176;SUPREM (A730);ACC (PA02);DB2 Exchange Table;YES;YES
+611;SUPREM to ACMM;;SUPREM (A730);ACMM (SS10);;;YES
+1512;SUPREM to ATLAS - Spares Management;;SUPREM (A730);ATLAS Spares Management (S350);;;
+1547;SUPREM to Upgrade Offering (H963);;SUPREM (A730);Upgrade offering (H963);;;
+1355;TD Aircraft Allocated  to CDS TD;;TD Aircraft Allocated  (F330);CDS TD (A660);;;
+1358;TD Aircraft Allocated  to CMS - Services;;TD Aircraft Allocated  (F330);CMS (DD) (G100);;;
+1359;TD Aircraft Allocated  to CMS - Services;;TD Aircraft Allocated  (F330);CMS (DD) (G100);;;
+1357;TD Aircraft Allocated  to COC DB;;TD Aircraft Allocated  (F330);COCDB (G080);;;
+1362;TD Aircraft Allocated  to DACAS TR & Preview;;TD Aircraft Allocated  (F330);DACAS (I070);;;
+1365;TD Aircraft Allocated  to EDPS SAP part;;TD Aircraft Allocated  (F330);EDPS SAP part (SR01);;;
+1367;TD Aircraft Allocated  to EDPS SigmaLink Part;;TD Aircraft Allocated  (F330);EDPS Sigmalink part (SR02);;;
+1350;TD Aircraft Allocated  to GIDOCA (WB ATR);;TD Aircraft Allocated  (F330);GIDOCA (5600);File;;NO
+1354;TD Aircraft Allocated  to GIDOCA (DD + LR + SA + MT) - CRIT;;TD Aircraft Allocated  (F330);GIDOCA (DD + LR + SA + MT) (8E00);;;
+1363;TD Aircraft Allocated  to IMS - Duplicate & Dispatch;;TD Aircraft Allocated  (F330);IMS - Duplicate & Dispatch (IM01);;;
+1352;TD Aircraft Allocated  to IPC Authoring;;TD Aircraft Allocated  (F330);IPC (DD) - Authoring (8D01);;;
+1353;TD Aircraft Allocated  to IPC Production;;TD Aircraft Allocated  (F330);IPC Production (8D02);;;
+1462;TD Aircraft Allocated  to ISCOM;;TD Aircraft Allocated  (F330);ISCoM (A661);;;
+1366;TD Aircraft Allocated  to New GOLDO (FX80) - Production;;TD Aircraft Allocated  (F330);New GOLDO (FX80);;;
+1364;TD Aircraft Allocated  to OPSDATA - AUTH;;TD Aircraft Allocated  (F330);OPSDATA (OP01);;;
+1356;TD Aircraft Allocated  to SBCLAS;;TD Aircraft Allocated  (F330);SBCLAS (F550);;;
+1342;TD Aircraft Allocated  to SMS;;TD Aircraft Allocated  (F330);SMS (8I00);;;
+1360;TD Aircraft Allocated  to TD CONFIGURATION DATA PROVIDER - Data Acq;;TD Aircraft Allocated  (F330);TD Configuration Data Provider (G101);;;
+1361;TD Aircraft Allocated  to WISE;;TD Aircraft Allocated  (F330);WISE (G340);;;
+1400;TD CONFIGURATION DATA PROVIDER - ComFct to CCDA;;TD Configuration Data Provider (G101);CCDA (T450);;;
+1417;TD CONFIGURATION DATA PROVIDER - ComFct to CCS;;TD Configuration Data Provider (G101);CCS (G102);;;
+1394;TD CONFIGURATION DATA PROVIDER - ComFct to DALI Production (DD);;TD Configuration Data Provider (G101);DALI (B260);;;
+1395;TD CONFIGURATION DATA PROVIDER - ComFct to DALI-SB;;TD Configuration Data Provider (G101);DALI-SB (B266);;;
+1393;TD CONFIGURATION DATA PROVIDER - ComFct to GIDOCA (DD + LR + SA + MT) - RPT;;TD Configuration Data Provider (G101);GIDOCA (DD + LR + SA + MT) (8E00);;;
+1392;TD CONFIGURATION DATA PROVIDER - ComFct to IPC Production;;TD Configuration Data Provider (G101);IPC Production (8D02);;;
+818;New-Goldo configured data;;TD Configuration Data Provider (G101);New GOLDO (FX80);;;
+1378;TD CONFIGURATION DATA PROVIDER - ComFct to New-GOLDO - Production;;TD Configuration Data Provider (G101);New GOLDO (FX80);;;
+1399;TD CONFIGURATION DATA PROVIDER - ComFct to OPSDATA - PROD;;TD Configuration Data Provider (G101);OPSDATA (OP01);;;
+1396;TD CONFIGURATION DATA PROVIDER - ComFct to RMS;;TD Configuration Data Provider (G101);RMS (E800);;;
+1397;TD CONFIGURATION DATA PROVIDER - ComFct to SIMIC;;TD Configuration Data Provider (G101);SIMIC (K350);;;
+1561;TRM to e-Collection;;TechRequest (FP60);e-Collection (A222);;;
+1637;CONF - TSDB - GIDOCA (8E00);;TSDB Authoring (DD) (8G00);GIDOCA (DD + LR + SA + MT) (8E00);;;
+1514;VIEW to Criteria Master Data Base;;VIEW (F020);Criteria Master Data Base (R739);;;
+1629;Wiring - WALI to AWL2 - CRITERIA;;WALI AWL Production (B710);AWL2 (8L00);File;NO;NO
+1401;WALI AWL Production to DALI Production (DD);;WALI AWL Production (B710);DALI (B260);;;
+1465;WFILE (Outillage out of IPC)) to SMS;;W-FILE (S750);SMS (8I00);;;
+1504;X2PAC to SBCLAS;;X2PAC (D570);SBCLAS (F550);;;
+1505;X2PAC to SBCLAS;;X2PAC (D570);SBCLAS (F550);;;
+320;Target Configuration Set, RFC, FIC, TDU...;171;ACC (PA02);ACMM (SS10);Other;YES;NO
+321;ATA Breakdown & Circuit Letter;886;ACC (PA02);ACMM (SS10);DBLink;YES;NO
+324;A/C table;1388;ACC (PA02);ACMM (SS10);Other;YES;NO
+325;Fleets;1402;ACC (PA02);ACMM (SS10);DBLink;NO;NO
+948;As-Specified Data;140;ACC (PA02);AIR (S520);File;NO;YES
+294;RFC Creation / Modification;2242;ACC (PA02);CIT-RFC (PA12);DB2 Exchange Table;NO;NO
+293;AAT;1600;ACC (PA02);DPDS (Y103);File;YES;NO
+837;AAT extract for FOXPRO;;ACC (PA02);DPDS (Y103);File;NO;NO
+330;AAT Simulation Results;1628;ACC (PA02);EDC Rebuilt and Re-ranking (xxxxx);File;NO;NO
+332;MSN;1385;ACC (PA02);FTA (QB10);File;;NO
+677;A/C Configuration;2428;ACC (PA02);FTA-NG (G550);DBLink;;NO
+316;RFC Data Import;923;ACC (PA02);IDF (K480);;;NO
+121;CIN-Config;104;ACC (PA02);MCC (S170);File;NO;NO
+305; Target configuration Set;107;ACC (PA02);MCC (S170);File;NO;NO
+315;Unknown;2430;ACC (PA02);OSAM-AOSAM (M350);;;
+334;Target Configuration Set;104;ACC (PA02);PMOD (N054);File;YES;YES
+359;Target Configuration Set;104;ACC (PA02);PMOD (N054);File;NO;YES
+792;MP;not referenced may be [1370];ACC (PA02);PMOD (N054);File;;YES
+335;Unapproved MOD to certify;1374;ACC (PA02);PVCE (N144);File;NO;YES
+790;CIN list per MSN (with approval and mod closure status);140;ACC (PA02);SAP R/3 Corporate_xAC_LDS (B180);File;YES;YES
+1049;A/C mod;referenced in the line (790);ACC (PA02);SAP R/3 Corporate_xAC_LDS (B180);;NO;YES
+313;Commercial Offer Telex Confirmation (SB);;ACC (PA02);SUPREM (A730);DB2 Exchange Table;YES;YES
+337;Commercial Offer Telex Confirmation;777;ACC (PA02);Sysconf (PJ00);DB2 Exchange Table;YES;NO
+319;A.I.R. (SA LR A380);1415;ACC: AIR96 (C360);ACMM (SS10);DBLink;YES;NO
+322;A.I.R. (SA LR A380);1394;ACC: AIR96 (C360);AIMS (S340);File;NO;YES
+801;A.I.R (SA LR);[1413];ACC: AIR96 (C360);GIDOCA (5600);File;NO;YES
+340;A.I.R. (chapters 0 and 3 of AIR Stage 3O of all A/C Programs);1414;ACC: AIR96 (C360);IPC Production (8D02);File;NO;YES
+333;Propulsion System CAIR Transfer;1465;ACC: PSQM (QQ10);IRS (U830);File;NO;YES
+336;Propulsion System CAIR Transfer;1464;ACC: PSQM (QQ10);PVCE (N144);File;NO;YES
+342;RFW;1382;ACMM (SS10);ACC (PA02);DB2 Exchange Table;NO;NO
+628;MP Data;149;ACMM (SS10);ACC (PA02);;;NO
+542;(several data services);#VALUE!;ACMM (SS10);ACCL (xxxxx);DBLink;;
+1240;A/C conf data;;ACMM (SS10);ACET NG (FU10);Service;NO;YES
+543;(several data services);#VALUE!;ACMM (SS10);ADMS (UB00);DBLink;;
+870;ACMM to AIDA interface - MSN info;;ACMM (SS10);AIDA (UI00);File;NO;YES
+951;MOD Referential;IL import;ACMM (SS10);AIR (S520);;;YES
+544;(several data services);#VALUE!;ACMM (SS10);AIRMAN (NA);DBLink;;
+1273;ACMM to AMSL;;ACMM (SS10);AMSL OTC Aircraft (M181);;;
+863;ICAO code to APC Jaguar;;ACMM (SS10);APC JAGUAR (PB00);DBLink;NO;YES
+892;COAC and customer data;;ACMM (SS10);APMM (1L01);DBLink;NO;YES
+364;Target and Industrial Configuration Set, CIN Closure Status ;2248;ACMM (SS10);APS (I532);DBLink;NO;NO
+366;(several data services);#VALUE!;ACMM (SS10);ASCOM (E290);DBLink;;
+367;(several data services);#VALUE!;ACMM (SS10);ASPECT (O910);DBLink;;YES
+368;A/C Data ;2469;ACMM (SS10);ATTS (AO10);DBLink;NO;NO
+369;MOD;2476;ACMM (SS10);AWAS (LG10);DBLink;NO;NO
+545;(several data services);#VALUE!;ACMM (SS10);AWAS2 (xxxxx);DBLink;;
+370;(several data services);#VALUE!;ACMM (SS10);BFEMS (PF00);DBLink;;YES
+546;(several data services);#VALUE!;ACMM (SS10);BNA TRACKING TOOL (xxxxx);DBLink;;
+547;(several data services);#VALUE!;ACMM (SS10);BRACKET_REPORTING_TOOL (xxxxx);DBLink;;
+440;(several data services);#VALUE!;ACMM (SS10);BW - CS TECH-DATA (G710);DBLink;;YES
+548;(several data services);#VALUE!;ACMM (SS10);CABIN (xxxxx);DBLink;;
+621;Standard Specification, fleet, COAC, Aircraft;117;ACMM (SS10);CABIN DOSSIER (D330);DBLink;NO;YES
+371;(several data services);#VALUE!;ACMM (SS10);CACIS NOMAD (E721);DBLink;;YES
+362;(several data services);#VALUE!;ACMM (SS10);CAD-CSIP (A430);DBLink;;YES
+876;ACMM to SAP CAIR - SAP CIN CI Extracts;895;ACMM (SS10);CAIR (B750);File;NO;YES
+1618;Aircaft Configuration, AC Type, Series, Model - Ghost User;;ACMM (SS10);CAPA (BE00);;;
+372;(several data services);;ACMM (SS10);CAPRICA (A930);DBLink;;YES
+375;(several data services) - via CBOA BA30;;ACMM (SS10);CASCADE (F340);DBLink;;YES
+549;(several data services);#VALUE!;ACMM (SS10);CATS_A400M (xxxxx);DBLink;;
+374;(several data services);#VALUE!;ACMM (SS10);CAWA (Obsolete) (SL10);DBLink;;YES
+377;(several data services);#VALUE!;ACMM (SS10);CDIS - eDOCBO_APPGEN (A42W);DBLink;;YES
+871;ACMM to CDIS interface;;ACMM (SS10);CDIS General (A420);DBLink;NO;YES
+873;Concessions transfer from ACMM to CDIS;;ACMM (SS10);CDIS General (A420);File;NO;YES
+378;(several data services);#VALUE!;ACMM (SS10);CDISMM (A42U);DBLink;;YES
+379;(several data services);#VALUE!;ACMM (SS10);CDM (YI10);DBLink;;YES
+380;(several data services);#VALUE!;ACMM (SS10);CDS TD (A660);DBLink;;YES
+550;ACMM access table;742;ACMM (SS10);CES (xxxxx);DBLink;NO;YES
+409;(several data services);#VALUE!;ACMM (SS10);Changes and OSW Management (G220);DBLink;;
+953;A/C data;IL import;ACMM (SS10);CHI (A291);;;YES
+382;(several data services);;ACMM (SS10);CIR (A269);DBLink;;YES
+800;ACMM to CIRCE-G;;ACMM (SS10);CIRCE-G (LC30);File;NO;NO
+390;(several data services);#VALUE!;ACMM (SS10);CISCRM (A277);DBLink;;YES
+491;(several data services);#VALUE!;ACMM (SS10);CIT (PA10);DBLink;;NO
+626;Fleet synchronization;1470;ACMM (SS10);CIT (PA10);;;NO
+627;TDU;1471;ACMM (SS10);CIT (PA10);DBLink;;NO
+540;RFC Creation / Modification;2242;ACMM (SS10);CIT-RFC (PA12);Service;;NO
+638;Data for calculation & comparison;217;ACMM (SS10);CKD (D440);DBLink;NO;NO
+662;Data for KPI;725;ACMM (SS10);CKD (D440);DBLink;NO;NO
+551;(several data services);#VALUE!;ACMM (SS10);CLMFU (A237);DBLink;;
+552;(several data services);#VALUE!;ACMM (SS10);CM DATABASE (xxxxx);DBLink;;
+297;ACMM Data replication (multiprogram);148;ACMM (SS10);CM Reporting (G930);DBLink;NO;NO
+672;CME PAD input data from ACMM;985;ACMM (SS10);CMEPAD (C770);DBLink;NO;
+553;(several data services);#VALUE!;ACMM (SS10);CMFU / ZEUS (xxxxx);DBLink;;
+605;(several data services);#VALUE!;ACMM (SS10);CMFU / ZEUS (xxxxx);DBLink;;
+839;ACMM to CMS - SB data;;ACMM (SS10);CMS (DD) (G100);File;NO;YES
+840;ACMM to CMS- CIN Effectivity Mail alerts;;ACMM (SS10);CMS (DD) (G100);Other;NO;YES
+1060;ACMM to GIDOCA - CIN data;;ACMM (SS10);CMS (DD) (G100);File;NO;YES
+386;Target Configuration Set;766;ACMM (SS10);CMTS (I530);DBLink;NO;NO
+617;Official Conf Data;1001;ACMM (SS10);CMTS (I530);DBLink;NO;NO
+618;As specified MP ESD CI;1002;ACMM (SS10);CMTS (I530);DBLink;NO;NO
+1272;ACMM to COM;;ACMM (SS10);COM (O180);;;
+389;(several data services);#VALUE!;ACMM (SS10);CORE (SS11);DBLink;;YES
+384;(several data services);;ACMM (SS10);Criteria Master Data Base (R739);DBLink;;YES
+869;ACMM to PCS - Data transfer;1381;ACMM (SS10);Criteria Master Data Base (R739);File;NO;YES
+554;(several data services);#VALUE!;ACMM (SS10);CRONOS (xxxxx);DBLink;;
+391;(several data services);#VALUE!;ACMM (SS10);CTTOOL (C330);DBLink;;YES
+1256;ACMM to DPDS;;ACMM (SS10);DPDS (Y103);File;YES;NO
+954;DQN closure;IL import;ACMM (SS10);DQN (C720);;;YES
+392;(several data services);#VALUE!;ACMM (SS10);DWR (E190);DBLink;;NO
+381;(several data services);#VALUE!;ACMM (SS10);EC Reporting (FC00);DBLink;;YES
+556;(several data services);#VALUE!;ACMM (SS10);EDCR (xxxxx);DBLink;;YES
+557;(several data services);#VALUE!;ACMM (SS10);EDM (xxxxx);DBLink;;
+604;(several data services);#VALUE!;ACMM (SS10);EDS (E150);DBLink;;YES
+410;(several data services);#VALUE!;ACMM (SS10);EIL - Image Library (G110);DBLink;;YES
+397;MP/MSN Import;1750;ACMM (SS10);ELECREF (F100);DBLink;NO;NO
+393;(several data services);#VALUE!;ACMM (SS10);ELIPSEDW (E205);DBLink;;NO
+394;(several data services);#VALUE!;ACMM (SS10);ELIPSEDW (E205);DBLink;;NO
+395;(several data services);#VALUE!;ACMM (SS10);EMMA (N/A);DBLink;;YES
+396;(several data services);#VALUE!;ACMM (SS10);eQLB (A279);DBLink;;YES
+558;Data access byESAO;#VALUE!;ACMM (SS10);ESAO (ES20 / ES40 / ES50 / ES80);DBLink;NO;YES
+817;CIN validities transfer to ESAO;;ACMM (SS10);ESAO (ES20 / ES40 / ES50 / ES80);File;NO;YES
+637;MOD Closure Information;2120;ACMM (SS10);ESDCR - A350 (E401);;;NO
+615;MOD Closure Information;033;ACMM (SS10);ESDCR - A380 (E403);;;NO
+636;MOD Closure Information;2119;ACMM (SS10);ESDCR - A400M (E402);;;NO
+559;(several data services);#VALUE!;ACMM (SS10);EXTENDED_FORDS (xxxxx);DBLink;;
+398;(several data services);#VALUE!;ACMM (SS10);F5253 (I460);DBLink;;YES
+399;(several data services);#VALUE!;ACMM (SS10);FAIR (D220);DBLink;;YES
+400;(several data services);#VALUE!;ACMM (SS10);FCO Management Tool (PM00);DBLink;NO;YES
+401;(several data services);#VALUE!;ACMM (SS10);FDR (F050);DBLink;;
+560;(several data services);#VALUE!;ACMM (SS10);FORCES (xxxxx);DBLink;;
+402;Airports data|Enterprises data|Aircrafts Types;2470;ACMM (SS10);FTA (QB10);DBLink;NO;NO
+403;(several data services);#VALUE!;ACMM (SS10);FTA-NG (G550);DBLink;;NO
+561;(several data services);#VALUE!;ACMM (SS10);FTIP (xxxxx);DBLink;;
+404;(several data services);#VALUE!;ACMM (SS10);FUN2 (I190);DBLink;YES;YES
+562;(several data services);#VALUE!;ACMM (SS10);FV / KPI (xxxxx);DBLink;;
+563;(several data services);#VALUE!;ACMM (SS10);GEN_FORDS (xxxxx);DBLink;;
+623;Typage Electrique CIN A400M & A350;1237;ACMM (SS10);GILDA (GG00 );File;;NO
+629;Prod and SB Conf from ACMM to iAMT;1660;ACMM (SS10);iAMT (H970);DBLink;NO;NO
+255;ATA Breakdown & Circuit Letter;889;ACMM (SS10);ICC-CADB (A410);DBLink;;NO
+257;ACC2, SYSCONF, ICC-CADB, ESDB data;1710;ACMM (SS10);ICC-Services (O470);DBLink;NO;NO
+407;(several data services);#VALUE!;ACMM (SS10);ICOS Corporate (E700);DBLink;;YES
+408;SAP XCS file extraction 1,2,3,4,5;#VALUE!;ACMM (SS10);ICOS Corporate (E700);File;NO;YES
+564;(several data services);#VALUE!;ACMM (SS10);IFA_IFU_TOOL / CHANGE PILOT (xxxxx);DBLink;;
+606;(several data services);#VALUE!;ACMM (SS10);IFA_IFU_TOOL / CHANGE PILOT (xxxxx);DBLink;;
+411;(several data services);#VALUE!;ACMM (SS10);IMMAX (Q240);DBLink;;
+655;ADAP-CI, EPAC/TDU, ATA;358;ACMM (SS10);IMMAX (Q240);;;
+565;(several data services);#VALUE!;ACMM (SS10);INDUS_CONF_CR (xxxxx);DBLink;;
+412;(several data services);#VALUE!;ACMM (SS10);IPC Production (8D02);DBLink;;YES
+413;(several data services);#VALUE!;ACMM (SS10);ISAIM-CDBi (ST01);DBLink;;YES
+843;ACMM to ISAIM-TFU: Transfer of MSN and MSN Events information;;ACMM (SS10);ISAIM-CDBi (ST01);File;NO;YES
+414;(several data services);#VALUE!;ACMM (SS10);ISOP (SU00);DBLink;;YES
+415;(several data services);#VALUE!;ACMM (SS10);IVP NG (AR10);DBLink;;YES
+566;(several data services);#VALUE!;ACMM (SS10);KPI_WORKPACKAGE_A380 (xxxxx);DBLink;;
+416;(several data services);#VALUE!;ACMM (SS10);LDS (Obsolete) (D630);DBLink;;YES
+567;(several data services);#VALUE!;ACMM (SS10);M3P3 / PRS (xxxxx);DBLink;;
+555;(several data services);#VALUE!;ACMM (SS10);MASCOT (G530);DBLink;NO;YES
+422;(several data services);#VALUE!;ACMM (SS10);MAT (Q810);DBLink;;YES
+568;(several data services);#VALUE!;ACMM (SS10);MCCTLS (xxxxx);DBLink;;
+304;A/C Technical & Configuration Data;912;ACMM (SS10);MCT (I531);DBLink;NO;NO
+418;(several data services);#VALUE!;ACMM (SS10);MEGA2 (N093);DBLink;;YES
+607;(several data services);#VALUE!;ACMM (SS10);MEGA2_MTAD (xxxxx);DBLink;;
+419;(several data services);#VALUE!;ACMM (SS10);MES (R800);DBLink;;YES
+622;AAT Table;119;ACMM (SS10);Migration Request Management A380 (AW50);DBLink;;NO
+405;(several data services);#VALUE!;ACMM (SS10);Miki (E690);DBLink;;
+420;(several data services);#VALUE!;ACMM (SS10);MIRIAM (SB30);DBLink;;YES
+570;(several data services);#VALUE!;ACMM (SS10);MIXABILITE (xxxxx);DBLink;;
+645;MOD_VALIDITIES;2471;ACMM (SS10);MixView (B562);DBLink;NO;NO
+571;(several data services);#VALUE!;ACMM (SS10);MMP_Modifications Monitoring Pro (xxxxx);DBLink;;
+572;(several data services);#VALUE!;ACMM (SS10);MOD Database (xxxxx);DBLink;;
+573;(several data services);#VALUE!;ACMM (SS10);MOD MANAGEMENT A380 (xxxxx);DBLink;;
+421;(several data services);#VALUE!;ACMM (SS10);MOD Tardives (SS12);DBLink;;YES
+574;(several data services);#VALUE!;ACMM (SS10);ModTracker (xxxxx);DBLink;;
+575;(several data services);#VALUE!;ACMM (SS10);MORE (xxxxx);DBLink;;
+576;(several data services);#VALUE!;ACMM (SS10);MPT_TOOL (xxxxx);DBLink;;
+569;(several data services);#VALUE!;ACMM (SS10);MSN_REPOSITORY_P11 (xxxxx);DBLink;;
+577;(several data services);#VALUE!;ACMM (SS10);NECTAR (xxxxx);DBLink;;
+702;Data for New ADCL;;ACMM (SS10);New ADCL (Q970);DBLink;NO;NO
+406;(several data services);#VALUE!;ACMM (SS10);New GOLDO (FX80);DBLink;;NO
+423;Logs|MSN Configuration Data ;2472;ACMM (SS10);NICE (D650);DBLink;NO;NO
+578;(several data services);#VALUE!;ACMM (SS10);NOTES (xxxxx);DBLink;;
+888;DBLink;;ACMM (SS10);OPCMT (O240);DBLink;NO;NO
+579;(several data services);#VALUE!;ACMM (SS10);PACK (xxxxx);DBLink;;
+620;MSN Delivery date;1109;ACMM (SS10);PDMLink CASPARE (H100);DBLink;NO;NO
+632;MOD Closure;201;ACMM (SS10);PDMLink System A380 (A205);File;NO;NO
+580;(several data services);#VALUE!;ACMM (SS10);PDS (xxxxx);DBLink;;
+581;(several data services);#VALUE!;ACMM (SS10);PQPM (xxxxx);DBLink;;
+608;(several data services);#VALUE!;ACMM (SS10);PQPM (xxxxx);DBLink;;
+667;Mod closure;953;ACMM (SS10);Primes CCM A350 (E341);;;
+669;CA/CC cascade;954;ACMM (SS10);Primes CCM A350 (E341);;;
+668;Mod closure;953;ACMM (SS10);Primes CCM A380 (E340);;;
+670;CA/CC cascade;954;ACMM (SS10);Primes CCM A380 (E340);;;
+657;Mod closure;447;ACMM (SS10);Primes CCM A400M (F660);;;
+658;CA/CC cascade;448;ACMM (SS10);Primes CCM A400M (F660);DBLink;NO;NO
+660;MSN Production Rank;493;ACMM (SS10);Primes CCM A400M (F660);;;
+633;Target Configuration Set;2098;ACMM (SS10);Primes Services SSI A350 (I472);DBLink;NO;NO
+640;CAT, CN, Impact CN/PFIN-CI;2311;ACMM (SS10);Primes Services SSI A350 (I472);DBLink;NO;NO
+665;MP impacts on ATA Circuit Code & breakdown code;891;ACMM (SS10);Primes Services SSI A350 (I472);DBLink;NO;NO
+671;MOD Closure;974;ACMM (SS10);Primes Services SSI A350 (I472);DBLink;NO;NO
+641;ACMM DbLink;233;ACMM (SS10);Primes Services SSI A380 (I470);DBLink;NO;NO
+616;MOD Closure Status;100;ACMM (SS10);Primes Services SSI A400M (I471);DBLink;NO;NO
+652;Target Configuration Set;3009;ACMM (SS10);Primes Services SSI A400M (I471);DBLink;NO;NO
+653;MP/ATA/CL/ Breakdown codes;3010;ACMM (SS10);Primes Services SSI A400M (I471);DBLink;NO;NO
+654;Target Configuration Set;346;ACMM (SS10);Primes Services SSI DWH A400M (E120);DBLink;NO;NO
+625;AAT Table;1360;ACMM (SS10);PRIMES SSI DMU Trouble A380 (C660);DBLink;NO;NO
+424;(several data services);#VALUE!;ACMM (SS10);PSE: ELCODATA (B580);DBLink;NO;NO
+585;(several data services);#VALUE!;ACMM (SS10);PSS (xxxxx);DBLink;;
+1196;Responsibles from CA database;;ACMM (SS10);R-DB Delta Calculation (G070);DBLink;NO;YES
+431;(several data services);#VALUE!;ACMM (SS10);S_Catalogue (H960);DBLink;;YES
+601;(several data services);#VALUE!;ACMM (SS10);S_Catalogue (H960);DBLink;;
+613;ACMM to Warrently Express;#VALUE!;ACMM (SS10);S_Catalogue (H960);DBLink;NO;YES
+587;(several data services);#VALUE!;ACMM (SS10);SABRE - EVID (xxxxx);DBLink;;
+588;(several data services);#VALUE!;ACMM (SS10);SADD A400M TMP (xxxxx);DBLink;;
+589;(several data services);#VALUE!;ACMM (SS10);SAP - Finance Repository MSN (xxxxx);DBLink;YES;YES
+426;(several data services);#VALUE!;ACMM (SS10);SAP PBI - Netweaver BW (B100);DBLink;;YES
+365;(several data services);#VALUE!;ACMM (SS10);SAP PP Industrial Processes (F900);DBLink;;YES
+590;(several data services);#VALUE!;ACMM (SS10);SAP R/3 Corporate_xAC_LDS (B180);DBLink;;YES
+619;MSN,CA Code,PRS MP...;108;ACMM (SS10);SAP R/3 Corporate_xAC_LDS (B180);;;YES
+661;as specified baseline;636;ACMM (SS10);SAP R/3 Corporate_xAC_LDS (B180);;;YES
+666;As specified baseline MSN/CA/CI/CIN;895;ACMM (SS10);SAP R/3 Corporate_xAC_LDS (B180);File;;YES
+427;(several data services);#VALUE!;ACMM (SS10);SB-COMP (SH20);DBLink;;YES
+841;ACMM to SBComp - MSN information;;ACMM (SS10);SB-COMP (SH20);File;NO;YES
+591;(several data services);#VALUE!;ACMM (SS10);SBREP (CORE) (xxxxx);DBLink;;
+592;(several data services);#VALUE!;ACMM (SS10);SCL_LEASING (xxxxx);DBLink;;
+593;(several data services);#VALUE!;ACMM (SS10);SCODA (xxxxx);DBLink;;
+789;Aircraft Data;;ACMM (SS10);SDM plus (1J49);DBLink;NO;NO
+432;(several data services);#VALUE!;ACMM (SS10);SISCO2 (TE00);DBLink;;YES
+842;ACMM - SMART - CIN/MSN data transfer;;ACMM (SS10);SMART A400M (N/A);File;NO;YES
+594;(several data services);#VALUE!;ACMM (SS10);SNT Airbus Military A400M (xxxxx);DBLink;;
+433;(several data services);#VALUE!;ACMM (SS10);SPOC (YM00);DBLink;;YES
+434;(several data services);#VALUE!;ACMM (SS10);SPSA (A440);DBLink;;YES
+435;(several data services);#VALUE!;ACMM (SS10);STATOOL (S690);DBLink;;YES
+436;(several data services);#VALUE!;ACMM (SS10);STDO (B830);DBLink;;YES
+437;(several data services);#VALUE!;ACMM (SS10);SUPREM (A730);DBLink;;YES
+438;FLEET, MSN and contractual data;778;ACMM (SS10);Sysconf (PJ00);DBLink;NO;NO
+838;ACMM to TD Aircraft - AC Nomenclature;;ACMM (SS10);TD Aircraft Allocated  (F330);File;NO;YES
+868;ACMM to F330 extract;;ACMM (SS10);TD Aircraft Allocated  (F330);File;NO;YES
+877;ACMM to F330  - Table Avion;;ACMM (SS10);TD Aircraft Allocated  (F330);File;NO;YES
+595;(several data services);#VALUE!;ACMM (SS10);TDQM (QQ00);DBLink;;
+439;(several data services);#VALUE!;ACMM (SS10);TDSF (E600);DBLink;;YES
+417;(several data services);#VALUE!;ACMM (SS10);TLB (QA10);DBLink;;YES
+596;(several data services);#VALUE!;ACMM (SS10);TPCI (xxxxx);DBLink;;
+597;(several data services);#VALUE!;ACMM (SS10);TRS (xxxxx);DBLink;;
+598;(several data services);#VALUE!;ACMM (SS10);TTGF (xxxxx);DBLink;;
+624;CR, MP, MOD, TRS Data;1287;ACMM (SS10);TWMD (xxxxx);DBLink;NO;YES
+955;SP0605753 - AIP & COAC table;IL import;ACMM (SS10);Unified Planning for Series IVP-SAP and SUPER (F780);DBLink;NO;YES
+600;(several data services);#VALUE!;ACMM (SS10);UP_SERIES_SINGLE_AC (xxxxx);DBLink;;
+602;(several data services);#VALUE!;ACMM (SS10);VSD (xxxxx);DBLink;;
+603;(several data services);#VALUE!;ACMM (SS10);WEDEC (xxxxx);DBLink;;
+715;EG_interface;#VALUE!;ADN/OSIRIS (BS40);B.O.T (xxxxx);;;
+886;EV_interface;;ADN/OSIRIS (BS40);B.O.T (xxxxx);;;
+1066;TBD;;ADN/OSIRIS (BS40);EMIS (FD20);;;
+1064;TBD;;ADN/OSIRIS (BS40);EXTRA-ADN (FD60);;;
+1067;TBD;;ADN/OSIRIS (BS40);PUMAS (A231);;;
+1068;TBD;;ADN/OSIRIS (BS40);VBCxxx Software chain (FL80);;;
+262;AMO to SPRINT;1003;AMO (ND73);SPRINT (ND72);Service;NO;NO
+299;APS Data for reports (A350, A380);1630;APS (I532);CM Reporting (G930);Other;;NO
+808;BCAWD to AWL2 - FIN;1613;BCAWD (X419);AWL2 (8L00);File;NO;YES
+1061;BCAWD to AWL2 - WIRES;1613;BCAWD (X419);AWL2 (8L00);File;NO;YES
+1062;BCAWD to AWL2 - MSN;;BCAWD (X419);AWL2 (8L00);File;NO;YES
+816;A-U EDDF ESD transfer;;BCAWD (X419);CIRCE-C (LC10);File;NO;NO
+87;A-UK ESD Transfer;1565;BCAWD (X419);TAKSY:ELSY (X010 :ELSY);File;NO;NO
+811;SB - SDF sp‚cification de fourniture - ;;CIRCE-C (LC10);ABC-ELEC (Z059);File;NO;YES
+820;LABO files (ESD&Sketch);;CIRCE-C (LC10);ABC-ELEC (Z059);File;NO;NO
+726;serveur transfer;;CIRCE-C (LC10);B.O.T (xxxxx);File;NO;
+729;A-F EDDF ESD transfer (for A-U);;CIRCE-C (LC10);BCAWD (X419);File;NO;
+782;LC10 to LC20: ESD files & SB bulletin;CIRCE-C;CIRCE-C (LC10);CIRCE-C-CAO (LC20);File;YES;YES
+518;SB Wires length & EE;577;CIRCE-C (LC10);CIRCE-G (LC30);File;NO;NO
+520;Sketches;563;CIRCE-C (LC10);CIRCE-G (LC30);File;NO;NO
+764;micro fiches ;;CIRCE-C (LC10);CIRCE-G (LC30);File;NO;NO
+704;eedb transfer;;CIRCE-C (LC10);EEDB (F180);File;NO;NO
+21;Criterias table;1211;CIRCE-C (LC10);ESAO (ES20 / ES40 / ES50 / ES80);File;NO;YES
+519;ESD Effectivities;2385;CIRCE-C (LC10);ESAO (ES20 / ES40 / ES50 / ES80);File;NO;YES
+807;ECN Gilda ;1410;CIRCE-C (LC10);GILDA (GG00 );File;NO;NO
+809;SB postcript;;CIRCE-C (LC10);SB-CCT (DT10);File;NO;YES
+810;SB Printings;;CIRCE-C (LC10);SB-CCT (DT10);File;NO;YES
+91;A-F EDDF ESD Transfer (for A-D);1562;CIRCE-C (LC10);TAKSY:ELSY (X010 :ELSY);File;NO;NO
+781;ESD files & SB illustration;AXIOM/CIRCE-C-CAO;CIRCE-C-CAO (LC20);CIRCE-C (LC10);File;YES;NO
+172;List of processed diagrams;2381;CIRCE-C-CAO (LC20);SIDEV (R320);File;NO;YES
+754;ADQ/ATTCONF;;CIRCE-G (LC30);ATTconf (N220);File;NO;YES
+169;AWL Standard Items, Equipments Metadata;169;CIRCE-G (LC30);AWL2 (8L00);File;NO;YES
+742;AWL wires metadata;;CIRCE-G (LC30);AWL2 (8L00);File;NO;YES
+746;diff plan bisu customer service;;CIRCE-G (LC30);AWL2 (8L00);File;NO;YES
+750;AWL2  Treated MSN File;;CIRCE-G (LC30);AWL2 (8L00);;NO;YES
+1044;AWL list of MSN impacted;;CIRCE-G (LC30);AWL2 (8L00);File;NO;YES
+743;transfer serveur ESDI heavy tretment / sketches / on demand;;CIRCE-G (LC30);B.O.T (xxxxx);;;
+744;microfiches;;CIRCE-G (LC30);B.O.T (xxxxx);File;NO;
+748;EG Masse wire ;;CIRCE-G (LC30);B.O.T (xxxxx);File;NO;
+749;EG masse standard item;;CIRCE-G (LC30);B.O.T (xxxxx);File;NO;NO
+753;ALPIN;;CIRCE-G (LC30);B.O.T (xxxxx);File;NO;NO
+521;Power on MSN ;2090;CIRCE-G (LC30);CIRCE-C (LC10);File;NO;NO
+522;SB updated with DA, length, End-Fitting;578;CIRCE-G (LC30);CIRCE-C (LC10);File;NO;NO
+745;T041 transfer ;;CIRCE-G (LC30);CIRCE-C (LC10);File;NO;
+772;file aircraft delivery ;;CIRCE-G (LC30);CIRCE-C (LC10);File;NO;NO
+819;ALPIN files (Pin Programming);;CIRCE-G (LC30);CIRCE-C (LC10);File;NO;NO
+171;Definition Dossier Data wire ;212;CIRCE-G (LC30);CIRCE-P (G840);Other;YES;YES
+528;module decision (entr‚e);#VALUE!;CIRCE-G (LC30);CIRCE-P (G840);File;NO;YES
+724;retrofit manufacturing main treatment;#VALUE!;CIRCE-G (LC30);CIRCE-P (G840);File;NO;YES
+725;retrofit sketches manufacturing;#VALUE!;CIRCE-G (LC30);CIRCE-P (G840);File;NO;YES
+731;definitin data standard item / equipment ;;CIRCE-G (LC30);CIRCE-P (G840);DB2 Exchange Table;YES;YES
+733;electric definition  esd validity ;;CIRCE-G (LC30);CIRCE-P (G840);DB2 Exchange Table;YES;YES
+734;sketches ;;CIRCE-G (LC30);CIRCE-P (G840);File;NO;YES
+756;MSNs taken into account in CIRCE-G treatment;;CIRCE-G (LC30);CIRCE-P (G840);File;NO;YES
+757;DA to diffuse ;;CIRCE-G (LC30);CIRCE-P (G840);File;NO;YES
+758;points de masse enrichis;;CIRCE-G (LC30);CIRCE-P (G840);;NO;YES
+759;Ficher des types de masse valid‚s;;CIRCE-G (LC30);CIRCE-P (G840);;NO;YES
+762;refurbushing (7 files);;CIRCE-G (LC30);CIRCE-P (G840);File;NO;YES
+763;heavy treatment wire and fin;;CIRCE-G (LC30);CIRCE-P (G840);File;NO;YES
+766;"refurbushing  ""type ATR"" ";;CIRCE-G (LC30);CIRCE-P (G840);File;NO;YES
+767;"refurbushing  ""type ATR"" ";;CIRCE-G (LC30);CIRCE-P (G840);File;NO;YES
+768;refurbushing on demand ;;CIRCE-G (LC30);CIRCE-P (G840);File;NO;NO
+769;definition data generalty;;CIRCE-G (LC30);CIRCE-P (G840);DB2 Exchange Table;YES;YES
+780;sketches treatment;;CIRCE-G (LC30);CIRCE-P (G840);File;NO;YES
+747;ESAO  titles drawing;;CIRCE-G (LC30);ESAO (ES20 / ES40 / ES50 / ES80);File;NO;YES
+523;Electrical spare definition (legacy Fr);1411;CIRCE-G (LC30);GILDA (GG00 );File;;NO
+524;MSN to process (Circe);1438;CIRCE-G (LC30);GILDA (GG00 );File;;NO
+525;PIN-P taken into account;1651;CIRCE-G (LC30);GILDA (GG00 );File;;NO
+526;Electrical definition (legacy-FR);054;CIRCE-G (LC30);GILDA (GG00 );File;;NO
+1641;CIRCE-G PFE;;CIRCE-G (LC30);TABAV (C740);DB2 Exchange Table;;YES
+274;Data replication;2240;CKD (D440);CM Reporting (G930);DB2 Exchange Table;;NO
+276;DBLink CKD Data;238 ;CKD (D440);CM Reporting (G930);DBLink;;NO
+939;Aerolia FTP Interface;;CM Reporting (G930);_TBD (N/A);Other;NO;YES
+266;Data replication;2240;CM Reporting (G930);A350XWB Reporting Center (xxxxx);DBLink;NO;YES
+289;CM Reporting KPI;749;CM Reporting (G930);PDMLink SSCI A350 (D850);Other;;NO
+269;Data replication to Product Structure Analyser (PSA);#VALUE!;CM Reporting (G930);PSA (XXXXX);DBLink;;YES
+268;Data replication to Re_Ranking tool;#VALUE!;CM Reporting (G930);Reranking (XXXXX);DBLink;;YES
+267;SpotFire Access to EZC;#VALUE!;CM Reporting (G930);SPOTFIRE (XXXXX);DBLink;NO;YES
+174;EZT Reports;1724;DPDS (Y103);Easytrieve (xxxxx);File;NO;NO
+161;A-D, A-UK, A-E,... Partner PL & PU - DPDS;1213;DPDS (Y103);GILDA (GG00 );File;NO;NO
+286;DPDS / Optegra interface;1678 ;DPDS (Y103);Optegra UK (X251);File;NO;NO
+924;DPDS/Optegra interface (cDMU legacy;582;DPDS (Y103);Optegra UK (X251);File;NO;NO
+1619;Load design BOMs from DPDS into SAP_UK APD;;DPDS (Y103);SAP R/3 UK_AxD_LDS (B040);IDOC;;YES
+175;Drg Cascade Xfer;1606;DPDS (Y103);TAKSY:ZEI (X010:ZEI);File;NO;NO
+356;#VALUE!;#VALUE!;ECDB (LE80);ACC: PSQM (QQ10);Other;YES;NO
+1070;Fin, CMS, PN and effectivity;1381;ECDB (LE80);ACC: PSQM (QQ10);File;NO;NO
+4;A-F & A-UK & A-D FIN Equipment;1614;ECDB (LE80);ACDB (1Q00 and 8W00);File;NO;YES
+5;A-F A-D FIN SI;1615;ECDB (LE80);ACDB (8W00);File;NO;YES
+925;Weighting check list;1907;ECDB (LE80);B.O.T (xxxxx);File;YES;NO
+12;Equipment definition;2258;ECDB (LE80);BFEMS (PF00);File;NO;YES
+207;Equipment Definition;1840;ECDB (LE80);CIRCE-G (LC30);File;NO;NO
+208;FIN SI Definition;1841;ECDB (LE80);CIRCE-G (LC30);File;NO;NO
+211;FIN-SI (CI/DS/MOD) A-F, A-D, A-E et A-UK;784;ECDB (LE80);CIRCE-G (LC30);File;NO;NO
+212;FIN SI Definition A-F, FAF & CCC;236;ECDB (LE80);CIRCE-G (LC30);File;NO;NO
+213;Equipment Definition A-F, A-D & A-UK;268;ECDB (LE80);CIRCE-G (LC30);File;NO;NO
+214;FIN-SI (CI/DS/MOD) A-F and A-D;433;ECDB (LE80);CIRCE-G (LC30);File;NO;NO
+885;Equipment Validity;;ECDB (LE80);CIRCE-P (G840);File;YES;YES
+14;Serial Equipment;1909;ECDB (LE80);DLW (Q190);File;NO;YES
+215;Equipment definition (legacy-FR);1412;ECDB (LE80);GILDA (GG00 );File;NO;NO
+23;Trans Validity EQ;048;ECDB (LE80);INTERFACE GILDA_GPAO - GEC SAP (Q120);File;NO;YES
+711;Equipment definition;2688;ECDB (LE80);MixView (B562);File;NO;NO
+728;SA/LR Equipment validity;1908;ECDB (LE80);MixView (B562);File;NO;NO
+216;Equipment definition FIN CMS PN;2237;ECDB (LE80);PL1-FOCUS APPLICATIONS (YBD1);File;NO;YES
+140;A-D FAF FIN-SI Definition;155;ECDB (LE80);Primes System FIN SI (F590);File;NO;NO
+141;A-F FIN-SI Definition;161;ECDB (LE80);Primes System FIN SI (F590);File;NO;NO
+142;A-D CCC FIN-SI Definition;1901;ECDB (LE80);Primes System FIN SI (F590);File;NO;NO
+145;A-F  FIN-SI Definition;1900;ECDB (LE80);Primes System FIN SI (F590);File;NO;NO
+146;A-D FIN-SI Definition;1902;ECDB (LE80);Primes System FIN SI (F590);File;NO;NO
+147;A-UK FIN-SI Definition;1903;ECDB (LE80);Primes System FIN SI (F590);File;NO;NO
+148;A-E FIN-SI Definition;1904;ECDB (LE80);Primes System FIN SI (F590);File;NO;NO
+149;A-D FIN-SI Definition;1312;ECDB (LE80);Primes System FIN SI (F590);File;NO;NO
+151;A-F FIN-SI Definition;1313;ECDB (LE80);Primes System FIN SI (F590);File;NO;NO
+143;C/B of 300VU A380 A-F;1108;ECDB (LE80);PSE: ELCODATA (B580);File;NO;NO
+144;C/B of 300VU A-F;1317;ECDB (LE80);PSE: ELCODATA (B580);File;NO;NO
+152;C/B of 300VU A350 A-F;1104;ECDB (LE80);PSE: ELCODATA (B580);File;NO;NO
+153;C/B of 300VU A350 A-D;1105;ECDB (LE80);PSE: ELCODATA (B580);File;NO;NO
+154;C/B of 300VU A350 A-E;1106;ECDB (LE80);PSE: ELCODATA (B580);File;NO;NO
+155;C/B of 300VU A350 A-UK;1107;ECDB (LE80);PSE: ELCODATA (B580);File;NO;NO
+22;Equipment definition for A-F, A-D, A-UK;1906;ECDB (LE80);RIC (N156);File;NO;YES
+19;FIN Data EQ Extract for SA;1745;ECDB (LE80);SAP R/3 UK_AxD_LDS (B040);File;NO;YES
+20;FIN Data EQ Extract for LR;1746;ECDB (LE80);SAP R/3 UK_AxD_LDS (B040);File;NO;YES
+24;TechData A-D, A-F FIN SI + Eqpt;1612;ECDB (LE80);SMS (8I00);File;NO;YES
+101;FIN EQ Data for D99/F99;1559;ECDB (LE80);TAKSY:GESY (X010:GESY);File;NO;NO
+102;SA FIN SI Circuit Breaker;1834;ECDB (LE80);TAKSY:GESY (X010:GESY);File;NO;NO
+284;ESD Product Structure;918;ESDCR - A350 (E401);MCT (I531);File;;NO
+1208;electrical data definition;;ESDCR (E400);SMS (8I00);File;;YES
+353;Registration At First Flights|APU At First Flights|Engines At First Flights;2478;FTA (QB10);ACC (PA02);File;NO;NO
+678;All Updates And Modifications;2482;FTA (QB10);FTA-NG (G550);DBLink;;NO
+341;Aircraft registration number;1375;FTA-NG (G550);ACC (PA02);File;;NO
+513;Engine APU;2431;FTA-NG (G550);ACMM (SS10);DBLink;;NO
+907;Interface;;FTA-NG (G550);FTA (QB10);;;
+978;eTLB information;IL import;FTA-NG (G550);SI Corporate (H620);;;YES
+979;Special instruction status;IL import;FTA-NG (G550);SI Corporate (H620);;;YES
+906;Interface;;FTA-NG (G550);TLB (QA10);DBLink;;YES
+1239;SA A-F ATA-Zone;383;GEMAVICC (FV11);DMU Server A320 (U960);File;NO;YES
+1237;SA&LR A-F ATA Zone;151;GEMAVICC (FV11);DVise Server (H990);File;NO;YES
+1238;SA&LR other Natcos subscribed ATA Zone by A-F;152;GEMAVICC (FV11);DVise Server (H990);;;
+2;Mod closure with validity;1347;GILDA (GG00 );ACC (PA02);File;NO;NO
+8;SSI Definition with Req. + CA/CC Code + Indus. Conf.;103;GILDA (GG00 );ARP Feeding A380 (xxxxx);File;NO;NO
+176;GILDA AAT;1210.b;GILDA (GG00 );CIRCE-C (LC10);File;NO;NO
+177;Criterias table;1211.a;GILDA (GG00 );CIRCE-C (LC10);File;NO;NO
+186;FIN installation + effectivity checked;1013;GILDA (GG00 );CIRCE-G (LC30);File;NO;NO
+187;ESD effectivity calculation results;1437;GILDA (GG00 );CIRCE-G (LC30);File;NO;NO
+196;Gilda result of effectivity calculation FIN-SI A-F, FAF & CCC;042;GILDA (GG00 );ECDB (LE80);File;NO;NO
+197;MSN SA for D99;2213;GILDA (GG00 );ECDB (LE80);File;NO;NO
+198;Gilda result of effectivity calculation FIN-EQ, FIN-SI & FIN-CB;2214;GILDA (GG00 );ECDB (LE80);File;NO;NO
+199;Gilda result of effectivity calculation FIN-SI;2215;GILDA (GG00 );ECDB (LE80);File;NO;NO
+200;Gilda result of effectivity calculation FIN-SI A-F & A-D;2221;GILDA (GG00 );ECDB (LE80);File;NO;NO
+201;Gilda result of effectivity calculation FIN EQ A-F, A-D & A-UK;2238;GILDA (GG00 );ECDB (LE80);File;NO;NO
+206;Eqpt validity transfer file for SA/LR;1233;GILDA (GG00 );ECDB (LE80);File;NO;NO
+202;Technical solutions validities;1527;GILDA (GG00 );GEMAVICC (FV11);File;NO;NO
+203;Unreferenced PS;023;GILDA (GG00 );GEMAVICC (FV11);File;NO;NO
+25;Components/Drawings need;1576;GILDA (GG00 );INTERFACE GILDA_GPAO - GEC SAP (Q120);File;NO;YES
+26;Functional landmark needs;1577;GILDA (GG00 );INTERFACE GILDA_GPAO - GEC SAP (Q120);File;NO;YES
+27;Technical solution needs;1578;GILDA (GG00 );INTERFACE GILDA_GPAO - GEC SAP (Q120);File;NO;YES
+28;Components needs;1579;GILDA (GG00 );INTERFACE GILDA_GPAO - GEC SAP (Q120);File;NO;YES
+29;Items needs;1580;GILDA (GG00 );INTERFACE GILDA_GPAO - GEC SAP (Q120);File;NO;YES
+30;BAL RT modified (Cascade descent);1581;GILDA (GG00 );INTERFACE GILDA_GPAO - GEC SAP (Q120);File;NO;YES
+35;RF with valid responsability (IE01);1590;GILDA (GG00 );INTERFACE GILDA_GPAO - GEC SAP (Q120);File;NO;YES
+37;A320 - IE50: Conf EC's solution validities table;1592;GILDA (GG00 );INTERFACE GILDA_GPAO - GEC SAP (Q120);File;NO;YES
+40;Responsibles File;1595;GILDA (GG00 );INTERFACE GILDA_GPAO - GEC SAP (Q120);File;NO;YES
+779;Effectivity FM-OPE;;GILDA (GG00 );INTERFACE GILDA_GPAO - GEC SAP (Q120);File;NO;YES
+31;Interchangeability;1512;GILDA (GG00 );INTERRAP (N056);File;NO;YES
+720;[1225.b] Definition Meca, EQT by MSN;1225.b;GILDA (GG00 );MAEVA (N112);File;NO;YES
+159;Indus Conf;127;GILDA (GG00 );PDMLink System A380 (A205);File;NO;NO
+736;Gilda export to Focus;;GILDA (GG00 );PL1-FOCUS APPLICATIONS (YBD1);File;NO;YES
+717;SSI Definition with Req. + CA/CC Code + Indus. Conf.;103;GILDA (GG00 );Primes CCM A380 (E340);File;NO;
+156;SSI Definition with Req. + CA/CC Code+ Indus Conf;113;GILDA (GG00 );Primes Services SSI A380 (I470);File;NO;NO
+718;SSI Definition with Req. + CA/CC Code + Indus. Conf.;103;GILDA (GG00 );PRIMES SYSTEMS CME ELEC A380 (D790);File;NO;
+1623;Partner Delta 1;IM Import;GILDA (GG00 );R-DB Delta Calculation (G070);File;;YES
+32;A380 - IE50: Conf EC solution validities table;1588;GILDA (GG00 );SAP R/3 Corporate_xAC_LDS (B180);File;NO;YES
+33;A340 - IE50: Conf EC solution validities table;1589;GILDA (GG00 );SAP R/3 Corporate_xAC_LDS (B180);File;NO;YES
+36;EC base T3D102;1591;GILDA (GG00 );SAP R/3 Corporate_xAC_LDS (B180);File;NO;YES
+41;Integrated DQN + Drawing booking table (GN80);1596;GILDA (GG00 );SAP R/3 Corporate_xAC_LDS (B180);File;NO;YES
+42;Drawing/ECN/DMJ;1597;GILDA (GG00 );SAP R/3 Corporate_xAC_LDS (B180);File;NO;YES
+1053;Link CA PNR;;GILDA (GG00 );SAP R/3 Corporate_xAC_LDS (B180);;;YES
+43;Gilda data replication to Schedule;1229;GILDA (GG00 );Scheduling (E380);File;NO;YES
+7;A-F, A-D, A-UK, A-E Part usage SMS;1216;GILDA (GG00 );SMS (8I00);File;NO;YES
+44;Delta file (SSI Definition);1222;GILDA (GG00 );SMS (8I00);File;NO;YES
+721;[1225.d] Definition Meca, EQT by MSN;1225.d;GILDA (GG00 );Supplier(s) (XXX);File;NO;YES
+115;DRW Cascade;1798;GILDA (GG00 );TAKSY (X010);File;NO;NO
+160;Effectivity calculation anomalies;1732;GILDA (GG00 );TREATMENT RESULTS (E670);File;NO;NO
+158;TA & Criteria & GC9A FAF-CCC A380;1235;GILDA (GG00 );VPM A-D (X011);File;NO;NO
+926;AAT Delta1;1584;GILDA:EC-BILAN (GG00:EC-BILAN);SAP R/3 FR_xGI_LDS (B030);File;NO;YES
+929;Specified File;1585;GILDA:EC-BILAN (GG00:EC-BILAN);SAP R/3 FR_xGI_LDS (B030);File;NO;YES
+934;Defined File;1586;GILDA:EC-BILAN (GG00:EC-BILAN);SAP R/3 FR_xGI_LDS (B030);File;NO;YES
+938;Delta 1 files;1587;GILDA:EC-BILAN (GG00:EC-BILAN);SAP R/3 FR_xGI_LDS (B030);File;NO;YES
+173;Part Lists;1122;GILDA:MMDB+ (GG00:MMDB+);Engineering Drawings A380 (D750);File;NO;YES
+300;Mixability Cond. by MOD Tree, CIN and MSN;1666;iAMT (H970);CM Reporting (G930);File;;NO
+695;Calculated status of marketing relevant status;1737;iAMT (H970);S_Catalogue (H960);File;;YES
+673;Concept phase conf data;632;ICC pre M7 (E550);ACMM (SS10);DBLink;;NO
+6;ICC-CADB data;1324;ICC-CADB (A410);ACMM (SS10);DBLink;YES;NO
+986;As-Specified Data;1422;ICC-CADB (A410);AIR (S520);;;YES
+220;CA/CC Codes;072;ICC-CADB (A410);AIRCRAFT PROGRESS NG (AS10);;;
+221;TRS impacts, CACC Codes;2353;ICC-CADB (A410);APS (I532);CDC;;NO
+222;CA/CC Codes;072;ICC-CADB (A410);GILDA (GG00 );File;NO;NO
+1242;ICC Services;1417;ICC-CADB (A410);ICC-Services (O470);;NO;NO
+231;CA/CC Codes;072;ICC-CADB (A410);Primes 2.0 AUK (K170);;;NO
+224;CA/CC Codes;072;ICC-CADB (A410);Primes CCM A400M (F660);;;NO
+225;CA/CC Codes;072;ICC-CADB (A410);Primes Services SSI A350 (I472);;;NO
+226;As Specified Baseline;074;ICC-CADB (A410);Primes Services SSI A350 (I472);File;;NO
+227;As Specified Baseline;074;ICC-CADB (A410);Primes Services SSI A380 (I470);File;;NO
+228;CA/CC Codes;2008;ICC-CADB (A410);Primes Services SSI A400M (I471);;;NO
+229;As Specified Baseline;2009;ICC-CADB (A410);Primes Services SSI A400M (I471);;;NO
+230;CA/CC Codes;075;ICC-CADB (A410);Primes Services SSI DWH A400M (E120);File;NO;NO
+1203;CA/CC Codes;;ICC-CADB (A410);R-DB Delta Calculation (G070);DB2 Exchange Table;;YES
+989;SP0703075 - Update of the CA table which links the CA / MSN and P/N;IL import;ICC-CADB (A410);SAP ARP ECC EXE_Prod_PEA (J050);;;YES
+232;CAIR Chapt. 0,2,4;1422;ICC-CADB (A410);SAP R/3 Corporate_xAC_LDS (B180);;;YES
+1051;CA referential;;ICC-CADB (A410);SAP R/3 Corporate_xAC_LDS (B180);;;YES
+307;ICC R&J transfer and target dates;1743;ICC-CADB (A410);TAKSY:MODA (X010:MODA);File;NO;NO
+62;CA/CC Codes;072;ICC-CADB (A410);TAKSY:TESY (X010 :TESY);File;NO;NO
+256;Actions, Comments, Forecast, Involvements, Teams;1711;ICC-Services (O470);CM Reporting (G930);DBLink;NO;NO
+253;Scheduling data;520;ICC-Services (O470);ICC-CADB (A410);DBLink;NO;NO
+755;IDF - netDMU;1354;IDF (K480);NetDMU A380 (g271);File;YES;NO
+752; Local SLUA /IDF ;;Local-SLUA (???? Not AW70);IDF (K480);File;YES;NO
+122;MSN, MOD, MP;1322;MCC (S170);AIR (S520);DBLink;NO;YES
+1592;Validity;;MCC (S170);CADABAS TP1 (DA01);DBLink;NO;YES
+127;different MCC tables;1257;MCC (S170);CCP (Q960);DBLink;NO;YES
+1120;MSN and CIN validity;1262;MCC (S170);CODAC (R930);DBLink;NO;YES
+128;Access-Interface for RFC process in SA;#VALUE!;MCC (S170);Defi-Delta (xxxxx);DBLink;NO;YES
+124;Jobs K53E10AP and K53E10AQ ;389;MCC (S170);ESAO SA HAM (V430);File;NO;YES
+125;different MCC tables;#VALUE!;MCC (S170);Importtool for LR tools (xxxxx);DBLink;NO;YES
+123;Used for Screening preparation and Delta Calculation in LR ;1259;MCC (S170);LIMS (S380);DBLink;NO;YES
+130;History sheets for German meetings;1543;MCC (S170);MIB (C030);File;NO;YES
+943;CIN-Validities and AIPL information;;MCC (S170);TAKSY:DEF (X010:DEF);DBLink;NO;NO
+942;CIN Validities ;;MCC (S170);TAKSY:MODA (X010:MODA);DBLink;NO;NO
+287;MCT Business data Transfer;915;MCT (I531);ACMM (SS10);DBLink;NO;NO
+675;MOD/CIN Closure Information;916;MCT (I531);ACMM (SS10);DBLink;;
+288;MCT Data replication (A350-A400M);1756;MCT (I531);CM Reporting (G930);DBLink;NO;NO
+1622;New ADCL to SBCOMP;;New ADCL (Q970);SB-COMP (SH20);;NO;
+1069;TBD;;ONVISE (FI10);NLCP (FO50);File;;
+261;Optegra A-E to SPRINT;035;Optegra A-E (NE80);SPRINT (ND72);Service;NO;NO
+1063;to be defined-OK;;PEGASE (FJ10);ADN/OSIRIS (BS40);Other;;YES
+1065;TBD;;PERFO MOTEURS (X543);ADN/OSIRIS (BS40);;;
+273;Physical Data replication;2239;Primes Services SSI A350 (I472);CM Reporting (G930);DBLink;;NO
+275;DBLink data for reports;2241;Primes Services SSI A350 (I472);CM Reporting (G930);DBLink;;NO
+280;Data For Reports;726;Primes Services SSI A350 (I472);CM Reporting (G930);DBLink;;NO
+166;FIN Installation + effectivity;661;Primes Services SSI A350 (I472);GILDA (GG00 );File;NO;NO
+945;AAT,CIN A400M;1236;Primes Services SSI A350 (I472);GILDA (GG00 );File;NO;NO
+947;Typage Electrique CIN A400M & A350;1237;Primes Services SSI A350 (I472);GILDA (GG00 );File;NO;NO
+237;Links CA - P/N per MSN;076;Primes Services SSI A350 (I472);ICC-CADB (A410);File;;NO
+239;CA Composition in FIN -CI;1735;Primes Services SSI A350 (I472);ICC-CADB (A410);;;NO
+250;Upper CA-CA/VU/VB/VBVE;393;Primes Services SSI A350 (I472);ICC-CADB (A410);;;NO
+252;CA Composition in ADAP-CI;396;Primes Services SSI A350 (I472);ICC-CADB (A410);;;NO
+282;ADAP Product Structure;914;Primes Services SSI A350 (I472);MCT (I531);DBLink;;NO
+272;DBLink data for reports;216;Primes Services SSI A380 (I470);CM Reporting (G930);DBLink;;NO
+240;CA Composition in FIN -CI;1735;Primes Services SSI A380 (I470);ICC-CADB (A410);;;NO
+241;Upper CA-CA VU/VB/VE;1736;Primes Services SSI A380 (I470);ICC-CADB (A410);;;NO
+248;Links CA - P/N per MSN;2344;Primes Services SSI A380 (I470);ICC-CADB (A410);;;NO
+249;CA Composition in ADAP-CI;2346;Primes Services SSI A380 (I470);ICC-CADB (A410);;;NO
+278;DBLink Primes Services SSI Data;3016;Primes Services SSI A400M (I471);CM Reporting (G930);DBLink;;NO
+296;DBLink data for reports;1300;Primes Services SSI A400M (I471);CM Reporting (G930);DBLink;;NO
+303;DBLink Primes Services SSI Data;239;Primes Services SSI A400M (I471);CM Reporting (G930);DBLink;;NO
+944;AAT,CIN A400M;1236;Primes Services SSI A400M (I471);GILDA (GG00 );File;NO;NO
+946;Typage Electrique CIN A400M & A350;1237;Primes Services SSI A400M (I471);GILDA (GG00 );File;NO;NO
+242;Links CA - P/N per MSN;2000;Primes Services SSI A400M (I471);ICC-CADB (A410);File;;NO
+243;CA Composition in ADAP-CI;2002;Primes Services SSI A400M (I471);ICC-CADB (A410);File;;NO
+244;CA Composition in FIN-CI;2003;Primes Services SSI A400M (I471);ICC-CADB (A410);File;;NO
+245;Upper CA-CA/VU/VBVE;2004;Primes Services SSI A400M (I471);ICC-CADB (A410);File;;NO
+236;Links CA - P/N per MSN;076.c;Primes Services SSI DWH A400M (E120);ICC-CADB (A410);File;;NO
+251;CA Composition in ADAP-CI;395;Primes Services SSI DWH A400M (E120);ICC-CADB (A410);;;NO
+279;Data For Reports;706;PSS A350 (E122);CM Reporting (G930);Other;;NO
+238;CA Composition in FIN-CI;1603;PSS A350 (E122);ICC-CADB (A410);DBLink;;
+283;FIN Product Structure;913;PSS A350 (E122);MCT (I531);DBLink;;NO
+281;Data For Reports;817;PSS A380 (E121);CM Reporting (G930);Other;;NO
+246;CA Composition in FIN-CI;2321;PSS A380 (E121);ICC-CADB (A410);File;;NO
+277;Data For Reports;240;PSS A400M (V210);CM Reporting (G930);Other;;NO
+247;CA Composition in FIN-CI;2332;PSS A400M (V210);ICC-CADB (A410);DBLink;;NO
+263;SPRINT to AMO;1801;SPRINT (ND72);AMO (ND73);Service;NO;NO
+132;SPRINT to Gesti¢n Documental;1763;SPRINT (ND72);Gestion Documental (O880);File;NO;YES
+133;SPRINT to GILDA::MMDB+;1213;SPRINT (ND72);GILDA:MMDB+ (GG00:MMDB+);File;NO;NO
+260;SPRINT to Optegra A-E;1806;SPRINT (ND72);Optegra A-E (NE80);Other;NO;NO
+135;SPRINT to SAP Spain[285];285;SPRINT (ND72);SAP SPA - ERP SP (B050);Service;NO;YES
+531;SPRINT to SAP Spain[364];364;SPRINT (ND72);SAP SPA - ERP SP (B050);Service;NO;YES
+532;SPRINT to SAP Spain[371];371;SPRINT (ND72);SAP SPA - ERP SP (B050);Service;NO;YES
+137;SPRINT to SIVIC;1765;SPRINT (ND72);SIVIC (N/A);File;NO;YES
+352;Commercial Offer RFC/SCN/MSCN and EPAC/TDU;177;Sysconf (PJ00);ACC (PA02);DB2 Exchange Table;YES;NO
+676;interface sysconf/FCO;#VALUE!;Sysconf (PJ00);FCO Management Tool (PM00);Other;NO;YES
+68;A-D SSI Definition with Effectivity;021;TAKSY (X010);ConfigurationDataToVpmInterface (FR50);File;NO;NO
+119;SSI Definition without Req. + CA/CC Code + Indus Conf;323;TAKSY (X010);Primes Services SSI A380 (I470);File;;NO
+1195;Design Basic Data;1550;TAKSY (X010);R-DB Delta Calculation (G070);DB2 Exchange Table;NO;YES
+56;MP pro MSN;484;TAKSY:DEF (X010:DEF);FUN2 (I190);DBLink;NO;YES
+55;TAKSY 14;1548;TAKSY:DEF (X010:DEF);IRS (U830);DBLink;NO;YES
+59;MSN, CA, MOD, MP;492;TAKSY:DEF (X010:DEF);R-DB Delta Calculation (G070);DBLink;NO;YES
+57;MSN, CA, MOD, MP;487;TAKSY:DEF (X010:DEF);SARIS (P210);File;NO;YES
+309;DEfi TC20D;507;TAKSY:DEF (X010:DEF);TWE (TAKSY Web Engine) (1G98);DBLink;NO;NO
+93;FIN Equipment data;#VALUE!;TAKSY:ELSY (X010 :ELSY);ASTERICS (Q800);File;NO;YES
+89;A-D ESD Transfer;1564;TAKSY:ELSY (X010 :ELSY);BCAWD (X419);File;NO;NO
+92;A-D EDDF ESD Transfer;1563;TAKSY:ELSY (X010 :ELSY);CIRCE-C (LC10);File;NO;NO
+90;CATIA E3D for LR;1566;TAKSY:ELSY (X010 :ELSY);ELEX (1P27);File;NO;NO
+94;A-D FIN-SI FSI/NFSI Defintion;162;TAKSY:ELSY (X010 :ELSY);Primes System FIN SI (F590);File;NO;NO
+1206;Electrical Schemes with effectivities;;TAKSY:ELSY (X010 :ELSY);SMS (8I00);File;NO;YES
+96;A-D Wires, Equipment, AAT data from TAKSY:GESY and TAKSY:ELSY;1425 & 1427;TAKSY:GESY (X010:GESY);AWL2 (8L00);File;NO;YES
+98;[1561] FIN Equipment data BFE, SSBFE;1561;TAKSY:GESY (X010:GESY);BFEMS (PF00);File;NO;YES
+1612;Equipement data for configuration conformity;new;TAKSY:GESY (X010:GESY);CAIR (B750);;NO;YES
+100;[1329] Equipment data for cost calculation;1329;TAKSY:GESY (X010:GESY);Cast-Others (O750);File;NO;YES
+110;FIN Equipment data;1333;TAKSY:GESY (X010:GESY);CERIS++ (VCV Configuration Management) (AU40);File;NO;YES
+109;[1832] FIN cascade with MSN effectivity;1832;TAKSY:GESY (X010:GESY);ConfigurationDataToVpmInterface (FR50);File;NO;NO
+103;[2208] Standard Deviation for SA/LR;2208;TAKSY:GESY (X010:GESY);ECDB (LE80);File;NO;NO
+104;[2206] CB (Circuit Breaker) Delta FIN Cascade changes);2206;TAKSY:GESY (X010:GESY);ECDB (LE80);File;NO;NO
+105;[1558] A-D FIN Equipment system definition and A-D CIN referential;1558;TAKSY:GESY (X010:GESY);ECDB (LE80);File;NO;NO
+107;[1555] IRS Request for chapter 3;1555;TAKSY:GESY (X010:GESY);IRS (U830);Other;NO;YES
+259;Weight Check list;#VALUE!;TAKSY:GESY (X010:GESY);P342 (DH70);DBLink;NO;NO
+114;[162] A-D FIN-SI FSI/NFSI Defintion;162;TAKSY:GESY (X010:GESY);Primes System FIN SI (F590);File;NO;NO
+108;[1551] ECO for FIN EQ;1551;TAKSY:GESY (X010:GESY);R-DB Delta Calculation (G070);DBLink;NO;YES
+113;LR ECO Transfer;#VALUE!;TAKSY:GESY (X010:GESY);SAP R/3 FR_xGI_LDS (B030);File;NO;YES
+106;[084] Serial Equipment;084;TAKSY:GESY (X010:GESY);SAP R/3 GE_xDA_LDS (B020);File;NO;YES
+1616;TAKSY-GESY Brutto;;TAKSY:GESY (X010:GESY);SAP R/3 GE_xDA_LDS (B020);Other;NO;YES
+80;MOD Closure Stage3;1346;TAKSY:MODA (X010:MODA);ACC (PA02);File;NO;NO
+72;[1253] BM data from TAKSY;1253;TAKSY:MODA (X010:MODA);BU/BM Overview (AR0280);Service;NO;YES
+70;[1250] MOD, MP, Validities;1250;TAKSY:MODA (X010:MODA);DAMASTH TP5 (DB05);DBLink;NO;YES
+972;Loop back for DQN Closure;IL import;TAKSY:MODA (X010:MODA);DQN (C720);File;NO;YES
+791;ElconDB;571;TAKSY:MODA (X010:MODA);ElconDB (CB60);DBLink;NO;NO
+78;MSN, MOD, MP, ;389;TAKSY:MODA (X010:MODA);ESAO SA HAM (V430);File;NO;YES
+81;[1541] TAKSY 6, MP+Validity;1541;TAKSY:MODA (X010:MODA);FUN2 (I190);DBLink;NO;YES
+723;GTR, GCO from TAKSY MODA BM;#VALUE!;TAKSY:MODA (X010:MODA);FUN2 (I190);File;NO;YES
+83;MOD Closure data;445;TAKSY:MODA (X010:MODA);MC5-Tool (P910);DBLink;NO;YES
+82;[1543] TAKSY 4 MOD, MP, RFC, History;1543;TAKSY:MODA (X010:MODA);MIB (C030);File;NO;YES
+1123;Validity, GLP;126;TAKSY:MODA (X010:MODA);PDMLink System A380 (A205);File;NO;YES
+73;[1256] MOD,MP,RFC,AEV;1256;TAKSY:MODA (X010:MODA);ZAMIZ Imagemaster (H670);File;NO;YES
+889;Approved Design Data;;TAKSY:STL (X010:STL);B.O.T (xxxxx);File;NO;YES
+85;Master Data, BOM and Effectivity;1213;TAKSY:STL (X010:STL);GILDA (GG00 );File;NO;NO
+63;Gross;521;TAKSY:STL (X010:STL);GVS - BRUTTO (N061);File;NO;YES
+69;[1248]drawing freeze LR;1248;TAKSY:STL (X010:STL);MAEVA (N112);File;NO;YES
+301;Configuration Effectivities;#VALUE!;TAKSY:STL (X010:STL);PPS Legacy (N136);Other;NO;YES
+66;[1664] Product Structure + Effectivity;1664;TAKSY:STL (X010:STL);PRIMUS (xxxxx);File;NO;NO
+312;Weight calculation;1244;TAKSY:STL (X010:STL);TWE (TAKSY Web Engine) (1G98);DBLink;NO;NO
+788;AAT (called GLP) eBM;1554;TAKSY:TAK (X010:TAK);BW - CS TECH-DATA (G710);File;NO;YES
+1591;GLP data;;TAKSY:TAK (X010:TAK);CADABAS TP1 (DA01);DBLink;NO;YES
+784;AAT (called GLP) to Supplier RUAG;;TAKSY:TAK (X010:TAK);Supplier(s) (XXX);File;NO;NO
+785;AAT (called GLP) to Supplier PAG Augsburg;;TAKSY:TAK (X010:TAK);Supplier(s) (XXX);File;NO;NO
+786;AAT (called GLP) Logistic STUTE;;TAKSY:TAK (X010:TAK);Supplier(s) (XXX);File;NO;NO
+787;AAT (called GLP) KID Buxtehude;;TAKSY:TAK (X010:TAK);Supplier(s) (XXX);File;NO;NO
+292;MSN+TBT+Target Dates;#VALUE!;TAKSY:TESY (X010 :TESY);Supplier(s) (XXX);File;NO;YES
+311;TC11P data;820;TAKSY:TESY (X010 :TESY);TWE (TAKSY Web Engine) (1G98);DBLink;NO;NO
+761;80A,36S,37S;839;TAKSY:ZEI (X010:ZEI);CADABAS TP1 (DA01);DBLink;NO;
+310;BOT : report CA-Cascade;374;TWE (TAKSY Web Engine) (1G98);SAP System Netweaver BW-PBA (J020);File;NO;YES
+308;TC11P Load with MSN, KZI, Target dates;820;TWE (TAKSY Web Engine) (1G98);TAKSY:TESY (X010 :TESY);File;NO;NO
+957;CAIR Traceability Chapters 2, 3, 12;IL import;AIR (S520);GIDOCA (5600);File;NO;YES
+802;A.I.R. (SA LR A-D+China);1384;AIR 2000   (N912);ACC: AIR96 (C360);File;YES;NO
+958;A/C Documentation Data;IL import;AIR_C (R340);ACC: AIR96 (C360);File;;YES
+722;eBM SAP QM;#VALUE!;ARP Manufacturing and engineering (F880);TAKSY:MODA (X010:MODA);File;NO;YES
+1613;Info about attestation of MSN;new;CAIR (B750);TAKSY:DEF (X010:DEF);;NO;YES
+529;module decision main treatment ;#VALUE!;CIRCE-P (G840);CIRCE-G (LC30);File;NO;YES
+770;Retrofits (heavy treatment);;CIRCE-P (G840);CIRCE-G (LC30);File;NO;YES
+771;Retrofits (sketches);;CIRCE-P (G840);CIRCE-G (LC30);File;NO;YES
+774;"""module de decision"" come back sketches ";;CIRCE-P (G840);CIRCE-G (LC30);File;NO;YES
+778;"sketches ""update EC20""";;CIRCE-P (G840);CIRCE-G (LC30);File;NO;YES
+1318;Shared tables between CIRCE-P and CIRCE-G (owned by CIRCE-P) ;;CIRCE-P (G840);CIRCE-G (LC30);DB2 Exchange Table;YES;YES
+1319;CICS shared table between CIRCE-P and CIRCE-G (owned by CIRCE-P)   ;;CIRCE-P (G840);CIRCE-G (LC30);File;YES;YES
+1322;CIRCE files to CIRMA;;CIRCE-P (G840);CIRMA (N/A);File;NO;YES
+1323;CIRCE files to FOKKER;;CIRCE-P (G840);FOKKER ELMO (N/A);File;NO;YES
+1321;CIRCE files to LABINAL;;CIRCE-P (G840);LABINAL (N/A);File;NO;YES
+1324;CIRCE files to LATELEC;;CIRCE-P (G840);LATELEC (N/A);File;NO;YES
+1325;CIRCE files to RATIER;;CIRCE-P (G840);RATIER (N/A);File;NO;YES
+1326;CIRCE files to SEFEE;;CIRCE-P (G840);SEFEE (N/A);File;NO;YES
+1327;CIRCE files to STELIA;;CIRCE-P (G840);STELIA (N/A);File;NO;YES
+872;Online Concessions Transfer;;CONCESSION (B330);ACMM (SS10);Other;NO;YES
+1124;Repair manager management;;CONCESSION (B330);Repair Manager (K140);File;NO;YES
+1115;DQN header;;DQN (C720);SAP PBI - Netweaver BW (B100);;NO;YES
+1116;DQN Tasks;;DQN (C720);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1117;DQN drawing;;DQN (C720);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+971;DQN Impacts to Taksy;IL import;DQN (C720);TAKSY (X010);File;NO;YES
+1118;PDF DQN document;;DQN (C720);ZAMIZ Imagemaster (H670);File;NO;YES
+1615;Scheduled Brutto to Southplants;;GVS - BRUTTO (N061);Supplier(s) (XXX);File;YES;YES
+991;Feedback information;IL import;IRS (U830);FUN2 (I190);DB2 Exchange Table;;YES
+992;A/C outstanding work data;IL import;IRS (U830);SAP PBI - Netweaver BW (B100);;;YES
+291;IRS Closure;1548;IRS (U830);TAKSY:DEF (X010:DEF);DBLink;YES;YES
+773;delivery aircraft PMOD ICAO;;PMOD (N054);CIRCE-G (LC30);File;NO;YES
+775;GILDA AAT;1210.a;PMOD (N054);ECDB (LE80);File;NO;YES
+1207;CIN effectivity;;PMOD (N054);GIDOCA (5600);File;;YES
+47;[1210.a] AAT;1210.a;PMOD (N054);GILDA (GG00 );File;NO;YES
+48;[125] Industrial Configuration Set;125;PMOD (N054);GILDA (GG00 );File;NO;YES
+776;MOD;;PMOD (N054);GILDA (GG00 );;;
+777;AAT for MMDB+;1210.a;PMOD (N054);GILDA (GG00 );File;NO;YES
+887;TXTFiles;;PMOD (N054);OPCMT (O240);;;
+1617;Configuration Effectivities;;PPS Legacy (N136);SAP PR3 (N/A);;NO;YES
+993;Engines order;IL import;PPS-ENGINE (D900);SAP P11 - ERP CE (B010);;;YES
+994;Nacelles order;IL import;PPS-ENGINE (D900);SAP P11 - ERP CE (B010);;;YES
+995;Propulsion systems order;IL import;PPS-ENGINE (D900);SAP P11 - ERP CE (B010);;;YES
+345;List of MSN;1442;PVCE (N144);ACC (PA02);File;YES;YES
+343;A.I.R. (SA LR A-F);1383;RIC (N156);ACC: AIR96 (C360);File;YES;YES
+765;"""file aircraft delivery"" ";;RIC (N156);CIRCE-G (LC30);;;
+741;Aircraft delivered Table ;;RIC (N156);GILDA (GG00 );File;NO;YES
+1621;GR for BLO orders of BFE parts;IM Import;SAP Americ xAM_LDS (1J44);BFEMS (PF00);File;;YES
+1001;Manufacturing data extraction request;IL import;SAP Americ xAM_LDS (1J44);R-DB Delta Calculation (G070);;;YES
+1200;Basic Manufacturing Data US;;SAP Americ xAM_LDS (1J44);R-DB Delta Calculation (G070);File;NO;YES
+1108;ZAMIZ  Nonconformity PAM;IL ImportGE;SAP Americ xAM_LDS (1J44);ZAMIZ Imagemaster (H670);;NO;YES
+1109;ZAMIZ Inspectionlot PAM;IL ImportGE;SAP Americ xAM_LDS (1J44);ZAMIZ Imagemaster (H670);;NO;YES
+1110;ZAMIZ Workorder PAM;IL ImportGE;SAP Americ xAM_LDS (1J44);ZAMIZ Imagemaster (H670);;NO;YES
+1088;Sdwerke Schnittstelle;IL ImportGE;SAP MM SWS PDA (C262);Donauw”rth (N/A);;NO;YES
+1089;Sdwerke Schnittstelle;IL ImportGE;SAP MM SWS PDA (C262);EADS EFW (N/A);;NO;YES
+1090;Sdwerke Schnittstelle;IL ImportGE;SAP MM SWS PDA (C262);FLAMMAEROTEC (N/A);;NO;YES
+1091;Sdwerke Schnittstelle;IL ImportGE;SAP MM SWS PDA (C262);KID (N/A);;NO;YES
+1092;Sdwerke Schnittstelle;IL ImportGE;SAP MM SWS PDA (C262);LABINAL (N/A);;NO;YES
+1093;Sdwerke Schnittstelle;IL ImportGE;SAP MM SWS PDA (C262);OPF (N/A);;NO;YES
+1094;Sdwerke Schnittstelle;IL ImportGE;SAP MM SWS PDA (C262);PFW SPEYER (N/A);;NO;YES
+1087;Customer demand;IL ImportGE;SAP MM SWS PDA (C262);SAP PR3 (N/A);;NO;YES
+1022;Goods receipt;IL import;SAP PDA Supply flying part (BC70);SAP BW Delivery Adherence (C222);;;YES
+1023;Goods receipt;IL import;SAP PDA Supply flying part (BC70);SAP BW Dispatch Advice (O600);;;YES
+1024;Evidence;IL import;SAP PDA Supply flying part (BC70);SAP BW OTD Collaboration (C223);;;YES
+1025;Supplier flag;IL import;SAP PDA Supply flying part (BC70);SAP BW OTD Collaboration (C223);;;YES
+1026;Supplier root cause;IL import;SAP PDA Supply flying part (BC70);SAP BW OTD Collaboration (C223);;;YES
+1027;Goods receipt;IL import;SAP PDA Supply flying part (BC70);SAP BW Rejection Rate (C225);;;YES
+1028;Quality notification;IL import;SAP PDA Supply flying part (BC70);SAP BW Rejection Rate (C225);;;YES
+1029;Supplier master Data;IL import;SAP PDA Supply flying part (BC70);SAP P11 - ERP CE (B010);;;YES
+1096;Purchase order;IL ImportGE;SAP PDA Supply flying part (BC70);SAP P11 - ERP CE (B010);;NO;YES
+1030;Workload procured;IL import;SAP PDA Supply flying part (BC70);SPEND ANALYSIS (A242);;;YES
+1095;Forecast;IL ImportGE;SAP PDA Supply flying part (BC70);Stock and Demand BW KPI (H320);;NO;YES
+1267;MSN repository;;SAP PGI logistics (BC20);SAP R3 CO -AFR (X127);Other;NO;YES
+1082;PDA-> TAKSY-GESY;IL ImportGE;SAP PP Shopfloor A-D (R470);TAKSY:GESY (X010:GESY);DBLink;NO;YES
+1105;ZAMIZ  Nonconformity PCH (SAP QM PCH);IL ImportGE;SAP QM PCH (T130);ZAMIZ Imagemaster (H670);RFC;NO;YES
+1106;ZAMIZ Inspectionlot PCH (SAP QM PCH);IL ImportGE;SAP QM PCH (T130);ZAMIZ Imagemaster (H670);RFC;NO;YES
+1102;ZAMIZ  Nonconformity PDA (SAP QM PDA);IL ImportGE;SAP QM PDA (T132);ZAMIZ Imagemaster (H670);;NO;YES
+1103;ZAMIZ Inspectionlot PDA (SAP QM PDA);IL ImportGE;SAP QM PDA (T132);ZAMIZ Imagemaster (H670);;NO;YES
+804;A.I.R.;1387;SAP R/3 Corporate_xAC_LDS (B180);ACC: AIR96 (C360);File;YES;YES
+1125;concession reference from SAP PAC to CDIS;;SAP R/3 Corporate_xAC_LDS (B180);ACMM (SS10);File;NO;YES
+1236;FIN-Equipment list extraction for CERIS++ ;;SAP R/3 Corporate_xAC_LDS (B180);CERIS++ (VCV Configuration Management) (AU40);Service;NO;YES
+1129;Tech Data interface;;SAP R/3 Corporate_xAC_LDS (B180);CMS (DD) (G100);IDOC;NO;YES
+1004;delta request file;IL import;SAP R/3 Corporate_xAC_LDS (B180);DPDS (Y103);;;YES
+1111;eBinder;;SAP R/3 Corporate_xAC_LDS (B180);eLDS (1J98);RFC;NO;YES
+1009;AIR data;IL import;SAP R/3 Corporate_xAC_LDS (B180);GIDOCA (5600);RFC;NO;YES
+49;[1508] ECN DQN Impact;1508;SAP R/3 Corporate_xAC_LDS (B180);GILDA (GG00 );File;NO;YES
+1005;delta request file;IL import;SAP R/3 Corporate_xAC_LDS (B180);GILDA (GG00 );File;;YES
+1007;delta request file;IL import;SAP R/3 Corporate_xAC_LDS (B180);R-DB Delta Calculation (G070);File;;YES
+1008;Request file for baseline;IL import;SAP R/3 Corporate_xAC_LDS (B180);R-DB Delta Calculation (G070);File;;YES
+1211;MOD / MP EQ - HDELTA2EQ_MOD_MP;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;YES;YES
+1212;MEGA2 EQ Eng. table - HDELTA2_EQ_PRIMES_FILE;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;YES;YES
+1213;MOD / MP - HDELTA2_MOD_MP;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;YES;YES
+1214;Datasource HPPD2_QE - HDELTA2_PRIMES_DQN;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;YES;YES
+1215;Delta 2 Base Line - HDELTA2_PRIMES_FILE;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1216;D2 DS load with IS - HDELTA2_PRIMES_FILE_IS;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;YES;YES
+1217;Master Data HQMSN - HQMSNTYP_ATTR;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1218;Msn attr - HQMSN_ATTR;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1219;Operator Code Text - HQOPERCOD_TEXT;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1220;CA/SN extraction - HQOWCASN_ATTR;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1221;MSN Filter - HZDPDBT05_ATTR;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;YES;YES
+1222;Delivered MSN - HZDPDBT_DBAVION;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;YES;YES
+1223;CAIR : DELTA1 - HZDPQMT32_D_D1;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;YES;YES
+1224;CAIR : Delta 2 - HZDPQMT32_D_D2;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1225;DataSource HPPDE_P8 - ZDPD2T_HPPDE_P8;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;YES;YES
+1226;CAIR FOLIO5 Head OW - ZHQMOW_CAIR_FOLIO5_HEADER;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1227;AIR Chapter 11 - ZHQM_AIR_CHAPTER11;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1228;AIR Chapter 2 - ZHQM_AIR_CHAPTER2;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1229;AIR Chapter 3 - ZHQM_AIR_CHAPTER3;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1230;AIR Chapter 4 - ZHQM_AIR_CHAPTER4;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1231;AIR Msn - ZHQM_AIR_MSN;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1232;NC attributes - ZNON_CONFORMANCES_ATTR;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1233;DQN - ZZDPQMT_DQN_AVIS;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1234;Vw ZDPMOTAC_O A400M - Z_A400M_ZDPMOTAC_O;;SAP R/3 Corporate_xAC_LDS (B180);SAP PBI - Netweaver BW (B100);RFC;NO;YES
+1112;A400M traceability transfer;;SAP R/3 Corporate_xAC_LDS (B180);SAP PDR (N/A);;;YES
+17;[1811] MSN for ® Transfert Val EQ ¯;1811;SAP R/3 FR_xGI_LDS (B030);ECDB (LE80);File;;YES
+1620;GR for BLO orders of BFE parts;IM Import;SAP R/3 GE_xDA_LDS (B020);BFEMS (PF00);File;;YES
+1081;Spares preisanstoá - PDA->CADABAS;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);CADABAS TP3 (DA03);;NO;YES
+1098;PO Message;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);DCG integration (N/A);;NO;YES
+1020;AMN;IL import;SAP R/3 GE_xDA_LDS (B020);HAZMAT (A500);;;YES
+1021;Basic Manufacturing Data Germany;IL import;SAP R/3 GE_xDA_LDS (B020);R-DB Delta Calculation (G070);File;;YES
+1086;Purchase order;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);SAP BW Delivery Adherence (C222);;NO;YES
+884;MSN Repository / GLP;;SAP R/3 GE_xDA_LDS (B020);SAP ERP Buxtehude/Zship (W440);Other;;
+1080;Spares PO PAG - PDA->PR3;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);SAP PR3 (N/A);;NO;YES
+1097;Forecast;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stock and Demand BW KPI (H320);;NO;YES
+1071;Logistic Shopfloor CEC hamburg;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stute (N/A);;NO;YES
+1072;Logistic Shopfloor MWZ Bremen;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stute (N/A);;NO;YES
+1073;Logistic Shopfloor MWZ Hamburg;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stute (N/A);;NO;YES
+1074;MDU CECHamburg;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stute (N/A);;NO;YES
+1075;MDU MWZ Bremen;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stute (N/A);;NO;YES
+1076;MDU  MWZ Hamburg;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stute (N/A);;NO;YES
+1077;Mvt.CECHamburg;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stute (N/A);;NO;YES
+1078;Mvt.  MWZ Bremen;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stute (N/A);;NO;YES
+1079;Mvt. MWZ Hamburg;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stute (N/A);;NO;YES
+1083;PULL CECHamburg;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stute (N/A);;NO;YES
+1084;PULL  MWZ Bremen;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stute (N/A);;NO;YES
+1085;PULL MWZ Hamburg;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stute (N/A);;NO;YES
+1099;TO CECHamburg;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stute (N/A);;NO;YES
+1100;TO  MWZ Bremen;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stute (N/A);;NO;YES
+1101;TOMWZ Hamburg;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);Stute (N/A);;NO;YES
+112;Production Orders sent from SAP PDA to TAKSY:GESY  ;#VALUE!;SAP R/3 GE_xDA_LDS (B020);TAKSY:GESY (X010:GESY);Other;NO;YES
+1104;ZAMIZ Workorder PDA;IL ImportGE;SAP R/3 GE_xDA_LDS (B020);ZAMIZ Imagemaster (H670);;NO;YES
+1002;Manufacturing data extraction request;IL import;SAP R/3 manufacturing China_xCH_LDS (J090);R-DB Delta Calculation (G070);;;YES
+1198;Basic Manufacturing Data China;;SAP R/3 manufacturing China_xCH_LDS (J090);R-DB Delta Calculation (G070);File;;YES
+1107;ZAMIZ Workorder PCH;IL ImportGE;SAP R/3 manufacturing China_xCH_LDS (J090);ZAMIZ Imagemaster (H670);;NO;YES
+1031;Non  recurring cost;IL import;SAP R/3 UK_AxD_LDS (B040);ICOS UK - Non Recurring Costs (1O43);;;YES
+1036;Quality notification;IL import;SAP R/3 UK_AxD_LDS (B040);SAP BW Rejection Rate (C225);;;YES
+1253;Si ASA;;SAP SD After Sales PDA (R580);Repair Manager (K140);;YES;YES
+1605;BW - AE - Actual cost of products;;SAP SPA - ERP SP (B050);BW - Actual cost of product (M840);RFC;;YES
+1604;BW - controlling product cost;;SAP SPA - ERP SP (B050);BW Controlling of Product Cost (M860);RFC;;YES
+1607;BW - General expenses SP;;SAP SPA - ERP SP (B050);BW General expenses -SP (M890);RFC;;YES
+1139; Launch GTIïs;;SAP SPA - ERP SP (B050);CATS_A400M (xxxxx);;;YES
+1140;Deletion of  GTIïs non effective;;SAP SPA - ERP SP (B050);CATS_A400M (xxxxx);;;YES
+1141;notification and close of  ZGTI and ZRTI orders;;SAP SPA - ERP SP (B050);CATS_A400M (xxxxx);;;YES
+1142;Creation of RTI;;SAP SPA - ERP SP (B050);CATS_A400M (xxxxx);;;YES
+1143;SAP query of PPFF orders;;SAP SPA - ERP SP (B050);CATS_A400M (xxxxx);;;YES
+1144;RFC CA creation in delievery center;;SAP SPA - ERP SP (B050);CATS_A400M (xxxxx);;;YES
+1145;Assign MSN to equipment concession;;SAP SPA - ERP SP (B050);CATS_A400M (xxxxx);;;YES
+1151;Global check of DEPS (usage1) in SAP;;SAP SPA - ERP SP (B050);Conversion (N/A);;;YES
+1152;Settle again order WBS;;SAP SPA - ERP SP (B050);Conversion (N/A);;;YES
+1153;PO Message;;SAP SPA - ERP SP (B050);DCG integration (N/A);;;YES
+1154;External procured P/N with long lead time;;SAP SPA - ERP SP (B050);I2 (N/A);;;YES
+1606;BW  ICOS-RECCURENTE;;SAP SPA - ERP SP (B050);ICOS-RECCURENTE domain for BW in Airbus Spain (M880);RFC;;YES
+1155;RFC CA creation in delievery center;;SAP SPA - ERP SP (B050);IPP (N/A);;;YES
+1156;PO interface;;SAP SPA - ERP SP (B050);IPP (N/A);;;YES
+1157;Close Operation: Order notification;;SAP SPA - ERP SP (B050);IPP (N/A);;;YES
+1158;AirSup Interface;;SAP SPA - ERP SP (B050);IPP (N/A);;;YES
+1159;sequence function of  HDR SFIS.;;SAP SPA - ERP SP (B050);IPP (N/A);;;YES
+1160;Multilevel BOM;;SAP SPA - ERP SP (B050);IPP (N/A);;;YES
+1161;Cancel notification;;SAP SPA - ERP SP (B050);IPP (N/A);;;YES
+1162;Stock level with FI data;;SAP SPA - ERP SP (B050);IPP (N/A);;;YES
+1163;Load BOM;;SAP SPA - ERP SP (B050);IPP (N/A);;;YES
+1164;Move planned order to purchase requisition;;SAP SPA - ERP SP (B050);IPP (N/A);;;YES
+1165;SIVIC;;SAP SPA - ERP SP (B050);IPP (N/A);;;YES
+1166;Load labels in SAP - Processes: assign MSN to equipment concession;;SAP SPA - ERP SP (B050);IPP (N/A);;;YES
+1167;Interface SAP - SPRINT ;;SAP SPA - ERP SP (B050);LPI (N/A);;;YES
+1168;Stock level with FI data;;SAP SPA - ERP SP (B050);LPI (N/A);;;YES
+1169;Tratamiento LPI ARP;;SAP SPA - ERP SP (B050);LPI (N/A);;;YES
+1170;Conversion of object types for master record changes;;SAP SPA - ERP SP (B050);LPI (N/A);;;YES
+1171;Multilevel BOM consolidation (ARP) manufacturing;;SAP SPA - ERP SP (B050);LPI (N/A);;;YES
+1172;Aircraft table interface;;SAP SPA - ERP SP (B050);Matriz (N/A);;;YES
+1173;SAP query of PPFF orders;;SAP SPA - ERP SP (B050);Pelicano (N/A);;;YES
+1174;Interface NC;;SAP SPA - ERP SP (B050);PHM (N/A);;;YES
+1175;WO policy for PEF/SEQ;;SAP SPA - ERP SP (B050);Primes Services SSI A400M (I471);;;YES
+1176;Stock extraction w/o FI data;;SAP SPA - ERP SP (B050);Primes Services SSI A400M (I471);;;YES
+1177;Updte design - manufacturing;;SAP SPA - ERP SP (B050);SAP PBA- Netweaver BW (J020);;;YES
+1138;WBS Extraction for aircraft table;;SAP SPA - ERP SP (B050);SAP SP1 (N/A);;;YES
+1146;Selecci¢n total Avi¢n y m¢dulos;;SAP SPA - ERP SP (B050);SAP SP1 (N/A);;;YES
+1147;Find aircraft module (configuration);;SAP SPA - ERP SP (B050);SAP SP1 (N/A);;;YES
+1148;Get aircraft and module by PEF;;SAP SPA - ERP SP (B050);SAP SP1 (N/A);;;YES
+1149;get sequence by module;;SAP SPA - ERP SP (B050);SAP SP1 (N/A);;;YES
+1150;Aircraft table interface;;SAP SPA - ERP SP (B050);SAP SP1 (N/A);;;YES
+1178;Interface Work Orders;;SAP SPA - ERP SP (B050);SAP SP1 (N/A);;;YES
+1179;Interface NC;;SAP SPA - ERP SP (B050);SAP SP1 (N/A);;;YES
+1180;RFC transfer data OW Management;;SAP SPA - ERP SP (B050);SAP SP1 (N/A);;;YES
+1181;paralel execution. Broken BOM;;SAP SPA - ERP SP (B050);SAP SP1 (N/A);;;YES
+1182;Interface MEGA_2;;SAP SPA - ERP SP (B050);SAP SP1 (N/A);;;YES
+1593;Import/export;;SAP SPA - ERP SP (B050);SICEX (P311);RFC;NO;YES
+1183;Load labels in SAP - Processes: assign MSN to equipment concession;;SAP SPA - ERP SP (B050);SIVIC (N/A);;;YES
+1184;Extraction I2 of demand order data;;SAP SPA - ERP SP (B050);SIVIC (N/A);;;YES
+1185;SIVIC file extraction;;SAP SPA - ERP SP (B050);SIVIC (N/A);;;YES
+1186;function to validate PEF-Sequence via RFC;;SAP SPA - ERP SP (B050);SIVIP (N/A);;;YES
+535;Sap Spain[271] - Aircraft Allocation Table Interface;271;SAP SPA - ERP SP (B050);SPRINT (ND72);Service;NO;YES
+1012;GR for BLO orders of BFE parts;IL import;SAP SPA Supply flying part (CB30);BFEMS (PF00);File;;YES
+1015;Goods receipt;IL import;SAP SPA Supply flying part (CB30);SAP BW Rejection Rate (C225);;;YES
+1199;Basic Manufacturing Data Zephyir;;SAP System ERP GE Zephyr - PNC (J810);R-DB Delta Calculation (G070);File;;YES
+1201;SA MSN dates;;SARIS (P210);R-DB Delta Calculation (G070);DBLink;;YES
+689;#VALUE!;#VALUE!;SI Corporate (H620);FTA-NG (G550);File;;YES
+739;AAT;1210.a;TABAV (C740);GILDA (GG00 );DBLink;YES;YES
+881;CNS information tranfer;;TDQM (QQ00);ACMM (SS10);DBLink;NO;YES
+865;TKZ to APC Jaguar;;TKZ-DB (NU59);APC JAGUAR (PB00);;;
+61;[1245] TKZ pro MSN;1245;TKZ-DB (NU59);TAKSY:TESY (X010 :TESY);DBLink;YES;YES
+1640;Industrial reporting link to TLB;;TLB (QA10);BO reporting for Programmes (1K26);DBLink;NO;YES
+1235;TLB data to CDIS;;TLB (QA10);CDIS General (A420);;NO;YES
+682;TLB data to FTA-NG;#VALUE!;TLB (QA10);FTA-NG (G550);DBLink;NO;YES
+1059;ACMM to ADDOC;;ADDoc (1D07);ACMM (SS10);File;NO;YES
+1210;CDIS updated by ADDOC;;ADDoc (1D07);CDIS General (A420);;NO;YES
+514;Aircraft planning / production life;144;APC JAGUAR (PB00);ACMM (SS10);DBLink;NO;YES
+880;Virtual MSN info. Transfer;;APC JAGUAR (PB00);ACMM (SS10);DBLink;NO;YES
+344;Aircraft planning / production life;144;APC JAGUAR (PB00);APC JAGUAR (PB00);File;YES;YES
+850;Official indust baseline dates to APMM;;APC JAGUAR (PB00);APMM (1L01);DBLink;NO;NO
+857;Official indus baseline dates to BFEMS;;APC JAGUAR (PB00);BFEMS (PF00);DBLink;NO;
+847;Ope Reporting on APC Jaguar;;APC JAGUAR (PB00);BO reporting for Programmes (1K26);DBLink;NO;NO
+846;Official Area for contracts;;APC JAGUAR (PB00);CASCADE (F340);DBLink;NO;YES
+862;Official indus baselining dates for CERIS++;;APC JAGUAR (PB00);CERIS++ (VCV Configuration Management) (AU40);Service;NO;NO
+1602;APC to COM;;APC JAGUAR (PB00);COM (O180);;;
+814;Official area planning dates;;APC JAGUAR (PB00);Datahub Shop Floor  (Q500);DBLink;NO;YES
+859;Official indus baselining dates to DMT;;APC JAGUAR (PB00);DMT (S700);DBLink;NO;YES
+851;Official indus baseline dates to FCO;;APC JAGUAR (PB00);FCO Management Tool (PM00);DBLink;NO;NO
+853;Official aircraft + some official indus baseline dates to Comet;;APC JAGUAR (PB00);Flight Beluga (FP70);;NO;YES
+844;A/C table + indus baseline dates;;APC JAGUAR (PB00);IVP NG (AR10);DBLink;NO;NO
+858;Offical indus baseline dates to LIMS;;APC JAGUAR (PB00);LIMS (S380);DBLink;NO;YES
+860;Official indus baselining dates to PSE;;APC JAGUAR (PB00);PSE: ELCODATA (B580);DBLink;NO;YES
+852;Official indus baseline dates to RDB;;APC JAGUAR (PB00);R-DB Delta Calculation (G070);DBLink;NO;NO
+848;Official indus dates to ARP;;APC JAGUAR (PB00);SAP ARP ECC EXE_Prod_PEA (J050);DBLink;NO;YES
+849;Indus Baseline dates to Aerolia;;APC JAGUAR (PB00);SAP R/3 FR_xGI_LDS (B030);DBLink;NO;YES
+813;Official area planning dates;;APC JAGUAR (PB00);SARIS (P210);DBLink;NO;YES
+71;[1251] MSN, Dates;1251;APC JAGUAR (PB00);TAKSY:MODA (X010:MODA);DBLink;NO;YES
+941;PAG Nordenham;;APC JAGUAR (PB00);TAKSY:STL (X010:STL);DBLink;NO;YES
+845;Private area;;APC JAGUAR (PB00);TKZ-DB (NU59);File;NO;
+855;Official + PreRelease indust dates to cVault;;APC JAGUAR (PB00);UPS cVault (1P09);DBLink;NO;NO
+856;Tactical dates for reporting;;APC JAGUAR (PB00);UPSR Tactical Planning (1P13);Service;NO;NO
+861;Official indus baselining dates for VIP;;APC JAGUAR (PB00);VIP (R620);Service;NO;NO
+1601;APC7 to reporting;;APC7 (PB07);BO reporting for Programmes (1K26);DBLink;NO;NO
+904;Indstrial Planning dates (short term);;APC7 (PB07);EVPT (E760);DBLink;NO;YES
+905;Industrial Planning dates (short term);;APC7 (PB07);IDP (QC00);DBLink;NO;NO
+903;Industrial Planning Dates (short term);;APC7 (PB07);SARIS (P210);DBLink;NO;YES
+891;Industrial Planning Dates + Aircraft/AIP data;;APMM (1L01);AIRMIS2 (D540);DBLink;NO;NO
+895;Industrial Planning Dates;;APMM (1L01);CACIS NOMAD (E721);DBLink;NO;NO
+890;Industrial Planning Dates and Delivery/FAL location;;APMM (1L01);CAD-CSIP (A430);DBLink;NO;NO
+896;Indus Planning dates + Aircraft data + logo;;APMM (1L01);CDIS General (A420);DBLink;YES;YES
+894;Industrial Planning dates and planning issues;;APMM (1L01);FCO Management Tool (PM00);DBLink;NO;NO
+898;Industrial Planning Dates;;APMM (1L01);LIMS (S380);DBLink;NO;YES
+899;Industrial Planning dates and aircraft data;;APMM (1L01);LINDA2 (T140);DBLink;NO;YES
+910;Part numbers & Vendor information;;BFEMS (PF00);ACC (PA02);DBLink;NO;YES
+908;Part numbers, Vendors information;;BFEMS (PF00);ACMM (SS10);DBLink;NO;YES
+866;BFEMS to APC JAGUAR;;BFEMS (PF00);APC JAGUAR (PB00);DBLink;NO;NO
+915;BFE List information;;BFEMS (PF00);CACIS NOMAD (E721);DBLink;NO;NO
+914;BFE List transfer to partners;;BFEMS (PF00);SAP Americ xAM_LDS (1J44);Other;NO;YES
+912;BFE List transfer to partners;;BFEMS (PF00);SAP R/3 FR_xGI_LDS (B030);File;NO;YES
+913;BFE List transfer to partners;;BFEMS (PF00);SAP R/3 GE_xDA_LDS (B020);Other;NO;YES
+969;Delivery status updated;IL import;BFEMS (PF00);SAP R/3 GE_xDA_LDS (B020);;NO;YES
+916;BFE List information;;BFEMS (PF00);STATOOL (S690);Service;NO;NO
+99;forwarded to PTS logistics (ex CEVA);487;BFEMS (PF00);TAKSY:GESY (X010:GESY);File;NO;YES
+1599;BFEMS to cVault;;BFEMS (PF00);UPS cVault (1P09);;NO;NO
+940;AAT data;;BO reporting for Programmes (1K26);TAKSY:TAK (X010:TAK);Service;NO;YES
+1603;CCDR;;CERIS++ (VCV Configuration Management) (AU40);CABIN DOSSIER (D330);Service;NO;NO
+922;Reporting for FCOMT;;FCO Management Tool (PM00);FCO Management Tool (PM00);Service;NO;NO
+919;Industrial Planning dates;;FCO Management Tool (PM00);IVP NG (AR10);File;NO;NO
+976;SP0605753 - Customer order dates;IL import modified by IM;FCO Management Tool (PM00);Unified Planning for Series IVP-SAP and SUPER (F780);File;NO;NO
+1270;100% GTR (Ground Test Requirements) information for MSN;;FUN2 (I190);ESAO SA HAM (V430);File;NO;YES
+980;CHapter 10 data + A/C GTI Data ;;FUN2 (I190);IRS (U830);DB2 Exchange Table;YES;YES
+1271;100% GTI information;;FUN2 (I190);SAP R/3 GE_xDA_LDS (B020);File;NO;YES
+985;a500 EHS - SP - HAZMAT;IL import;HAZMAT (A500);SAP PGI Supply flying part (BC30);;NO;YES
+883;MSN Repository / GLP;;Host Interface Forecast Data (X710);SAP ERP Buxtehude/Zship (W440);File;NO;NO
+1639;Industrial planning reporting;;IDP (QC00);BO reporting for Programmes (1K26);Service;NO;NO
+1316;IVPNG to APMM;;IVP NG (AR10);APMM (1L01);DBLink;NO;NO
+1597;IVPNG to cVault;;IVP NG (AR10);UPS cVault (1P09);Service;NO;NO
+1263;MSN Corporate repository;;Master data MSN CPN (N362);SAP R3 CO -AFR (X127);File;YES;YES
+1293;MSN Corporate repository;;Master data MSN CPN (N362);SAP R3 CO -OPA - AD (NE53);File;YES;YES
+1262;Protocol transfer to MODA;;MIB (C030);TAKSY:MODA (X010:MODA);File;NO;YES
+1317;Active MSN to A-UK;;R-DB Delta Calculation (G070);DPDS (Y103);File;NO;YES
+918;Delta Information;;R-DB Delta Calculation (G070);IRS (U830);DB2 Exchange Table;NO;YES
+996;Delta 1,2 and 3;IL import;R-DB Delta Calculation (G070);IRS DELTA China (R360);;NO;YES
+921;Delta1, Delta2,  Delta2 baseline to MAEVA;;R-DB Delta Calculation (G070);MAEVA (N112);File;NO;YES
+1187;Electrical drawings to PSE;;R-DB Delta Calculation (G070);PSE (P010);File;NO;YES
+997;Manufacturing data extraction request;IL import;R-DB Delta Calculation (G070);SAP Americ xAM_LDS (1J44);File;NO;YES
+917;Delta1, Delta2,  Delta2 baseline to CAIR;;R-DB Delta Calculation (G070);SAP R/3 Corporate_xAC_LDS (B180);File;NO;YES
+999;Manufacturing data extraction request;IL import;R-DB Delta Calculation (G070);SAP R/3 GE_xDA_LDS (B020);File;NO;YES
+1197;Basic Manufacturing Data Germany;;R-DB Delta Calculation (G070);SAP R/3 GE_xDA_LDS (B020);File;NO;YES
+998;Manufacturing data extraction request;IL import;R-DB Delta Calculation (G070);SAP R/3 manufacturing China_xCH_LDS (J090);File;NO;YES
+920;SA reporting;;R-DB Delta Calculation (G070);SARIS (P210);File;NO;YES
+1209;SAP R/3 BXP To SAP BW;;SAP ERP Buxtehude/Zship (W440);SAP BW Buxtehude (W460);RFC;YES;NO
+1264;CPN Msn  repository;;SAP P11 - ERP CE (B010);SAP R3 CO -AFR (X127);File;YES;YES
+1265;CPN non Msn  repository;;SAP P11 - ERP CE (B010);SAP R3 CO -AFR (X127);File;YES;YES
+1292;Interface Finance Corporate BW - TM1;;SAP PBI - Netweaver BW (B100);Controlling tools TM1 (M210);File;NO;NO
+1269;WBS interface ARP to PGI;;SAP R3 ARP PS (XXXX);SAP R3 PS -AFR (X795);IDOC;NO;YES
+1266;File of consolidation with MSN data;;SAP R3 CO -AFR (X127);FACTS (N368);File;YES;NO
+1594;Invoice data exchange;;SAP R3 CO -OPA - AE (NE54);FACTS (N368);File;NO;NO
+1268;WBS interface PGI ARP;;SAP R3 PS -AFR (X795);SAP R3 ARP PS (XXXX);IDOC;NO;YES
+901;Short term industrial dates;;Unified Planning for Series IVP-SAP and SUPER (F780);APC JAGUAR (PB00);Service;NO;NO
+902;Industrial planning dates (short term planning);;Unified Planning for Series IVP-SAP and SUPER (F780);APC7 (PB07);DBLink;NO;NO
+1315;IVP/SUPER-SAP to APMM;;Unified Planning for Series IVP-SAP and SUPER (F780);APMM (1L01);DBLink;NO;NO
+1638;Dev planning dates and cost;;UPDEV NEO (G482);UPDEV Reporting (R020);Service;NO;NO
+867;cVault to APC Jaguar;;UPS cVault (1P09);APC JAGUAR (PB00);Service;NO;NO
+1281;cVault to BFEMS;;UPS cVault (1P09);BFEMS (PF00);;NO;NO
+1278;cVault to CAD-CSIP;;UPS cVault (1P09);CAD-CSIP (A430);;NO;NO
+1260;cVault to CASCADE;;UPS cVault (1P09);CASCADE (F340);;NO;YES
+1276;cVault to CDIS;;UPS cVault (1P09);CDIS General (A420);;NO;YES
+1283;cVault to CERIS/VCVconfmgt;;UPS cVault (1P09);CERIS++ (VCV Configuration Management) (AU40);Service;NO;NO
+1258;cVault to COM;;UPS cVault (1P09);COM (O180);;NO;YES
+1282;cVault reporting;;UPS cVault (1P09);Corporate BAM (DJ90);;NO;NO
+1286;cVault to DMT;;UPS cVault (1P09);DMT (S700);;NO;YES
+1274;cVault to EVPT;;UPS cVault (1P09);EVPT (E760);;NO;YES
+1277;cVault to FCOMT;;UPS cVault (1P09);FCO Management Tool (PM00);;NO;NO
+1280;cVault to Fligh Belouga/COMET;;UPS cVault (1P09);Flight Beluga (FP70);;NO;YES
+1279;cVault to LIMS;;UPS cVault (1P09);LIMS (S380);;NO;YES
+1596;cVault to OETMI KPI (1K64);;UPS cVault (1P09);OMMS & BSC Reporting - Industrial Planning KPIS (1K64);DBLink;NO;NO
+1595;cVault to PSE via PSS;;UPS cVault (1P09);PSE: ELCODATA (B580);;NO;YES
+1287;cVault to RDB;;UPS cVault (1P09);R-DB Delta Calculation (G070);;NO;NO
+1275;cVault to SARIS;;UPS cVault (1P09);SARIS (P210);;NO;YES
+1285;cVault to Taksy;;UPS cVault (1P09);TAKSY (X010);;NO;YES
+1284;cVault to VIP/VCV work in progress;;UPS cVault (1P09);VIP (R620);;NO;NO
+1329;(ALL Document Type);;AirN@v / Maintenance A380 (O370);Federated Search (I770);File;NO;YES
+1330;(NTM SRM);;AirN@v / Repair LR/SA (O440);Federated Search (I770);File;NO;YES
+1328;TFU, SIL, AOT, OIT,FOT,OIT-FOT, MID, AD, UEAD,MOD,MP, SBIT Booklet, VSB, SB;;AirN@v Engineering V3 (T890);Federated Search (I770);File;NO;YES
+1254;AP1-Fuehlsbuttel;;Repair Manager (K140);SAP SD After Sales PDA (R580);;NO;YES
+45;PL & PU;1214;ALENIA A320 (xxxxx);GILDA (GG00 );File;NO;YES
+1248;PR3->MRP;;SAP PR3 (N/A);SAP PP MRP PDA (R450);RFC;NO;
+1126;CA allocation management;;SAP PR3 (N/A);SAP R/3 Corporate_xAC_LDS (B180);;NO;YES
+1127;Equipment allocation management;;SAP PR3 (N/A);SAP R/3 Corporate_xAC_LDS (B180);;NO;YES
+1128;Concession management;;SAP PR3 (N/A);SAP R/3 Corporate_xAC_LDS (B180);;NO;YES

@@ -1,0 +1,29 @@
+{
+  "consul": "{{ .CONSUL_ADDRESS }}",
+  "services": [
+    {
+      "name": "mongod",
+      "port": 27017,
+      "interfaces": ["eth0"],
+      "health": "mongo --eval 'db.serverStatus().ok'",
+      "poll": 1,
+      "ttl": 5,
+      "tags": [
+        "{{.CONSUL_ENVIRONMENT}}"
+      ]
+    }
+  ],
+    "coprocesses":[{
+      "command": [
+            "consul", 
+            "agent",
+            "-data-dir=/consul-data",
+            "-config-dir=/config",
+            "-rejoin",
+            "-retry-join", "{{ .CONSUL_ADDRESS }}",
+            "-retry-max", "10",
+            "-retry-interval", "10s"
+        ],
+    "restarts": "unlimited"
+    }]
+}

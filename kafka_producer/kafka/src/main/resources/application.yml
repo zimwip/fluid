@@ -1,0 +1,28 @@
+app:
+  id: ${random.uuid}
+  name: "iam"
+  consul:
+    hostname: "localhost"
+    port: 8500
+
+spring:
+  main:
+    banner-mode: "off"
+  application:
+    name: "iam"
+    java:
+      version: "@java.version@"
+  jmx:
+    enable: false
+  data:
+    mongodb.host: "mongo"
+    mongodb.port: 27017
+    mongodb.database: "prod"
+    
+producer:
+    file: "C://input.txt"
+    topic: "input-topic"
+
+server:
+  port: 8080
+

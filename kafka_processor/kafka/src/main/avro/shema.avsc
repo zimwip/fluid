@@ -1,0 +1,28 @@
+{"namespace": "kafka.avro",
+ "type": "record",
+ "name": "CDCEvent",
+ "fields": [
+     { "name" : "action",
+       "type": {
+        "name": "ACTION",
+        "type": "enum",
+        "symbols" : ["INSERT", "UPDATE", "DELETE"]
+      }},
+     {"name": "table",  "type": "string"},
+     {"name": "before", "type": {
+                "type": "array",  
+                "items":{
+                    "name":"Column",
+                    "type":"record",
+                    "fields":[
+                        {"name":"name", "type":"string"},
+                        {"name":"value", "type":"string"}
+                    ]
+                }}
+     },
+     {"name": "after", "type": {
+                "type": "array",  
+                "items": "Column"}
+     }
+ ]
+}

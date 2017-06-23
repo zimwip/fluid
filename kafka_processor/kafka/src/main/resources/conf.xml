@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<globalsearch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="conf.xsd"> <!-- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="conf.xsd" -->
+    <businessObjectList>
+        <MainObject tableName="ROOT" name="Object 1">
+            <PrimaryKeyDefinition>
+                <PrimaryKey type="String">PK</PrimaryKey>
+            </PrimaryKeyDefinition>
+            <LinkDefinition>
+            </LinkDefinition>
+            <AttributesList>
+                <Attribute rowData="false" type="String" name="id">TechContextHeader.CLASSNAMEA2A2|| ':' || TechContextHeader.IDA2A2</Attribute>
+            </AttributesList>
+            <SubObjectList>
+                <SubObject tableName="CHILD1" name="Child1">
+                    <PrimaryKeyDefinition>
+                        <PrimaryKey type="String">PK</PrimaryKey>
+                    </PrimaryKeyDefinition>
+                    <LinkDefinition>
+                        <ForeignKey outer="PK">FK</ForeignKey>
+                    </LinkDefinition>
+                    <AttributesList>
+                    </AttributesList>
+                    <SubObjectList>
+                    </SubObjectList>
+                </SubObject>
+                <SubObject tableName="CHILD2" name="Child2">
+                    <PrimaryKeyDefinition>
+                        <PrimaryKey type="String">PK</PrimaryKey>
+                    </PrimaryKeyDefinition>
+                    <LinkDefinition>
+                        <ForeignKey outer="COL1">FK</ForeignKey>
+                    </LinkDefinition>
+                    <AttributesList>
+                    </AttributesList>
+                    <SubObjectList>
+                    </SubObjectList>
+                </SubObject>
+            </SubObjectList>
+        </MainObject>
+        <MainObject tableName="ROOT" name="Object 2">
+            <PrimaryKeyDefinition>
+                <PrimaryKey type="String">PK</PrimaryKey>
+            </PrimaryKeyDefinition>
+            <LinkDefinition>
+            </LinkDefinition>
+            <AttributesList>
+                <Attribute rowData="false" type="String" name="id">TechContextHeader.CLASSNAMEA2A2|| ':' || TechContextHeader.IDA2A2</Attribute>
+            </AttributesList>
+            <SubObjectList>
+                <SubObject tableName="CHILD1" name="Child3">
+                    <PrimaryKeyDefinition>
+                        <PrimaryKey type="String">PK</PrimaryKey>
+                    </PrimaryKeyDefinition>
+                    <LinkDefinition>
+                        <ForeignKey outer="PK">FK</ForeignKey>
+                    </LinkDefinition>
+                    <AttributesList>
+                    </AttributesList>
+                    <SubObjectList>
+                    </SubObjectList>
+                </SubObject>
+            </SubObjectList>
+        </MainObject>
+    </businessObjectList>
+</globalsearch>
