@@ -63,22 +63,7 @@ public class KafkaProcessor implements ApplicationContextAware {
                 // add the sink processor node "SINK1" that takes Kafka topic "sink-topic1"
                 // as output and the "PROCESS1" node as its upstream processor
                 .addSink("SINK1", "output-topic", "PROCESS1");
-//        builder = new KStreamBuilder();
-//        KStream<String, String> source1 = builder.stream("input-topic");
-//        KStream<String, String> mapped = source1.mapValues(record -> "Mapped stream : " + record);
-//        KTable<Windowed<String>, Long> counts = mapped.groupByKey().
-////                reduce((String v, String v1) -> v + v1,
-////                "aggregate");
-//        aggregate(
-//                () -> 0L, // initial value
-//                (aggKey, value, aggregate) -> {logger.info("aggregate {} {}", value, aggKey); return aggregate + 1L;}, // aggregating value
-//                TimeWindows.of(TimeUnit.SECONDS.toMillis(1L)), // intervals in milliseconds
-//                Serdes.Long(), // serde for aggregated value
-//                "count" // State name
-//        );
-//        counts.print();
-//        KStream<String, String> mapped2 = counts.toStream().map((Windowed<String> k, Long v) -> new KeyValue<>(k.toString() +"["+ new Date(k.window().start()) +", "+ new Date(k.window().end())+"]", v.toString()));
-//        mapped2.to("output-topic");
+
     }
 
     public void start() {

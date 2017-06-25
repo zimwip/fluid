@@ -6,7 +6,7 @@
        "type": {
         "name": "ACTION",
         "type": "enum",
-        "symbols" : ["INSERT", "UPDATE", "DELETE"]
+        "symbols" : ["START", "END", "INSERT", "UPDATE", "DELETE"]
       }},
      {"name": "table",  "type": "string"},
      {"name": "before", "type": {

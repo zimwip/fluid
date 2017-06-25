@@ -34,7 +34,7 @@ public class GraphMapper {
     private static final Logger logger = LoggerFactory.getLogger(GraphMapper.class);
     private final static String MAX_VALUE = "\"" + Long.MAX_VALUE + "\"";
     private final MapperConfig config;
-    private final Map<String, GraphQuery> queries = new HashMap<>();
+    private final Map<String, GraphPreparedQuery> queries = new HashMap<>();
 
     @Autowired
     @Qualifier("neo4jDriver")
@@ -48,12 +48,12 @@ public class GraphMapper {
     private void initialize() {
 
         for (String table : config.getTableSet()) {
-            GraphQuery graphQuery = new GraphQuery();
+            GraphPreparedQuery.Builder builder = new GraphPreparedQuery.Builder();
             List<SqlObject> objects = config.getObjectForTable(table);
             if (objects == null) {
                 return;
             }
-            queries.put(table, graphQuery);
+            
             Map<String, PrimaryKey> pksh = new HashMap<>();
             Map<String, ForeignKey> fksh = new HashMap<>();
             boolean first;
@@ -62,6 +62,7 @@ public class GraphMapper {
                 first = true;
                 for (PrimaryKey pk : obj.getPrimaryKeys()) {
                     pksh.put(pk.getName(), pk);
+                    builder.pk(pk.getName());
                     // also build Index on key
                     if (first) {
                         index += " ";
@@ -75,9 +76,8 @@ public class GraphMapper {
                 String finalIndex = index;
                 try (org.neo4j.driver.v1.Session session = driver.session()) {
                     session.writeTransaction((Transaction tx) -> {
-                        logger.info("INDEX Query {}", finalIndex);
                         StatementResult rs = tx.run(finalIndex);
-                        logger.info("process index in store index added {}", rs.summary().counters().indexesAdded());
+                        logger.info("INDEX Query {} \nprocess index in store index added {}", finalIndex, rs.summary().counters().indexesAdded());
                         return 0L;
                     });
                 }
@@ -94,8 +94,9 @@ public class GraphMapper {
             List<ForeignKey> fks = new ArrayList<>(fksh.values());
 
             first = true;
+            // create (TABLE) - (RECORD) level.
             String query = "MERGE (table:TABLE:" + table + " { tableName:$table}) WITH table MERGE (table) <-[:OF]- (record:RECORD:TAB_" + table + " {";
-            graphQuery.addBasicValue("table", table);
+            builder.baseVal("table", table);
             for (PrimaryKey pk : pks) {
                 if (first) {
                     query += " ";
@@ -104,10 +105,11 @@ public class GraphMapper {
                     query += ", ";
                 }
                 query += pk.getName() + " : $" + pk.getName();
-                graphQuery.addKey(pk.getName());
+                builder.key(pk.getName());
             }
             // Existing version insert merge
             query += " }) WITH record ";
+            // Now create record.
 //            query += "OPTIONAL MATCH (:VERSION) -[pv:VERSION_OF]-> (record) WHERE pv.from < $tx AND pv.to > $tx ";
 //             // Existing version insert merge
 //            query += "WITH record, pv, CASE WHEN pv IS NOT null THEN pv.to";
@@ -117,26 +119,28 @@ public class GraphMapper {
 //            query += "CASE WHEN pv IS null THEN ";
 //            query += "SET ppv.from = $tx ";
 //            query += "END";
-            query += "MERGE (version:VERSION {tx: $tx}) -[:VERSION_OF {from:$tx, to:" + MAX_VALUE + "}]-> (record) ";
-            query += "WITH record, version ";
+            query += "MERGE (version:VERSION {tx: $tx}) -[vlink:VERSION_OF {from:$tx, to:" + MAX_VALUE + "}]-> (record) ";
+            query += "WITH record, version, vlink ";
             // Insert data here
+            query = query + "\nSET vlink.to = "+MAX_VALUE ;
             if (fks.size() > 0) {
-                query = query + "\nSET";
+                query = query + " ";
                 first = true;
                 for (PrimaryKey pk : pks) {
-                    if (first) {
-                        query += " ";
-                        first = false;
-                    } else {
-                        query += ", ";
-                    }
+//                    if (first) {
+//                        query += " ";
+//                        first = false;
+//                    } else {
+//                        query += ", ";
+//                    }
+                    query += ",\n ";
                     query += "version."+pk.getName() + " = $" + pk.getName();
-                    graphQuery.addKey(pk.getName());
+                    builder.key(pk.getName());
                 }
                 for (ForeignKey fk : fks) {
-                        query += ",\n ";
+                    query += ",\n ";
                     query += "version." + fk.getOuter() + " = $" + fk.getOuter();
-                    graphQuery.addKey(fk.getOuter());
+                    builder.key(fk.getOuter());
                 }
             }
             // end insert data
@@ -146,7 +150,7 @@ public class GraphMapper {
             for (SqlObject obj : objects) {
                 // link with object.
                 query += "\nMERGE (" + obj.getClearAlias().toLowerCase() + ":OBJECT:OBJ_" + obj.getClearAlias() + "  { name:$" + obj.getClearAlias() + "_name })-[:REFERENCE]->(record) ";
-                graphQuery.addBasicValue(obj.getClearAlias() + "_name", obj.getAlias());
+                builder.baseVal(obj.getClearAlias() + "_name", obj.getAlias());
                 withQuery += ", " + obj.getClearAlias().toLowerCase();
             }
             boolean firstParent = true;
@@ -169,7 +173,7 @@ public class GraphMapper {
                         query += ", ";
                     }
                     query += fk.getOuter() + " : $" + fk.getCurrent();
-                    graphQuery.addKey(fk.getCurrent());
+                    builder.key(fk.getCurrent());
                 }
                 query += " }) -[:OF]-> (:TABLE:" + obj.getParent().getTableName() + ")";
                 mergeQuery += "\nMERGE (" + obj.getClearAlias().toLowerCase() + ")-[:PART_OF]->(" + obj.getClearAlias().toLowerCase() + "_" + obj.getParent().getClearAlias().toLowerCase() + ") ";
@@ -197,19 +201,20 @@ public class GraphMapper {
                             query += ", ";
                         }
                         query += fk.getCurrent() + " : $" + fk.getOuter();
-                        graphQuery.addKey(fk.getOuter());
+                        builder.key(fk.getOuter());
                     }
                     query += " }) -[:OF]-> (:TABLE:" + childObj.getTableName() + ")";
                     mergeQuery += "\nMERGE (" + obj2.getClearAlias().toLowerCase() + ")<-[:PART_OF]-(" + obj2.getClearAlias().toLowerCase() + "_" + childObj.getClearAlias().toLowerCase() + ") ";
                 }
             }
             query += mergeQuery;
-            graphQuery.setQuery(query);
+            builder.query(query);
+            queries.put(table, builder.build());
         }
 
     }
 
-    public GraphQuery getQueryForTable(String table) {
+    public GraphPreparedQuery getQueryForTable(String table) {
         return queries.get(table);
     }
 
