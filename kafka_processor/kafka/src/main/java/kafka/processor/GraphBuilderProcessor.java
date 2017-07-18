@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import kafka.avro.CDCEvent;
 import kafka.avro.Column;
 import kafka.graph.GraphMapper;
@@ -138,7 +139,7 @@ public class GraphBuilderProcessor implements Processor<String, String> {
         if (q.getParameters(pks) != null) {
             logger.warn("Unexpected entry for tx {}, table {}, keys {}", key, event.getTable(), pks);
         } else {
-            Map <String, Object> parameter = q.createParameters(pks);
+            Map<String, Object> parameter = q.createParameters(pks);
             parameter.putAll(query.getInitParameter());
             String pkVal = "";
             for (String column : query.keys()) {
@@ -167,14 +168,18 @@ public class GraphBuilderProcessor implements Processor<String, String> {
         try (org.neo4j.driver.v1.Session session = driver.session()) {
             session.writeTransaction((Transaction tx) -> {
                 TransactionCacheEntry entry = transactionCache.remove(key);
+                long timeAvailable = 0L;
                 for (Query q : entry.getQueries().values()) {
                     for (Map<String, Object> parameters : q.getParameterList()) {
+                        long start = System.currentTimeMillis();
                         parameters.put("tx", context.offset());
                         logger.debug("Merge Query {} \n with param {}", q.getQuery(), parameters);
                         StatementResult rs = tx.run(q.getQuery(), parameters);
-                        logger.debug("store modification node created {}, relationship created {}", rs.summary().counters().nodesCreated(), rs.summary().counters().relationshipsCreated());
+                        //logger.debug("store modification node created {}, relationship created {}", rs.summary().counters().nodesCreated(), rs.summary().counters().relationshipsCreated());
+                        timeAvailable += System.currentTimeMillis() - start;
                     }
                 }
+                logger.info("Process TX : in {} ms", timeAvailable);
                 return key;
             });
         }
@@ -187,11 +192,10 @@ public class GraphBuilderProcessor implements Processor<String, String> {
         List<String> toBeRemoved = new ArrayList<>();
         for (TransactionCacheEntry entry : transactionCache.values()) {
             if (entry.getCache_date() < timestamp - 5000) {
-                toBeRemoved.add(entry.getKey());         
+                toBeRemoved.add(entry.getKey());
             }
         }
-        for (String key : toBeRemoved)
-        {
+        for (String key : toBeRemoved) {
             logger.warn("remove old tx : {}", key);
             transactionCache.remove(key);
         }

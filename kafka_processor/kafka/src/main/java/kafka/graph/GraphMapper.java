@@ -7,8 +7,10 @@ package kafka.graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import javax.annotation.PostConstruct;
 import org.airbus.mapper.MapperConfig;
 import org.airbus.mapper.domain.ForeignKey;
@@ -32,7 +34,6 @@ import org.springframework.stereotype.Component;
 public class GraphMapper {
 
     private static final Logger logger = LoggerFactory.getLogger(GraphMapper.class);
-    private final static String MAX_VALUE = "\"" + Long.MAX_VALUE + "\"";
     private final MapperConfig config;
     private final Map<String, GraphPreparedQuery> queries = new HashMap<>();
 
@@ -46,16 +47,20 @@ public class GraphMapper {
 
     @PostConstruct
     private void initialize() {
-
+        Map<String, String> indexQuery = new HashMap<>();
+        indexQuery.put("TABLE", "CREATE INDEX ON :TABLE (tableName)");
+        indexQuery.put("VERSION_FROM", "CREATE INDEX ON :VERSION (tx)");
+        indexQuery.put("VERSION_TO", "CREATE INDEX ON :VERSION (to)");
         for (String table : config.getTableSet()) {
             GraphPreparedQuery.Builder builder = new GraphPreparedQuery.Builder();
+            builder.baseVal("max_val", Long.MAX_VALUE);
             List<SqlObject> objects = config.getObjectForTable(table);
             if (objects == null) {
                 return;
             }
-            
+
             Map<String, PrimaryKey> pksh = new HashMap<>();
-            Map<String, ForeignKey> fksh = new HashMap<>();
+            Set<String> fksh = new HashSet<>();
             boolean first;
             for (SqlObject obj : objects) {
                 String index = "CREATE INDEX ON :TAB_" + table + "( ";
@@ -74,28 +79,27 @@ public class GraphMapper {
                 }
                 index += " )";
                 String finalIndex = index;
-                try (org.neo4j.driver.v1.Session session = driver.session()) {
-                    session.writeTransaction((Transaction tx) -> {
-                        StatementResult rs = tx.run(finalIndex);
-                        logger.info("INDEX Query {} \nprocess index in store index added {}", finalIndex, rs.summary().counters().indexesAdded());
-                        return 0L;
-                    });
-                }
+                indexQuery.put("TAB_" + table, finalIndex);
                 // handle SubObject Reference
+                for (ForeignKey fk : obj.getForeignKeys()) {
+                    if (pksh.get(fk.getCurrent()) == null) { // do not add fk if already in pk.
+                        fksh.add(fk.getCurrent());
+                    }
+                }
                 for (SqlObject subObject : obj.getSubObjects()) {
                     for (ForeignKey fk : subObject.getForeignKeys()) {
                         if (pksh.get(fk.getOuter()) == null) { // do not add fk if already in pk.
-                            fksh.put(fk.getOuter(), fk);
+                            fksh.add(fk.getOuter());
                         }
                     }
                 }
             }
             List<PrimaryKey> pks = new ArrayList<>(pksh.values());
-            List<ForeignKey> fks = new ArrayList<>(fksh.values());
+            List<String> fks = new ArrayList<>(fksh);
 
             first = true;
             // create (TABLE) - (RECORD) level.
-            String query = "MERGE (table:TABLE:" + table + " { tableName:$table}) WITH table MERGE (table) <-[:OF]- (record:RECORD:TAB_" + table + " {";
+            String query = "MERGE (table:TABLE { tableName:$table}) WITH table MERGE (table) <-[:OF]- (record:RECORD:TAB_" + table + " {";
             builder.baseVal("table", table);
             for (PrimaryKey pk : pks) {
                 if (first) {
@@ -108,41 +112,38 @@ public class GraphMapper {
                 builder.key(pk.getName());
             }
             // Existing version insert merge
-            query += " }) WITH record ";
-            // Now create record.
-//            query += "OPTIONAL MATCH (:VERSION) -[pv:VERSION_OF]-> (record) WHERE pv.from < $tx AND pv.to > $tx ";
-//             // Existing version insert merge
-//            query += "WITH record, pv, CASE WHEN pv IS NOT null THEN pv.to";
-//            query += "SET pv.to = $tx ";
-//            query += "END "; 
-//            // First version direct merge
-//            query += "CASE WHEN pv IS null THEN ";
-//            query += "SET ppv.from = $tx ";
-//            query += "END";
-            query += "MERGE (version:VERSION {tx: $tx}) -[vlink:VERSION_OF {from:$tx, to:" + MAX_VALUE + "}]-> (record) ";
-            query += "WITH record, version, vlink ";
+            query += " }) WITH record\n";
+            query += "MERGE (tx:TX {tx:$tx})\n";
+            query += "CREATE (tx) <-[:INCLUDE_IN]- (version:VERSION {tx: $tx}) -[:VERSION_OF]-> (record)";
+            query = query + "\nSET version.to = $max_val ";
             // Insert data here
-            query = query + "\nSET vlink.to = "+MAX_VALUE ;
-            if (fks.size() > 0) {
-                query = query + " ";
-                first = true;
-                for (PrimaryKey pk : pks) {
+//            query = query + " SET";
+//            first = true;
+            for (PrimaryKey pk : pks) {
 //                    if (first) {
 //                        query += " ";
 //                        first = false;
 //                    } else {
 //                        query += ", ";
 //                    }
-                    query += ",\n ";
-                    query += "version."+pk.getName() + " = $" + pk.getName();
-                    builder.key(pk.getName());
-                }
-                for (ForeignKey fk : fks) {
-                    query += ",\n ";
-                    query += "version." + fk.getOuter() + " = $" + fk.getOuter();
-                    builder.key(fk.getOuter());
-                }
+                query += ", ";
+                query += "version." + pk.getName() + " = $" + pk.getName();
+                builder.key(pk.getName());
             }
+            for (String fk : fks) {
+                query += ",\n ";
+                query += "version." + fk + " = $" + fk;
+                builder.key(fk);
+            }
+            // Now create record.
+            query += "\nWITH record, version\n";
+            query += "OPTIONAL MATCH (pversion:VERSION) -[:VERSION_OF]-> (record) WHERE pversion.tx < $tx AND pversion.to > $tx ";
+            // Existing version insert merge
+            query += "WITH record, version, collect(pversion) as previous\n";
+            query += "FOREACH (prev IN previous | ";
+            query += "CREATE (version) -[:PREVIOUS]-> (pversion) ";
+            query = query + "\nSET version.to = pversion.to";
+            query += ", pversion.to = $tx )";
             // end insert data
             String withQuery = "\n WITH record";
             String mergeQuery = "";
@@ -175,7 +176,8 @@ public class GraphMapper {
                     query += fk.getOuter() + " : $" + fk.getCurrent();
                     builder.key(fk.getCurrent());
                 }
-                query += " }) -[:OF]-> (:TABLE:" + obj.getParent().getTableName() + ")";
+                query += " }) -[:OF]-> (:TABLE {tableName:$" + obj.getParent().getClearAlias().toLowerCase() + "Table})";
+                builder.baseVal(obj.getParent().getClearAlias().toLowerCase() + "Table", obj.getParent().getTableName());
                 mergeQuery += "\nMERGE (" + obj.getClearAlias().toLowerCase() + ")-[:PART_OF]->(" + obj.getClearAlias().toLowerCase() + "_" + obj.getParent().getClearAlias().toLowerCase() + ") ";
             }
             query += mergeQuery;
@@ -203,7 +205,8 @@ public class GraphMapper {
                         query += fk.getCurrent() + " : $" + fk.getOuter();
                         builder.key(fk.getOuter());
                     }
-                    query += " }) -[:OF]-> (:TABLE:" + childObj.getTableName() + ")";
+                    query += " }) -[:OF]-> (:TABLE {tableName:$" + childObj.getClearAlias().toLowerCase() + "Table})";
+                    builder.baseVal(childObj.getClearAlias().toLowerCase() + "Table", childObj.getTableName());
                     mergeQuery += "\nMERGE (" + obj2.getClearAlias().toLowerCase() + ")<-[:PART_OF]-(" + obj2.getClearAlias().toLowerCase() + "_" + childObj.getClearAlias().toLowerCase() + ") ";
                 }
             }
@@ -211,7 +214,16 @@ public class GraphMapper {
             builder.query(query);
             queries.put(table, builder.build());
         }
-
+        // Update INDEX if needed
+        try (org.neo4j.driver.v1.Session session = driver.session()) {
+            session.writeTransaction((Transaction tx) -> {
+                for (String query : indexQuery.values()) {
+                    StatementResult rs = tx.run(query);
+                    logger.info("INDEX Query {} : process index in store index added {}", query, rs.summary().counters().indexesAdded());
+                }
+                return 0L;
+            });
+        }
     }
 
     public GraphPreparedQuery getQueryForTable(String table) {

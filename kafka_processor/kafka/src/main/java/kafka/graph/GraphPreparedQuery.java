@@ -78,7 +78,7 @@ public class GraphPreparedQuery {
             this.pKeys.add(key);
         }
 
-        public void baseVal(String key, String value) {
+        public void baseVal(String key, Object value) {
             this.baseVariable.put(key, value);
         }
 
