@@ -1,0 +1,3 @@
+rootProject.name = 'kafka-stream'
+include ':mapper'
+project(':mapper').projectDir = new File('../../../mapper')
