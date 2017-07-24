@@ -20,11 +20,12 @@ venv/
 # IPythonNotebook
 .ipynb_checkpoints/
 
-gradle/wrapper/
+gradle/
 .gradle/
 .nb-gradle/
 target/
 build/
+out/
 generated-sources/
 node_modules/
 

@@ -4,10 +4,11 @@ app:
   consul:
     hostname: "localhost"
     port: 8500
-  neo4j:
-    url: "bolt://localhost:7687"
-    user: "neo4j"
-    pwd: "toto"
+
+neo4j:
+  url: "bolt://localhost:7687"
+  user: "neo4j"
+  pwd: "toto"
 
 spring:
   main:
