@@ -12,7 +12,6 @@ import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
@@ -21,6 +20,12 @@ import java.util.logging.Level;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.annotation.PreDestroy;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Invocation;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import kafka.admin.AdminUtils;
 import kafka.admin.RackAwareMode;
 import kafka.utils.ZKStringSerializer$;
@@ -31,9 +36,9 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.apache.kafka.common.serialization.StringSerializer;
+import org.fagazi.enedis.DataResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
@@ -49,6 +54,11 @@ public class KafkaProducer {
     private String file = "C://Work/input.txt";
 
     private List<String> lines = new ArrayList<>();
+    
+    // REST access to data
+    private Client client = ClientBuilder.newClient();
+    private WebTarget webTarget = client.target("https://data.enedis.fr/api");
+    private WebTarget employeeWebTarget  = webTarget.path("records/1.0/search");
 
     // Create our producer properties
     //@Value("${producer.topic}")
@@ -143,7 +153,14 @@ public class KafkaProducer {
         started = false;
     }
 
-    public void send() {
+    public Future<DataResponse> send() {
+        Invocation.Builder invocationBuilder = employeeWebTarget
+                .queryParam("dataset","bilan-electrique-demi-heure")
+                .queryParam("rows", 1)
+                .queryParam("start", 1)
+                .queryParam("sort","horodate")
+                .request(MediaType.APPLICATION_JSON);
+        Future<DataResponse> response  = invocationBuilder.async().get(DataResponse.class);
         Future<RecordMetadata> send = producerRecord();
         try {
             logger.info("send message {}", send.get());
@@ -152,6 +169,7 @@ public class KafkaProducer {
         } catch (ExecutionException ex) {
             java.util.logging.Logger.getLogger(KafkaProducer.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return response;
     }
 
     @PreDestroy

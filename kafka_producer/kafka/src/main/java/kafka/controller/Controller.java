@@ -15,11 +15,21 @@
  */
 package kafka.controller;
 
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Future;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.container.AsyncResponse;
+import javax.ws.rs.container.CompletionCallback;
+import javax.ws.rs.container.ConnectionCallback;
+import javax.ws.rs.container.Suspended;
 import javax.ws.rs.core.Response;
+import jersey.repackaged.com.google.common.util.concurrent.Futures;
 import kafka.services.KafkaProducer;
+import org.fagazi.enedis.DataResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Component;
@@ -38,16 +48,40 @@ public class Controller {
         producer.start();
         return Response.ok("Starting producer").build();
     }
-    
-        @GET
+
+    @GET
     @Path("/send")
     @Produces("application/json")
-    public Response send() {
-        producer.send();
-        return Response.ok("Sending message").build();
+    public void send(@Suspended final AsyncResponse asyncResponse) {
+        asyncResponse.register(new CompletionCallback() {
+            @Override
+            public void onComplete(Throwable throwable) {
+                if (throwable == null) {
+                    //Everything is good. Response has been successfully 
+                    //dispatched to client
+                } else {
+                    //An error has occurred during request processing
+                }
+            }
+        }, new ConnectionCallback() {
+            public void onDisconnect(AsyncResponse disconnected) {
+                //Connection lost or closed by the client!
+            }
+        });
+        
+        CompletableFuture.supplyAsync(() -> {
+            try {
+                return producer.send().get();
+            } catch (InterruptedException | ExecutionException e) {
+                throw new RuntimeException(e);
+            }
+        })
+                .thenApply((result) -> 
+        asyncResponse.resume(result)
+    );
     }
-    
-            @GET
+
+    @GET
     @Path("/config")
     @Produces("application/json")
     public Response config() {

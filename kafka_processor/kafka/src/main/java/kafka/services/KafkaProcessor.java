@@ -50,7 +50,7 @@ public class KafkaProcessor implements ApplicationContextAware {
         StateStoreSupplier countStore = Stores.create("Counts")
                 .withKeys(Serdes.String())
                 .withValues(Serdes.Long())
-                .inMemory()
+                .persistent()
                 .build();
 
         builder = new TopologyBuilder();
