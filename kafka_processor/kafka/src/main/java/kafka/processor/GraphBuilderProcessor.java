@@ -125,16 +125,16 @@ public class GraphBuilderProcessor implements Processor<String, String> {
 
     private void handleInsert(String key, CDCEvent event) {
         logger.debug("process insert {}", event);
-        GraphPreparedQuery query = graphMapper.getQueryForTable(event.getTable().toString());
+        GraphPreparedQuery query = graphMapper.getQueryForTable(event.getTable());
         if (query == null) {
             return;
         }
         TransactionCacheEntry tx = transactionCache.get(key);
         String pks = query.pks(event);
         Query q;
-        if ((q = tx.getQueries().get(event.getTable().toString())) == null) {
+        if ((q = tx.getQueries().get(event.getTable())) == null) {
             q = new Query(query.query());
-            tx.getQueries().put(event.getTable().toString(), q);
+            tx.getQueries().put(event.getTable(), q);
         }
         if (q.getParameters(pks) != null) {
             logger.warn("Unexpected entry for tx {}, table {}, keys {}", key, event.getTable(), pks);
@@ -145,7 +145,7 @@ public class GraphBuilderProcessor implements Processor<String, String> {
             for (String column : query.keys()) {
                 for (Column col : event.getAfter()) {
                     if (col.getName().equals(column)) {
-                        pkVal = col.getValue().toString();
+                        pkVal = col.getValue();
                         break;
                     }
                 }

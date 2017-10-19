@@ -68,14 +68,14 @@ const queryType = new graphql.GraphQLObjectType({
     allPeople: {
   type: new graphql.GraphQLList(PersonType),
   resolve: fetchPeople,
-},
-person: {
-  type: PersonType,
-  args: {
-    id: { type: graphql.GraphQLString },
   },
-  resolve: (root, args) => fetchPersonByURL(`/people/${args.id}/`),
-},
+  person: {
+    type: PersonType,
+    args: {
+      id: { type: graphql.GraphQLString },
+    },
+    resolve: (root, args) => fetchPersonByURL(`/people/${args.id}/`),
+  },
     user: {
       type: userType,
       // `args` describes the arguments that the `user` query accepts

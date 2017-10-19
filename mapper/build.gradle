@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'org.airbus'
+version = '1.0-SNAPSHOT'
+
+description = """mapper"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+
+repositories {
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+dependencies {
+    compile group: 'commons-lang', name: 'commons-lang', version:'2.3'
+    compile group: 'org.jdom', name: 'jdom2', version:'2.0.5'
+    compile group: 'org.slf4j', name: 'slf4j-api', version:'1.7.7'
+    testCompile group: 'junit', name: 'junit', version:'3.8.1'
+}

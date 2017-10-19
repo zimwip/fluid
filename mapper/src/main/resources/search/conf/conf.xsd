@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="" elementFormDefault="qualified"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:attribute name="type"  type="xsd:string"/>
+	<xsd:element name="globalsearch">
+		<xsd:complexType mixed="true">
+			<xsd:sequence>
+				<xsd:element name="businessObjectList" minOccurs="0">
+					<xsd:complexType mixed="true">
+						<xsd:sequence>
+							<xsd:element name="MainObject" maxOccurs="unbounded">
+								<xsd:complexType mixed="true">
+									<xsd:sequence>
+										<xsd:element name="PrimaryKeyDefinition"
+											minOccurs="0">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="PrimaryKey" maxOccurs="unbounded">
+														<xsd:complexType>
+															<xsd:simpleContent>
+																<xsd:extension base="xsd:string">
+																	<xsd:attribute type="xsd:string" name="type" />
+																</xsd:extension>
+															</xsd:simpleContent>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="LinkDefinition" minOccurs="0"
+											maxOccurs="unbounded">
+											<xsd:complexType mixed="true">
+												<xsd:sequence>
+													<xsd:element name="ForeignKey" minOccurs="0"
+														maxOccurs="unbounded">
+														<xsd:complexType>
+															<xsd:simpleContent>
+																<xsd:extension base="xsd:string">
+																	<xsd:attribute type="xsd:string" name="outer" />
+																</xsd:extension>
+															</xsd:simpleContent>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="AttributesList" minOccurs="0">
+											<xsd:complexType mixed="true">
+												<xsd:sequence>
+													<xsd:element name="Attribute" minOccurs="0"
+														maxOccurs="unbounded">
+														<xsd:complexType>
+															<xsd:simpleContent>
+																<xsd:extension base="xsd:string">
+																	<xsd:attribute name="rowData" type="xsd:boolean"
+																		use="optional" />
+																	<xsd:attribute ref="type" use="optional" />
+																	<xsd:attribute name="name" use="optional" />
+																	<xsd:attribute name="content"
+																		type="xsd:normalizedString" use="optional" />
+																	<xsd:attribute name="doNotCopy" type="xsd:boolean"
+																		use="optional" />
+																</xsd:extension>
+															</xsd:simpleContent>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="SubObjectList" minOccurs="0">
+											<xsd:complexType mixed="true">
+												<xsd:sequence>
+													<xsd:element name="SubObject" minOccurs="0"
+														maxOccurs="unbounded">
+														<xsd:complexType mixed="true">
+															<xsd:sequence>
+																<xsd:element name="PrimaryKeyDefinition"
+																	minOccurs="0">
+																	<xsd:complexType>
+																		<xsd:sequence>
+																			<xsd:element name="PrimaryKey" maxOccurs="unbounded">
+																				<xsd:complexType>
+																					<xsd:simpleContent>
+																						<xsd:extension base="xsd:string">
+																							<xsd:attribute type="xsd:string"
+																								name="type" />
+																						</xsd:extension>
+																					</xsd:simpleContent>
+																				</xsd:complexType>
+																			</xsd:element>
+																		</xsd:sequence>
+																	</xsd:complexType>
+																</xsd:element>
+																<xsd:element name="LinkDefinition"
+																	minOccurs="0" maxOccurs="unbounded">
+																	<xsd:complexType mixed="true">
+																		<xsd:sequence>
+																			<xsd:element name="ForeignKey" minOccurs="0"
+																				maxOccurs="unbounded">
+																				<xsd:complexType>
+																					<xsd:simpleContent>
+																						<xsd:extension base="xsd:string">
+																							<xsd:attribute type="xsd:string"
+																								name="outer" />
+																						</xsd:extension>
+																					</xsd:simpleContent>
+																				</xsd:complexType>
+																			</xsd:element>
+																			<xsd:element name="Filter" minOccurs="0"
+																				maxOccurs="unbounded">
+																				<xsd:complexType mixed="true">
+																					<xsd:sequence>
+																						<xsd:element name="Criteria"
+																							minOccurs="0" maxOccurs="unbounded">
+																							<xsd:complexType mixed="true">
+																								<xsd:sequence>
+																									<xsd:element name="Param"
+																										minOccurs="0" maxOccurs="unbounded">
+																										<xsd:complexType mixed="true">
+																											<xsd:simpleContent>
+																												<xsd:extension base="xsd:normalizedString">
+																													<xsd:attribute name="rowData"
+																														type="xsd:boolean" use="optional" />
+																													<xsd:attribute name="name"
+																														type="xsd:normalizedString" use="optional" />
+																												</xsd:extension>
+																											</xsd:simpleContent>
+																										</xsd:complexType>
+																									</xsd:element>
+																								</xsd:sequence>
+																								<xsd:attribute name="rowData"
+																									type="xsd:boolean" use="optional" />
+																								<xsd:attribute name="class"
+																									type="xsd:normalizedString" use="optional" />
+																								<xsd:attribute name="name"
+																									type="xsd:normalizedString" use="optional" />
+																							</xsd:complexType>
+																						</xsd:element>
+																					</xsd:sequence>
+																				</xsd:complexType>
+																			</xsd:element>
+																		</xsd:sequence>
+																	</xsd:complexType>
+																</xsd:element>
+																<xsd:element name="AttributesList"
+																	minOccurs="0">
+																	<xsd:complexType mixed="true">
+																		<xsd:sequence>
+																			<xsd:element name="Attribute" minOccurs="0"
+																				maxOccurs="unbounded">
+																				<xsd:complexType>
+																					<xsd:simpleContent>
+																						<xsd:extension base="xsd:normalizedString">
+																							<xsd:attribute name="rowData" type="xsd:boolean"
+																								use="optional" />
+																							<xsd:attribute ref="type" use="required" />
+																							<xsd:attribute name="doNotCopy"
+																								type="xsd:boolean" use="optional" />
+																							<xsd:attribute name="name"
+																								type="xsd:normalizedString" use="required" />
+																							<xsd:attribute name="mimetype"
+																								type="xsd:normalizedString" use="optional" />
+																						</xsd:extension>
+																					</xsd:simpleContent>
+																				</xsd:complexType>
+																			</xsd:element>
+																		</xsd:sequence>
+																	</xsd:complexType>
+																</xsd:element>
+																<xsd:element name="SubObjectList" minOccurs="0">
+																	<xsd:complexType mixed="true">
+																		<xsd:sequence>
+																			<xsd:element name="SubObject" minOccurs="0"
+																				maxOccurs="unbounded">
+																				<xsd:complexType mixed="true">
+																					<xsd:sequence>
+																						<xsd:element name="PrimaryKeyDefinition"
+																							minOccurs="0">
+																							<xsd:complexType>
+																								<xsd:sequence>
+																									<xsd:element name="PrimaryKey"
+																										maxOccurs="unbounded">
+																										<xsd:complexType>
+																											<xsd:simpleContent>
+																												<xsd:extension base="xsd:string">
+																													<xsd:attribute type="xsd:string"
+																														name="type" />
+																												</xsd:extension>
+																											</xsd:simpleContent>
+																										</xsd:complexType>
+																									</xsd:element>
+																								</xsd:sequence>
+																							</xsd:complexType>
+																						</xsd:element>
+																						<xsd:element name="LinkDefinition"
+																							minOccurs="0" maxOccurs="unbounded">
+																							<xsd:complexType mixed="true">
+																								<xsd:sequence>
+																									<xsd:element name="ForeignKey"
+																										minOccurs="0" maxOccurs="unbounded">
+																										<xsd:complexType>
+																											<xsd:simpleContent>
+																												<xsd:extension base="xsd:string">
+																													<xsd:attribute type="xsd:string"
+																														name="outer" />
+																												</xsd:extension>
+																											</xsd:simpleContent>
+																										</xsd:complexType>
+																									</xsd:element>
+																									<xsd:element name="Filter"
+																										minOccurs="0" maxOccurs="unbounded">
+																										<xsd:complexType mixed="true">
+																											<xsd:sequence>
+																												<xsd:element name="Criteria"
+																													minOccurs="0" maxOccurs="unbounded">
+																													<xsd:complexType mixed="true">
+																														<xsd:sequence>
+																															<xsd:element name="Param"
+																																minOccurs="0" maxOccurs="unbounded">
+																																<xsd:complexType mixed="true">
+																																	<xsd:simpleContent>
+																																		<xsd:extension base="xsd:normalizedString">
+																																			<xsd:attribute name="rowData"
+																																				type="xsd:boolean" use="optional" />
+																																			<xsd:attribute name="name"
+																																				type="xsd:normalizedString" use="optional" />
+																																		</xsd:extension>
+																																	</xsd:simpleContent>
+																																</xsd:complexType>
+																															</xsd:element>
+																														</xsd:sequence>
+																														<xsd:attribute name="rowData"
+																															type="xsd:boolean" use="optional" />
+																														<xsd:attribute name="class"
+																															type="xsd:normalizedString" use="optional" />
+																														<xsd:attribute name="name"
+																															type="xsd:normalizedString" use="optional" />
+																													</xsd:complexType>
+																												</xsd:element>
+																											</xsd:sequence>
+																										</xsd:complexType>
+																									</xsd:element>
+																								</xsd:sequence>
+																							</xsd:complexType>
+																						</xsd:element>
+																						<xsd:element name="AttributesList"
+																							minOccurs="0">
+																							<xsd:complexType mixed="true">
+																								<xsd:sequence>
+																									<xsd:element name="Attribute"
+																										minOccurs="0" maxOccurs="unbounded">
+																										<xsd:complexType>
+																											<xsd:simpleContent>
+																												<xsd:extension base="xsd:normalizedString">
+																													<xsd:attribute name="doNotCopy"
+																														type="xsd:boolean" use="optional" />
+																													<xsd:attribute name="rowData"
+																														type="xsd:boolean" use="optional" />
+																													<xsd:attribute ref="type"
+																														use="optional" />
+																													<xsd:attribute name="name"
+																														type="xsd:normalizedString" use="optional" />
+																													<xsd:attribute name="content"
+																														type="xsd:normalizedString" use="optional" />
+																													<xsd:attribute name="mimetype"
+																														type="xsd:normalizedString" use="optional" />
+																												</xsd:extension>
+																											</xsd:simpleContent>
+																										</xsd:complexType>
+																									</xsd:element>
+																								</xsd:sequence>
+																							</xsd:complexType>
+																						</xsd:element>
+																						<xsd:element name="SubObjectList"
+																							minOccurs="0" />
+																					</xsd:sequence>
+																					<xsd:attribute name="join"
+																						type="xsd:normalizedString" use="optional" />
+																					<xsd:attribute name="inclStrategy"
+																						type="xsd:normalizedString" use="optional" />
+																					<xsd:attribute name="tableName"
+																						type="xsd:normalizedString" use="required" />
+																					<xsd:attribute name="name"
+																						type="xsd:normalizedString" use="required" />
+																					<xsd:attribute name="multiple" type="xsd:boolean"
+																						use="optional" />
+																				</xsd:complexType>
+																			</xsd:element>
+																		</xsd:sequence>
+																	</xsd:complexType>
+																</xsd:element>
+															</xsd:sequence>
+															<xsd:attribute name="join" type="xsd:normalizedString"
+																use="optional" />
+															<xsd:attribute name="tableName" type="xsd:normalizedString"
+																use="required" />
+															<xsd:attribute name="multiple" type="xsd:boolean"
+																use="optional" />
+															<xsd:attribute name="inclStrategy" type="xsd:normalizedString"
+																use="optional" />
+															<xsd:attribute name="name" type="xsd:normalizedString"
+																use="required" />
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+									<xsd:attribute name="tableName" type="xsd:normalizedString"
+										use="required" />
+									<xsd:attribute name="name" type="xsd:normalizedString"
+										use="required" />
+									<xsd:attribute name="indexed" type="xsd:boolean"
+										use="optional" />
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
