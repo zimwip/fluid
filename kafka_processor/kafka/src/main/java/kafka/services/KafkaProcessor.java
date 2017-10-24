@@ -29,6 +29,7 @@ public class KafkaProcessor implements ApplicationContextAware {
 
     private static final Logger logger = LoggerFactory.getLogger(KafkaProcessor.class);
 
+
     // Create our producer properties
     private final String topic = "input-topic";
     private final Properties props = new Properties();
@@ -39,6 +40,7 @@ public class KafkaProcessor implements ApplicationContextAware {
     private ApplicationContext applicationContext;
 
     public KafkaProcessor() {
+      
         props.put(StreamsConfig.APPLICATION_ID_CONFIG, "my-stream-app");
         props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:29092");
         props.put(StreamsConfig.KEY_SERDE_CLASS_CONFIG, Serdes.StringSerde.class);
@@ -65,6 +67,7 @@ public class KafkaProcessor implements ApplicationContextAware {
                 .addSink("SINK1", "output-topic", "PROCESS1");
 
     }
+
 
     public void start() {
         // Start the Kafka Streams instance

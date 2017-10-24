@@ -39,7 +39,7 @@ public class KafkaConsumer {
     private final String topic = "output-topic";
     private final Properties props = new Properties();
     private org.apache.kafka.clients.consumer.KafkaConsumer<String, String> consumer;
-    private final AtomicBoolean closed = new AtomicBoolean(false);
+    private final AtomicBoolean closed = new AtomicBoolean(true);
 
     public KafkaConsumer() {
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:29092");
@@ -90,6 +90,7 @@ public class KafkaConsumer {
             try {
                 consumer = new org.apache.kafka.clients.consumer.KafkaConsumer<>(props);
                 consumer.subscribe(Arrays.asList(topic));
+                logger.info("consumer subscribe to topic {}", topic);
                 while (!closed.get()) {
                     ConsumerRecords<String, String> records = consumer.poll(100);
                     // Handle new records
@@ -117,14 +118,18 @@ public class KafkaConsumer {
     }
 
     public void start() {
-        closed.set(false);
-        Thread t = new Thread(new KafkaConsumerRunner());
-        t.start();
+        if (closed.get()) {
+            closed.set(false);
+            Thread t = new Thread(new KafkaConsumerRunner());
+            t.start();
+        }
     }
 
     public void stop() {
-        closed.set(true);
-        consumer.wakeup();
+        if (!closed.get()) {
+            closed.set(true);
+            consumer.wakeup();
+        }
     }
 
 }

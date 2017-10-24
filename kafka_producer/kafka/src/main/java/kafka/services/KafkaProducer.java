@@ -25,7 +25,6 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 import kafka.admin.AdminUtils;
 import kafka.admin.RackAwareMode;
 import kafka.utils.ZKStringSerializer$;
@@ -37,6 +36,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.fagazi.enedis.DataResponse;
+import org.glassfish.jersey.jackson.JacksonFeature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -54,15 +54,16 @@ public class KafkaProducer {
     private String file = "C://Work/input.txt";
 
     private List<String> lines = new ArrayList<>();
-    
+
     // REST access to data
-    private Client client = ClientBuilder.newClient();
+    private Client client = ClientBuilder.newClient().register(JacksonFeature.class);
     private WebTarget webTarget = client.target("https://data.enedis.fr/api");
-    private WebTarget employeeWebTarget  = webTarget.path("records/1.0/search");
+    private WebTarget employeeWebTarget = webTarget.path("records/1.0/search");
 
     // Create our producer properties
     //@Value("${producer.topic}")
     private String topic = "input-topic";
+    private String topicEnedis = "enedis-topic";
 
     private final Properties props = new Properties();
     private final org.apache.kafka.clients.producer.KafkaProducer<String, String> producer;
@@ -122,6 +123,10 @@ public class KafkaProducer {
             AdminUtils.createTopic(zkUtils, topic, partitions, replication, topicConfig, RackAwareMode.Disabled$.MODULE$);
             logger.info("Topic created");
         }
+        if (configs.get(topicEnedis) == null) {
+            AdminUtils.createTopic(zkUtils, topicEnedis, partitions, replication, topicConfig, RackAwareMode.Disabled$.MODULE$);
+            logger.info("Topic created");
+        }
         zkClient.close();
 
     }
@@ -155,12 +160,12 @@ public class KafkaProducer {
 
     public Future<DataResponse> send() {
         Invocation.Builder invocationBuilder = employeeWebTarget
-                .queryParam("dataset","bilan-electrique-demi-heure")
+                .queryParam("dataset", "bilan-electrique-demi-heure")
                 .queryParam("rows", 1)
-                .queryParam("start", 1)
-                .queryParam("sort","horodate")
+                .queryParam("start", position + 1)
+                .queryParam("sort", "horodate")
                 .request(MediaType.APPLICATION_JSON);
-        Future<DataResponse> response  = invocationBuilder.async().get(DataResponse.class);
+        Future<DataResponse> response = invocationBuilder.async().get(DataResponse.class);
         Future<RecordMetadata> send = producerRecord();
         try {
             logger.info("send message {}", send.get());

@@ -8,6 +8,7 @@ package kafka.processor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,6 +18,7 @@ import kafka.avro.Column;
 import kafka.graph.GraphMapper;
 import kafka.graph.GraphPreparedQuery;
 import kafka.graph.Query;
+import kafka.message.EventMessage;
 import org.apache.kafka.streams.processor.Processor;
 import org.apache.kafka.streams.processor.ProcessorContext;
 import org.apache.kafka.streams.state.KeyValueStore;
@@ -28,6 +30,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Component;
 
 /**
@@ -39,9 +42,14 @@ import org.springframework.stereotype.Component;
 public class GraphBuilderProcessor implements Processor<String, String> {
 
     private static final Logger logger = LoggerFactory.getLogger(GraphBuilderProcessor.class);
+    private static final String LOST_TX = "Lost-Tx-Error";
+
     private ProcessorContext context;
     private KeyValueStore<String, Long> kvStore;
     private final ObjectMapper mapper = new ObjectMapper();
+
+    @Autowired
+    private SimpMessagingTemplate messagingTemplate;
 
     @Autowired
     @Qualifier("neo4jDriver")
@@ -57,7 +65,7 @@ public class GraphBuilderProcessor implements Processor<String, String> {
         // keep the processor context locally because we need it in punctuate() and commit()
         this.context = context;
 
-        // call this processor's punctuate() method every 1000 milliseconds.
+        // call this processor's punctuate() method every 60000 milliseconds.
         this.context.schedule(60000);
 
         // retrieve the key-value store named "Counts"
@@ -113,7 +121,7 @@ public class GraphBuilderProcessor implements Processor<String, String> {
                     break;
 
             }
-
+            context.forward(key, value);
         } catch (IOException ex) {
             logger.info("Error", ex);
         }
@@ -184,12 +192,17 @@ public class GraphBuilderProcessor implements Processor<String, String> {
             });
         }
         // then commit message processing
+        this.messagingTemplate.convertAndSend("/topic/events", new EventMessage("processed tx", new Date()));
         context.commit();
     }
 
     @Override
     public void punctuate(long timestamp) {
         List<String> toBeRemoved = new ArrayList<>();
+        Long nbError = kvStore.get(LOST_TX);
+        if (nbError == null) {
+            nbError = 0l;
+        }
         for (TransactionCacheEntry entry : transactionCache.values()) {
             if (entry.getCache_date() < timestamp - 5000) {
                 toBeRemoved.add(entry.getKey());
@@ -197,8 +210,12 @@ public class GraphBuilderProcessor implements Processor<String, String> {
         }
         for (String key : toBeRemoved) {
             logger.warn("remove old tx : {}", key);
+            this.messagingTemplate.convertAndSend("/topic/events", new EventMessage("remove tx "+key, new Date()));
             transactionCache.remove(key);
+            nbError++;
         }
+        kvStore.put(LOST_TX, nbError);
+        logger.warn("total tx removed : {}", nbError);
     }
 
     @Override
