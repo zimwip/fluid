@@ -36,6 +36,8 @@ function connect() {
     var url = 'ws://'+window.location.host+'/ws';
     var socket = new WebSocket(url);
     stompClient = Stomp.over(socket);
+    stompClient.heartbeat.outgoing = 20000;
+    stompClient.heartbeat.incoming = 20000;
     stompClient.connect({}, connect_callback, error_callback);
 }
 

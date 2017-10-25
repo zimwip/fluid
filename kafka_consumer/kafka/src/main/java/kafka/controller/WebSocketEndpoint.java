@@ -6,13 +6,16 @@
 package kafka.controller;
 
 import java.util.Date;
+import kafka.message.ApplicationError;
 import kafka.message.Command;
 import kafka.message.EventMessage;
 import kafka.services.KafkaConsumer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.MessageExceptionHandler;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.messaging.simp.annotation.SendToUser;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -34,7 +37,7 @@ public class WebSocketEndpoint {
         if ("start".equals(message.getName())) {
             consumer.start();
             return new EventMessage("Processor started", new Date());
-            
+
         } else if ("config".equals(message.getName())) {
             consumer.config();
             return new EventMessage("Processor stopped", new Date());
@@ -42,7 +45,20 @@ public class WebSocketEndpoint {
             consumer.stop();
             return new EventMessage("Processor stopped", new Date());
         }
-        return new EventMessage("Unknow command", new Date());
+        throw new RuntimeException("Unknow command");
+        //return new EventMessage("Unknow command", new Date());
+    }
+
+    /**
+     *
+     * @param message
+     * @return
+     * @throws ApplicationErrorHandler
+     */
+    @MessageExceptionHandler
+    @SendToUser(value = "/queue/error", broadcast = false)
+    public ApplicationError handleException(Exception message) {
+        return new ApplicationError("test");
     }
 
 }

@@ -33,8 +33,8 @@ dependencies {
     compile("org.webjars:bootstrap:3.3.7")
     compile group: 'org.apache.kafka', name: 'kafka_2.10', version:'0.10.2.1'
     compile group: 'com.101tec', name: 'zkclient', version:'0.10'
-    testCompile group: 'org.springframework.boot', name: 'spring-boot-devtools', version:'1.5.4.RELEASE'
-    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.5.4.RELEASE') {
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-devtools'
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test') {
 exclude(module: 'commons-logging')
     }
 }
