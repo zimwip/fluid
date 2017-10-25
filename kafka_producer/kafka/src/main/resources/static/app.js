@@ -2,15 +2,18 @@
 var stompClient = null;
 
 function setConnected(connected) {
-    $("#connect").prop("disabled", connected);
-    $("#disconnect").prop("disabled", !connected);
+
     if (connected) {
-        $("#conversation").show();
+        document.getElementById("connect").setAttribute("disabled","");
+        document.getElementById("disconnect").removeAttribute("disabled");
+        document.getElementById("conversation").removeAttribute("style");
     }
     else {
-        $("#conversation").hide();
+        document.getElementById("connect").removeAttribute("disabled");
+        document.getElementById("disconnect").setAttribute("disabled", "");
+        document.getElementById("conversation").style.display = 'none';
     }
-    $("#events").html("");
+    document.getElementById("events").innerHtml = "";
 }
 
 var error_callback = function(error) {
@@ -61,21 +64,28 @@ function sendStop() {
 }
 
 function showEvent(event) {
-    $("#events").append("<tr><td>" + event.event +"/"+ event.date +"</td></tr>");
+    var domEvent = document.createElement("tr");
+    domEvent.innerHTML = "<td>" + event.event +"/"+ event.date +"</td>";
+    document.getElementById("events").appendChild(domEvent);
 }
 
 function showData(data) {
-    $("#events").append("<tr><td>" + JSON.stringify(data) +"</td></tr>");
+    var domEvent = document.createElement("tr");
+    domEvent.innerHTML = "<td>" + JSON.stringify(data) +"</td>";
+    document.getElementById("events").appendChild(domEvent);
 }
 
-$(function () {
-    $("form").on('submit', function (e) {
-        e.preventDefault();
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    [].forEach.call(document.querySelectorAll('form'), function(el) {
+        el.addEventListener('submit', function (event) {event.preventDefault();});
     });
-    $( "#connect" ).click(function() { connect(); });
-    $( "#disconnect" ).click(function() { disconnect(); });
-    $( "#config" ).click(function() { sendConfig(); });
-    $( "#start" ).click(function() { sendStart(); });
-    $( "#send" ).click(function() { sendSend(); });
-    $( "#stop" ).click(function() { sendStop(); });
+    document.getElementById("connect" ).addEventListener('click', connect);
+    document.getElementById("disconnect" ).addEventListener('click', function() { disconnect(); });
+    document.getElementById("config" ).addEventListener('click', function() { sendConfig(); });
+    document.getElementById("start" ).addEventListener('click', function() { sendStart(); });
+    document.getElementById("send" ).addEventListener('click', function() { sendSend(); });
+    document.getElementById("stop" ).addEventListener('click', function() { sendStop(); });
+
 });

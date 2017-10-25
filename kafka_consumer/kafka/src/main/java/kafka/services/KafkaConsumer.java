@@ -13,6 +13,7 @@ import java.util.Properties;
 import java.util.concurrent.atomic.AtomicBoolean;
 import kafka.admin.AdminUtils;
 import kafka.admin.RackAwareMode;
+import kafka.message.EventMessage;
 import kafka.utils.ZKStringSerializer$;
 import kafka.utils.ZkUtils;
 import org.I0Itec.zkclient.ZkClient;
@@ -24,6 +25,8 @@ import org.apache.kafka.common.errors.WakeupException;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
 /**
@@ -35,6 +38,9 @@ public class KafkaConsumer {
 
     private static final Logger logger = LoggerFactory.getLogger(KafkaConsumer.class);
 
+    @Autowired
+    private SimpMessagingTemplate messagingTemplate;
+    
     // Create our producer properties
     private final String topic = "output-topic";
     private final Properties props = new Properties();
@@ -102,6 +108,7 @@ public class KafkaConsumer {
                             data.put("timestamp", new Date(record.timestamp()));
                             data.put("key", record.key());
                             data.put("value", record.value());
+                            messagingTemplate.convertAndSend("/topic/events", new EventMessage("receive " + data, new Date()));
                             logger.info("get message {}", data);
                         }
                     }
