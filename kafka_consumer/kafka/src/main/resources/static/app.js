@@ -4,11 +4,10 @@ var stompClient = null;
 function setConnected(connected) {
 
     if (connected) {
-        document.getElementById("connect").setAttribute("disabled","");
+        document.getElementById("connect").setAttribute("disabled", "");
         document.getElementById("disconnect").removeAttribute("disabled");
         document.getElementById("conversation").removeAttribute("style");
-    }
-    else {
+    } else {
         document.getElementById("connect").removeAttribute("disabled");
         document.getElementById("disconnect").setAttribute("disabled", "");
         document.getElementById("conversation").style.display = 'none';
@@ -16,9 +15,9 @@ function setConnected(connected) {
     document.getElementById("events").innerHtml = "";
 }
 
-var error_callback = function(error) {
-  // display the error's message header:
-  alert(error);
+var error_callback = function (error) {
+    // display the error's message header:
+    alert(error);
 };
 
 var connect_callback = function (frame) {
@@ -30,10 +29,13 @@ var connect_callback = function (frame) {
     stompClient.subscribe('/topic/data', function (event) {
         showData(JSON.parse(event.body));
     });
+    stompClient.subscribe('/user/queue/errors', function (event) {
+        showError(event.body);
+    });
 }
 
 function connect() {
-    var url = 'ws://'+window.location.host+'/ws';
+    var url = 'wss://' + window.location.host + '/ws';
     var socket = new WebSocket(url);
     stompClient = Stomp.over(socket);
     stompClient.heartbeat.outgoing = 20000;
@@ -67,27 +69,45 @@ function sendStop() {
 
 function showEvent(event) {
     var domEvent = document.createElement("tr");
-    domEvent.innerHTML = "<td>" + event.event +"/"+ event.date +"</td>";
+    domEvent.innerHTML = "<td>" + event.event + "/" + event.date + "</td>";
     document.getElementById("events").appendChild(domEvent);
 }
 
 function showData(data) {
     var domEvent = document.createElement("tr");
-    domEvent.innerHTML = "<td>" + JSON.stringify(data) +"</td>";
+    domEvent.innerHTML = "<td>" + JSON.stringify(data) + "</td>";
+    document.getElementById("events").appendChild(domEvent);
+}
+
+function showError(message) {
+    var domEvent = document.createElement("tr");
+    domEvent.innerHTML = "<td class=\"alert alert-danger\">" + message + "</td>";
     document.getElementById("events").appendChild(domEvent);
 }
 
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    [].forEach.call(document.querySelectorAll('form'), function(el) {
-        el.addEventListener('submit', function (event) {event.preventDefault();});
+    [].forEach.call(document.querySelectorAll('form'), function (el) {
+        el.addEventListener('submit', function (event) {
+            event.preventDefault();
+        });
     });
-    document.getElementById("connect" ).addEventListener('click', connect);
-    document.getElementById("disconnect" ).addEventListener('click', function() { disconnect(); });
-    document.getElementById("config" ).addEventListener('click', function() { sendConfig(); });
-    document.getElementById("start" ).addEventListener('click', function() { sendStart(); });
-    document.getElementById("send" ).addEventListener('click', function() { sendSend(); });
-    document.getElementById("stop" ).addEventListener('click', function() { sendStop(); });
+    document.getElementById("connect").addEventListener('click', connect);
+    document.getElementById("disconnect").addEventListener('click', function () {
+        disconnect();
+    });
+    document.getElementById("config").addEventListener('click', function () {
+        sendConfig();
+    });
+    document.getElementById("start").addEventListener('click', function () {
+        sendStart();
+    });
+    document.getElementById("send").addEventListener('click', function () {
+        sendSend();
+    });
+    document.getElementById("stop").addEventListener('click', function () {
+        sendStop();
+    });
 
 });

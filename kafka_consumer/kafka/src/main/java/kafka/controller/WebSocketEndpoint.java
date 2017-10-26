@@ -37,7 +37,6 @@ public class WebSocketEndpoint {
         if ("start".equals(message.getName())) {
             consumer.start();
             return new EventMessage("Processor started", new Date());
-
         } else if ("config".equals(message.getName())) {
             consumer.config();
             return new EventMessage("Processor stopped", new Date());
@@ -46,7 +45,6 @@ public class WebSocketEndpoint {
             return new EventMessage("Processor stopped", new Date());
         }
         throw new RuntimeException("Unknow command");
-        //return new EventMessage("Unknow command", new Date());
     }
 
     /**
@@ -56,9 +54,10 @@ public class WebSocketEndpoint {
      * @throws ApplicationErrorHandler
      */
     @MessageExceptionHandler
-    @SendToUser(value = "/queue/error", broadcast = false)
-    public ApplicationError handleException(Exception message) {
-        return new ApplicationError("test");
+    @SendToUser(value = "/queue/errors", broadcast = false)
+    public String handleException(Exception message) {
+        System.out.println(message);
+        return message.getMessage();
     }
 
 }

@@ -20,6 +20,16 @@ spring:
     mongodb.database: "prod"
     
 server:
-  port: 8082
+    port: 8443
+    ssl:
+        key-store: keystore.p12
+        key-store-password: password
+        keyStoreType: PKCS12
+        keyAlias: tomcat
+  
+
+keystore:
+  file: keystore.jks
+  pass: password
   
 

@@ -11,7 +11,10 @@ package kafka.message;
  */
 public class ApplicationError {
 
+    private final String error;
+
     public ApplicationError(String test) {
+        this.error = test;
     }
     
 }

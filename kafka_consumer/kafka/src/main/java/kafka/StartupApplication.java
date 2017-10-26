@@ -21,6 +21,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class StartupApplication {
 
+    // build keystore
+    // keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
     public static void main(String[] args) {
         SpringApplication.run(StartupApplication.class, args);
     }
