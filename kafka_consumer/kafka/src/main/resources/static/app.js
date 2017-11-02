@@ -22,10 +22,9 @@ var error_callback = function (error) {
 
 var connect_callback = function (frame) {
     setConnected(true);
-    console.log('Connected: ' + frame);
     stompClient.subscribe('/topic/events', function (event) {
         showEvent(JSON.parse(event.body));
-    });
+    }, { receipt: 'my receipt' });
     stompClient.subscribe('/topic/data', function (event) {
         showData(JSON.parse(event.body));
     });

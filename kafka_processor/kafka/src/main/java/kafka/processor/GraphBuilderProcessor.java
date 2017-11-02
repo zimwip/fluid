@@ -121,7 +121,6 @@ public class GraphBuilderProcessor implements Processor<String, String> {
                     break;
 
             }
-            context.forward(key, value);
         } catch (IOException ex) {
             logger.info("Error", ex);
         }
@@ -193,6 +192,7 @@ public class GraphBuilderProcessor implements Processor<String, String> {
         }
         // then commit message processing
         this.messagingTemplate.convertAndSend("/topic/events", new EventMessage("processed tx", new Date()));
+        context.forward("/topic/events", "{\"event\":\"Finish processing TX "+key+"\",\"date\":1509626304159}");
         context.commit();
     }
 

@@ -64,7 +64,7 @@ public class KafkaProcessor implements ApplicationContextAware {
                 .addStateStore(countStore, "PROCESS1")
                 // add the sink processor node "SINK1" that takes Kafka topic "sink-topic1"
                 // as output and the "PROCESS1" node as its upstream processor
-                .addSink("SINK1", "output-topic", "PROCESS1");
+                .addSink("SINK1", "stomp-topic", "PROCESS1");
 
     }
 

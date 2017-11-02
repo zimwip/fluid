@@ -6,10 +6,8 @@
 package kafka.controller;
 
 import java.util.Date;
-import kafka.message.ApplicationError;
 import kafka.message.Command;
 import kafka.message.EventMessage;
-import kafka.services.KafkaConsumer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageExceptionHandler;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -26,25 +24,12 @@ import org.springframework.stereotype.Controller;
 public class WebSocketEndpoint {
 
     @Autowired
-    private KafkaConsumer consumer;
-
-    @Autowired
     private SimpMessagingTemplate messagingTemplate;
 
     @MessageMapping("/command")
     @SendTo("/topic/events")
     public EventMessage commandHandler(Command message) throws Exception {
-        if ("start".equals(message.getName())) {
-            consumer.start();
-            return new EventMessage("Processor started", new Date());
-        } else if ("config".equals(message.getName())) {
-            consumer.config();
-            return new EventMessage("Processor stopped", new Date());
-        } else if ("stop".equals(message.getName())) {
-            consumer.stop();
-            return new EventMessage("Processor stopped", new Date());
-        }
-        throw new RuntimeException("Unknow command");
+            return new EventMessage("Command "+message.getName()+" received", new Date());
     }
 
     /**
@@ -56,7 +41,6 @@ public class WebSocketEndpoint {
     @MessageExceptionHandler
     @SendToUser(value = "/queue/errors", broadcast = false)
     public String handleException(Exception message) {
-        System.out.println(message);
         return message.getMessage();
     }
 
