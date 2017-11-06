@@ -6,13 +6,24 @@ function setConnected(connected) {
     if (connected) {
         document.getElementById("connect").setAttribute("disabled", "");
         document.getElementById("disconnect").removeAttribute("disabled");
+        document.getElementById("config").removeAttribute("disabled");
+        document.getElementById("start").removeAttribute("disabled");
+        document.getElementById("stop").removeAttribute("disabled");
+        document.getElementById("send").removeAttribute("disabled");
         document.getElementById("conversation").removeAttribute("style");
     } else {
         document.getElementById("connect").removeAttribute("disabled");
         document.getElementById("disconnect").setAttribute("disabled", "");
+        document.getElementById("config").setAttribute("disabled", "");
+        document.getElementById("start").setAttribute("disabled", "");
+        document.getElementById("stop").setAttribute("disabled", "");
+        document.getElementById("send").setAttribute("disabled", "");
         document.getElementById("conversation").style.display = 'none';
     }
-    document.getElementById("events").innerHtml = "";
+    var myNode = document.getElementById("events");
+    while (myNode.firstChild) {
+        myNode.removeChild(myNode.firstChild);
+    }
 }
 
 var error_callback = function (error) {
@@ -24,7 +35,7 @@ var connect_callback = function (frame) {
     setConnected(true);
     stompClient.subscribe('/topic/events', function (event) {
         showEvent(JSON.parse(event.body));
-    }, { receipt: 'my receipt' });
+    }, {receipt: 'my receipt'});
     stompClient.subscribe('/topic/data', function (event) {
         showData(JSON.parse(event.body));
     });
