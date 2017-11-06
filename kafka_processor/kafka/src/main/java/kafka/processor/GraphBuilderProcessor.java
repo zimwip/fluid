@@ -54,6 +54,8 @@ public class GraphBuilderProcessor implements Processor<String, String> {
     @Autowired
     @Qualifier("neo4jDriver")
     protected Driver driver;
+    
+    private long nbMessages = 0;
 
     @Autowired
     protected GraphMapper graphMapper;
@@ -66,7 +68,7 @@ public class GraphBuilderProcessor implements Processor<String, String> {
         this.context = context;
 
         // call this processor's punctuate() method every 60000 milliseconds.
-        this.context.schedule(60000);
+        this.context.schedule(1000);
 
         // retrieve the key-value store named "Counts"
         this.kvStore = (KeyValueStore<String, Long>) context.getStateStore("Counts");
@@ -77,6 +79,7 @@ public class GraphBuilderProcessor implements Processor<String, String> {
 
         try {
             //JSON from String to Object
+            nbMessages++;
             CDCEvent event = mapper.readValue(value, CDCEvent.class);
             logger.debug("process event {}", value);
             switch (event.getAction()) {
@@ -191,8 +194,9 @@ public class GraphBuilderProcessor implements Processor<String, String> {
             });
         }
         // then commit message processing
-        this.messagingTemplate.convertAndSend("/topic/events", new EventMessage("processed tx", new Date()));
-        context.forward("/topic/events", "{\"event\":\"Finish processing TX "+key+"\",\"date\":1509626304159}");
+        Date currentDate = new Date();
+        this.messagingTemplate.convertAndSend("/topic/events", new EventMessage("processed tx", currentDate));
+        context.forward("/topic/events", "{\"event\":\"Process TX ["+key+"] \",\"date\":\""+currentDate.toString()+"\"}");
         context.commit();
     }
 
@@ -216,6 +220,8 @@ public class GraphBuilderProcessor implements Processor<String, String> {
         }
         kvStore.put(LOST_TX, nbError);
         logger.warn("total tx removed : {}", nbError);
+        context.forward("/topic/events", "{\"event\":\"Process "+nbMessages+" messages / second\",\"date\":\""+new Date().toString()+"\"}");
+        nbMessages = 0;
     }
 
     @Override

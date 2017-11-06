@@ -13,18 +13,28 @@ plugins {
     id 'org.springframework.boot' version '1.5.8.RELEASE'
 }
 
-group = 'kafka'
+group = ''
 version = '1.0'
 
-description = 'Kafka Consumer'
+description = 'Reactor Test'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
+// NetBeans will automatically add "run" and "debug" tasks relying on the
+// "mainClass" property. You may however define the property prior executing
+// tasks by passing a "-PmainClass=<QUALIFIED_CLASS_NAME>" argument.
+//
+// Note however, that you may define your own "run" and "debug" task if you
+// prefer. In this case NetBeans will not add these tasks but you may rely on
+// your own implementation.
+if (!hasProperty('mainClass')) {
+    ext.mainClass = ''
+}
 
 repositories {
-        
     maven { url "http://jcenter.bintray.com" }
 }
 
@@ -33,18 +43,10 @@ dependencies {
     compile("org.webjars:webjars-locator")
     compile("org.webjars:stomp-websocket:2.3.3")
     compile("org.webjars:bootstrap:3.3.7")
-    compile group: 'org.apache.kafka', name: 'kafka_2.10', version:'0.10.2.1'
-    compile group: 'com.101tec', name: 'zkclient', version:'0.10'
-    compile group: 'io.netty', name: 'netty-all', version:'4.1.16.Final'
-    compile group: 'io.projectreactor', name: 'reactor-core', version:'2.0.8.RELEASE'
-    compile group: 'io.projectreactor', name: 'reactor-net', version:'2.0.8.RELEASE'
-    compile group: 'io.projectreactor.spring', name: 'reactor-spring-context', version:'2.0.7.RELEASE'
+    compile group: 'io.projectreactor', name: 'reactor-core', version:'3.1.1.RELEASE'
+    compile group: 'io.projectreactor', name: 'reactor-test', version:'3.1.1.RELEASE'
     testCompile group: 'org.springframework.boot', name: 'spring-boot-devtools'
     testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test') {
         exclude(module: 'commons-logging')
     }
-}
-
-configurations.all {
-    exclude module: 'slf4j-log4j12'
 }
