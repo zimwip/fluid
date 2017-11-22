@@ -20,6 +20,11 @@ import java.util.logging.Level;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.annotation.PreDestroy;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.DataLine;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.TargetDataLine;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Invocation;
@@ -141,16 +146,43 @@ public class KafkaProducer {
     public void start() {
         started = true;
         long i = 0;
-        while (started) {
-            Future<RecordMetadata> send = producerRecord();
-            try {
-                logger.info("send message {}", send.get());
-            } catch (InterruptedException ex) {
-                java.util.logging.Logger.getLogger(KafkaProducer.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (ExecutionException ex) {
-                java.util.logging.Logger.getLogger(KafkaProducer.class.getName()).log(Level.SEVERE, null, ex);
+        // open mic 
+        TargetDataLine line;
+        AudioFormat.Encoding encoding = AudioFormat.Encoding.PCM_SIGNED;
+        float rate = 44100.0f;
+        int channels = 1;
+        int sampleSize = 8;
+        boolean bigEndian = true;
+        AudioFormat format = new AudioFormat(encoding, rate, sampleSize, channels, (sampleSize / 8) * channels, rate, bigEndian);
+        DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
+        if (!AudioSystem.isLineSupported(info)) {
+            logger.error("Line matching " + info + " not supported.");
+        }
+        try {
+
+            line = (TargetDataLine) AudioSystem.getLine(info);
+            int buffsize = line.getBufferSize() / 5;
+            //buffsize += 512;
+            line.open(format);
+            line.start();
+            int numBytesRead;
+            byte[] data = new byte[buffsize];
+            while (started) {
+                try {
+                    numBytesRead = line.read(data, 0, data.length);
+                    logger.info("test data {} :  {}", numBytesRead, data);
+                    Future<RecordMetadata> send = producerRecord();
+                    logger.info("send message {}", send.get());
+                } catch (InterruptedException ex) {
+                    java.util.logging.Logger.getLogger(KafkaProducer.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ExecutionException ex) {
+                    java.util.logging.Logger.getLogger(KafkaProducer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                i++;
             }
-            i++;
+            line.close();
+        } catch (LineUnavailableException ex) {
+            java.util.logging.Logger.getLogger(KafkaProducer.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

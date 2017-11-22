@@ -1,7 +1,7 @@
 version: "2"
 services:
   zookeeper:
-    image: "confluentinc/cp-zookeeper:3.2.1"
+    image: "confluentinc/cp-zookeeper:3.3.1"
     container_name: "zookeeper"
     hostname: "zookeeper"
     environment:
@@ -12,7 +12,7 @@ services:
     ports:
         - "32181:32181"
   kafka:
-    image: "confluentinc/cp-kafka:3.2.1"
+    image: "confluentinc/cp-kafka:3.3.1"
     container_name: "kafka"
     hostname: "kafka"
     depends_on:
@@ -26,7 +26,7 @@ services:
     ports:
         - "29092:29092"
   shema_registry:
-    image: "confluentinc/cp-schema-registry:3.2.1"
+    image: "confluentinc/cp-schema-registry:3.3.1"
     container_name: "schema-registry"
     hostname: "schema-registry"
     depends_on:
@@ -37,6 +37,18 @@ services:
         - SCHEMA_REGISTRY_LISTENERS=http://localhost:8581
     ports:
         - "8581:8581"
+  kafka_rest:
+    image: "confluentinc/cp-kafka-rest:3.3.1"
+    container_name: "kafka-rest"
+    hostname: "kafka-rest"
+    depends_on:
+      - kafka
+    environment:
+        - KAFKA_REST_ZOOKEEPER_CONNECT=zookeeper:32181
+        - KAFKA_REST_HOST_NAME=kafka-rest
+        - KAFKA_REST_LISTENERS=http://localhost:8081
+    ports:
+        - "8081:8081"
   neo4j:
     image: "neo4j:3.0"
     container_name: "neo4j"
@@ -49,4 +61,3 @@ services:
         - "7474:7474"
         - "7687:7687"
         - "7473:7473"
-
