@@ -21,6 +21,7 @@ services:
         - KAFKA_BROKER_ID=1
         - KAFKA_ZOOKEEPER_CONNECT=zookeeper:32181
         - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:29092
+        - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
     volumes:
         - ./kafka/data:/var/lib/kafka/data
     ports:
@@ -46,9 +47,9 @@ services:
     environment:
         - KAFKA_REST_ZOOKEEPER_CONNECT=zookeeper:32181
         - KAFKA_REST_HOST_NAME=kafka-rest
-        - KAFKA_REST_LISTENERS=http://localhost:8081
+        - KAFKA_REST_LISTENERS=http://localhost:8085
     ports:
-        - "8081:8081"
+        - "8085:8085"
   neo4j:
     image: "neo4j:3.0"
     container_name: "neo4j"

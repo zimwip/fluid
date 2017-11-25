@@ -7,6 +7,8 @@ package kafka.services;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.ByteBuffer;
+import java.nio.ShortBuffer;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
@@ -39,6 +41,7 @@ import org.I0Itec.zkclient.ZkConnection;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
+import org.apache.kafka.common.serialization.ByteArraySerializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.fagazi.enedis.DataResponse;
 import org.glassfish.jersey.jackson.JacksonFeature;
@@ -67,11 +70,16 @@ public class KafkaProducer {
 
     // Create our producer properties
     //@Value("${producer.topic}")
-    private String topic = "input-topic";
+    private String topicInput = "input-topic";
+    private String topicOutput = "output-topic";
     private String topicEnedis = "enedis-topic";
+    private String topicSound = "sound-topic";
 
     private final Properties props = new Properties();
     private final org.apache.kafka.clients.producer.KafkaProducer<String, String> producer;
+    // sound topic management
+    private final Properties soundProps = new Properties();
+    private final org.apache.kafka.clients.producer.KafkaProducer<String, byte[]> soundProducer;
     private boolean started = false;
     int position = 0;
 
@@ -81,6 +89,12 @@ public class KafkaProducer {
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         props.put(ProducerConfig.ACKS_CONFIG, "1");
         producer = new org.apache.kafka.clients.producer.KafkaProducer<>(props);
+        
+        soundProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:29092");
+        soundProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, ByteArraySerializer.class.getName());
+        soundProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        soundProps.put(ProducerConfig.ACKS_CONFIG, "1");
+        soundProducer = new org.apache.kafka.clients.producer.KafkaProducer<>(soundProps);
 
         // opening  File for read
         logger.info("File name {}", file);
@@ -124,13 +138,21 @@ public class KafkaProducer {
         Properties topicConfig = new Properties();
 
         scala.collection.Map<String, Properties> configs = AdminUtils.fetchAllTopicConfigs(zkUtils);
-        if (configs.get(topic) == null) {
-            AdminUtils.createTopic(zkUtils, topic, partitions, replication, topicConfig, RackAwareMode.Disabled$.MODULE$);
-            logger.info("Topic created");
+        if (configs.get(topicInput) == null) {
+            AdminUtils.createTopic(zkUtils, topicInput, partitions, replication, topicConfig, RackAwareMode.Disabled$.MODULE$);
+            logger.info("Topic input created");
+        }
+        if (configs.get(topicOutput) == null) {
+            AdminUtils.createTopic(zkUtils, topicOutput, partitions, replication, topicConfig, RackAwareMode.Disabled$.MODULE$);
+            logger.info("Topic output created");
         }
         if (configs.get(topicEnedis) == null) {
             AdminUtils.createTopic(zkUtils, topicEnedis, partitions, replication, topicConfig, RackAwareMode.Disabled$.MODULE$);
-            logger.info("Topic created");
+            logger.info("Topic enedis created");
+        }
+        if (configs.get(topicSound) == null) {
+            AdminUtils.createTopic(zkUtils, topicSound, partitions, replication, topicConfig, RackAwareMode.Disabled$.MODULE$);
+            logger.info("Topic sound created");
         }
         zkClient.close();
 
@@ -140,7 +162,7 @@ public class KafkaProducer {
         String raw = lines.get(position);
         position = (position + 1) % lines.size();
         String[] split = raw.split("-");
-        return producer.send(new ProducerRecord<>(topic, split[0], split[1]));
+        return producer.send(new ProducerRecord<>(topicInput, split[0], split[1]));
     }
 
     public void start() {
@@ -151,7 +173,7 @@ public class KafkaProducer {
         AudioFormat.Encoding encoding = AudioFormat.Encoding.PCM_SIGNED;
         float rate = 44100.0f;
         int channels = 1;
-        int sampleSize = 8;
+        int sampleSize = 16;
         boolean bigEndian = true;
         AudioFormat format = new AudioFormat(encoding, rate, sampleSize, channels, (sampleSize / 8) * channels, rate, bigEndian);
         DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
@@ -166,20 +188,20 @@ public class KafkaProducer {
             line.open(format);
             line.start();
             int numBytesRead;
-            byte[] data = new byte[buffsize];
+            ByteBuffer byteBuffer = ByteBuffer.allocate(buffsize);
+            ShortBuffer shortBuffer = byteBuffer.asShortBuffer();
+            byte[] data = byteBuffer.array();
+            
+            logger.trace("Start sending message");
             while (started) {
-                try {
-                    numBytesRead = line.read(data, 0, data.length);
-                    logger.info("test data {} :  {}", numBytesRead, data);
-                    Future<RecordMetadata> send = producerRecord();
-                    logger.info("send message {}", send.get());
-                } catch (InterruptedException ex) {
-                    java.util.logging.Logger.getLogger(KafkaProducer.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (ExecutionException ex) {
-                    java.util.logging.Logger.getLogger(KafkaProducer.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                numBytesRead = line.read(data, 0, data.length);
+                logger.info("test data {} :  {}", numBytesRead, shortBuffer);
+                shortBuffer.flip();
+                soundProducer.send(new ProducerRecord<>(topicSound, "channel_1", data));
+                Future<RecordMetadata> send = producerRecord();
                 i++;
             }
+            logger.trace("Stop sending message");
             line.close();
         } catch (LineUnavailableException ex) {
             java.util.logging.Logger.getLogger(KafkaProducer.class.getName()).log(Level.SEVERE, null, ex);
