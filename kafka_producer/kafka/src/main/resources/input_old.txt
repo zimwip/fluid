@@ -1,0 +1,8 @@
+001-{"action":"START"}
+001-{"action":"INSERT", "table":"ROOT", "before":[{"name":"PK", "value":"root"}], "after":[{"name":"PK", "value":"root"},{"name":"COL1", "value":"root"}]}
+001-{"action":"INSERT", "table":"CHILD1", "before":[{"name":"PK", "value":"child1"},{"name":"FK", "value":"root"}], "after":[{"name":"PK", "value":"child1"},{"name":"FK", "value":"root"}]}
+001-{"action":"INSERT", "table":"ROOT", "before":[{"name":"PK", "value":"root2"}], "after":[{"name":"PK", "value":"root2"},{"name":"COL1", "value":"root2"}]}
+001-{"action":"INSERT", "table":"CHILD2", "before":[{"name":"PK", "value":"child2"},{"name":"FK", "value":"root"}], "after":[{"name":"PK", "value":"child2"},{"name":"FK", "value":"root"}]}
+001-{"action":"INSERT", "table":"CHILD1", "before":[{"name":"PK", "value":"child3"},{"name":"FK", "value":"root2"}], "after":[{"name":"PK", "value":"child3"},{"name":"FK", "value":"root2"}]}
+001-{"action":"UPDATE", "table":"CHILD1", "before":[{"name":"PK", "value":"child3"},{"name":"FK", "value":"root2"}], "after":[{"name":"PK", "value":"child3"},{"name":"FK", "value":"root"}]}
+001-{"action":"END"}

@@ -161,7 +161,7 @@ public class KafkaProducer {
     private Future<RecordMetadata> producerRecord() {
         String raw = lines.get(position);
         position = (position + 1) % lines.size();
-        String[] split = raw.split("-");
+        String[] split = raw.split("@-");
         return producer.send(new ProducerRecord<>(topicInput, split[0], split[1]));
     }
 
@@ -223,11 +223,9 @@ public class KafkaProducer {
         Future<RecordMetadata> send = producerRecord();
         try {
             logger.info("send message {}", send.get());
-        } catch (InterruptedException ex) {
-            java.util.logging.Logger.getLogger(KafkaProducer.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ExecutionException ex) {
-            java.util.logging.Logger.getLogger(KafkaProducer.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (InterruptedException | ExecutionException ex) {
+            logger.error("Error message", ex);
+        } 
         return response;
     }
 
