@@ -20,8 +20,12 @@ spring:
     mongodb.database: "prod"
     
 producer:
-    file: "C://input.txt"
-    topic: "input-topic"
+    file: "input.txt"
+    input-topic: "input-topic"
+    output-topic: "output-topic"
+    enedis-topic: "enedis-topic"
+    sound-topic: "sound-topic"
+    
 
 server:
   port: 8080

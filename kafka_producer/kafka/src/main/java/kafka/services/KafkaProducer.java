@@ -7,6 +7,7 @@ package kafka.services;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.ShortBuffer;
 import java.nio.file.Files;
@@ -21,6 +22,7 @@ import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
@@ -32,6 +34,7 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
+import kafka.ExitException;
 import kafka.admin.AdminUtils;
 import kafka.admin.RackAwareMode;
 import kafka.utils.ZKStringSerializer$;
@@ -47,6 +50,7 @@ import org.fagazi.enedis.DataResponse;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
@@ -58,8 +62,8 @@ public class KafkaProducer {
 
     private static final Logger logger = LoggerFactory.getLogger(KafkaProducer.class);
 
-    //@Value("${producer.file}")
-    private String file = "C://Work/input.txt";
+    @Value("${producer.file:C:/Work/input.txt}")
+    private String file;
 
     private List<String> lines = new ArrayList<>();
 
@@ -69,41 +73,38 @@ public class KafkaProducer {
     private WebTarget employeeWebTarget = webTarget.path("records/1.0/search");
 
     // Create our producer properties
-    //@Value("${producer.topic}")
-    private String topicInput = "input-topic";
-    private String topicOutput = "output-topic";
-    private String topicEnedis = "enedis-topic";
-    private String topicSound = "sound-topic";
+    @Value("${producer.input-topic:input-topic}")
+    private String topicInput;
+    @Value("${producer.output-topic:output-topic}")
+    private String topicOutput;
+    @Value("${producer.enedis-topic:enedis-topic}")
+    private String topicEnedis;
+    @Value("${producer.sound-topic:sound-topic}")
+    private String topicSound;
 
     private final Properties props = new Properties();
-    private final org.apache.kafka.clients.producer.KafkaProducer<String, String> producer;
+    private org.apache.kafka.clients.producer.KafkaProducer<String, String> producer;
     // sound topic management
     private final Properties soundProps = new Properties();
-    private final org.apache.kafka.clients.producer.KafkaProducer<String, byte[]> soundProducer;
+    private org.apache.kafka.clients.producer.KafkaProducer<String, byte[]> soundProducer;
     private boolean started = false;
     int position = 0;
 
-    public KafkaProducer() throws URISyntaxException {
-        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:29092");
-        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
-        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
-        props.put(ProducerConfig.ACKS_CONFIG, "1");
-        producer = new org.apache.kafka.clients.producer.KafkaProducer<>(props);
-        
-        soundProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:29092");
-        soundProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, ByteArraySerializer.class.getName());
-        soundProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
-        soundProps.put(ProducerConfig.ACKS_CONFIG, "1");
-        soundProducer = new org.apache.kafka.clients.producer.KafkaProducer<>(soundProps);
+    @PostConstruct
+    public void init() throws URISyntaxException {
 
         // opening  File for read
-        logger.info("File name {}", file);
         Path filePath = Paths.get(file);
         if (!Files.exists(filePath, LinkOption.NOFOLLOW_LINKS)) {
-            logger.warn("File not found {}, aborting creation", file);
-            throw new RuntimeException("File not found");
+            URL url = this.getClass().getResource(file);
+            filePath = Paths.get(getClass().getClassLoader().getResource(file).toURI()); 
+            if (!Files.exists(filePath, LinkOption.NOFOLLOW_LINKS)) {
+                logger.warn("File not found {}, aborting creation", file);
+                throw new ExitException("File not found");
+            }
         }
-        try (Stream<String> stream = Files.lines(Paths.get(file))) {
+        logger.info("File name {}", filePath);
+        try (Stream<String> stream = Files.lines(filePath)) {
 
             //1. filter line 3
             //2. convert all content to upper case
@@ -112,7 +113,20 @@ public class KafkaProducer {
 
         } catch (IOException e) {
             e.printStackTrace();
+            throw new ExitException("File not found", e);
         }
+
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:29092");
+        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        props.put(ProducerConfig.ACKS_CONFIG, "1");
+        producer = new org.apache.kafka.clients.producer.KafkaProducer<>(props);
+
+        soundProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:29092");
+        soundProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, ByteArraySerializer.class.getName());
+        soundProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        soundProps.put(ProducerConfig.ACKS_CONFIG, "1");
+        soundProducer = new org.apache.kafka.clients.producer.KafkaProducer<>(soundProps);
     }
 
     public void config() {
@@ -191,7 +205,7 @@ public class KafkaProducer {
             ByteBuffer byteBuffer = ByteBuffer.allocate(buffsize);
             ShortBuffer shortBuffer = byteBuffer.asShortBuffer();
             byte[] data = byteBuffer.array();
-            
+
             logger.trace("Start sending message");
             while (started) {
                 numBytesRead = line.read(data, 0, data.length);
